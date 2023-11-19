@@ -701,7 +701,7 @@ function SurvivalGame.client_onLoadingScreenLifted(self)
 end
 
 function SurvivalGame.sv_requestZ(self)
-	return g_spawnZ * -10
+	return g_spawnZ / 10
 end
 
 function SurvivalGame.sv_createSpace(self, world)
