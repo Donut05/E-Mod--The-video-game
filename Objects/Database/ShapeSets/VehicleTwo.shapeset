@@ -1,0 +1,716 @@
+{
+   "partList" : [
+      {
+         "color" : "#518d3c",
+         "cylinder" : {
+            "axis" : "Y",
+            "depth" : 8.199999999999999,
+            "diameter" : 1,
+            "margin" : 0.040
+         },
+         "flammable" : false,
+         "name" : "obj_vehicle_antenna",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 3,
+            "durability" : 4,
+            "friction" : 5
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_antenna.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_antenna_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "showInInventory" : false,
+         "sticky" : "-Y",
+         "uuid" : "e7dcdeb1-3667-4829-ad77-5bcc38c6f1f4"
+      },
+      {
+         "box" : {
+            "x" : 6,
+            "y" : 4,
+            "z" : 1
+         },
+         "color" : "#518d3c",
+         "flammable" : false,
+         "name" : "obj_vehicle_backwindow",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 4,
+            "durability" : 4,
+            "friction" : 5
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_backwindow.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_backwindow_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "showInInventory" : false,
+         "sticky" : "+X-X+Y-Y+Z-Z",
+         "uuid" : "d38ef0d8-3f26-4fb8-ae24-fc869dd27cfd"
+      },
+      {
+         "box" : {
+            "x" : 8,
+            "y" : 1,
+            "z" : 7
+         },
+         "color" : "#518d3c",
+         "flammable" : false,
+         "name" : "obj_vehicle_base",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 7,
+            "durability" : 5,
+            "friction" : 5
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_base.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_base_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "showInInventory" : false,
+         "sticky" : "+X-X+Y-Y+Z-Z",
+         "uuid" : "27bd869f-bccb-471f-8c75-c0ba401e9bda"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "#808080",
+         "flammable" : false,
+         "name" : "obj_vehicle_beveledcube",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 2,
+            "durability" : 4,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_beveledcube.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "showInInventory" : false,
+         "sticky" : "+X-X+Y-Y+Z-Z",
+         "uuid" : "ae7f01db-5b37-48b8-a6ed-00d3c0a6372c"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 1,
+            "z" : 3
+         },
+         "color" : "#518d3c",
+         "flammable" : false,
+         "name" : "obj_vehicle_frontcornerlower",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 3,
+            "durability" : 4,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_frontcornerlower.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_frontcornerlower_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "showInInventory" : false,
+         "sticky" : "+X-X+Y-Y+Z-Z",
+         "uuid" : "8483343d-ce68-4a1f-a807-f4c6e399d10a"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 2,
+            "z" : 3
+         },
+         "color" : "#518d3c",
+         "flammable" : false,
+         "name" : "obj_vehicle_frontcornerupper",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 3,
+            "durability" : 4,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_frontcornerupper.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_frontcornerupper_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropZ",
+         "showInInventory" : false,
+         "sticky" : "+X-X+Y-Y+Z-Z",
+         "uuid" : "f737addd-42a8-4446-9117-01bb9db3e273"
+      },
+      {
+         "box" : {
+            "x" : 4,
+            "y" : 2,
+            "z" : 3
+         },
+         "color" : "#518d3c",
+         "flammable" : false,
+         "name" : "obj_vehicle_grill",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 3,
+            "durability" : 4,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_grill.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_grill_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "showInInventory" : false,
+         "sticky" : "+X-X+Y-Y+Z-Z",
+         "uuid" : "36cc89b0-01d2-419c-80d9-e38c22cd0cb1"
+      },
+      {
+         "color" : "#518d3c",
+         "flammable" : false,
+         "hull" : {
+            "col" : "$GAME_DATA/Objects/Collision/obj_decor_screw01.obj",
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "name" : "obj_vehicle_hubcap",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 2,
+            "durability" : 3,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_hubcap.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_hubcap_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropZ",
+         "showInInventory" : false,
+         "sticky" : "-Z",
+         "uuid" : "a053d5b7-f745-465e-87ac-97725e2ac984"
+      },
+      {
+         "box" : {
+            "x" : 6,
+            "y" : 1,
+            "z" : 5
+         },
+         "color" : "#518d3c",
+         "flammable" : false,
+         "name" : "obj_vehicle_roof",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 5,
+            "durability" : 5,
+            "friction" : 5
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_roof.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_roof_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "showInInventory" : false,
+         "sticky" : "+X-X+Y-Y+Z-Z",
+         "uuid" : "c195c3ca-17ba-4684-8173-1eb92715fc72"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "#808080",
+         "flammable" : false,
+         "hull" : {
+            "col" : "$GAME_DATA/Objects/Collision/obj_fittings_ductbend.obj",
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "name" : "obj_vehicle_roofcorner",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 2,
+            "durability" : 4,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_roofcorner.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropYX",
+         "showInInventory" : false,
+         "sticky" : "-X+X-Y-Z",
+         "uuid" : "4b55462e-976a-4cfc-b2fd-7b7a90f31813"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 4
+         },
+         "color" : "#518d3c",
+         "flammable" : false,
+         "name" : "obj_vehicle_roofside",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 2,
+            "durability" : 4,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_roofside.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropZX",
+         "showInInventory" : false,
+         "sticky" : "-X+X+Y-Y-Z+Z",
+         "uuid" : "71b2a025-d5ed-44cb-98f5-9e82517a9c04"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 2,
+            "z" : 4
+         },
+         "color" : "#518d3c",
+         "flammable" : false,
+         "name" : "obj_vehicle_sidevent",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 2,
+            "durability" : 4,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_sidevent.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_sidevent_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "showInInventory" : false,
+         "sticky" : "-X+X+Y-Y-Z+Z",
+         "uuid" : "db8c6146-8e90-440e-9099-36e3eedd1b78"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 4
+         },
+         "color" : "#518d3c",
+         "flammable" : false,
+         "name" : "obj_vehicle_trunkbase",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 2,
+            "durability" : 4,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_trunkbase.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_trunkbase_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropX",
+         "showInInventory" : false,
+         "sticky" : "-X+X+Y-Y-Z+Z",
+         "uuid" : "56a7a237-a3b2-4f31-a061-83de75afd9a2"
+      },
+      {
+         "box" : {
+            "x" : 4,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "#518d3c",
+         "flammable" : false,
+         "name" : "obj_vehicle_trunkextension",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 2,
+            "durability" : 2,
+            "friction" : 2
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_trunkextension.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "showInInventory" : false,
+         "sticky" : "+X-X+Y-Y+Z-Z",
+         "uuid" : "eeb0d743-486c-4441-a0b9-b2a2230ad0d4"
+      },
+      {
+         "box" : {
+            "x" : 4,
+            "y" : 3,
+            "z" : 1
+         },
+         "color" : "#518d3c",
+         "flammable" : false,
+         "name" : "obj_vehicle_trunkside",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 2,
+            "durability" : 4,
+            "friction" : 4
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_trunkside.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_trunkside_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "showInInventory" : false,
+         "sticky" : "-X+X+Y-Y-Z+Z",
+         "uuid" : "975e4770-41c4-4343-9435-cef1e85c0b01"
+      },
+      {
+         "box" : {
+            "x" : 3,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "#808080",
+         "flammable" : false,
+         "name" : "obj_vehicle_wheelhousecenter",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 3,
+            "durability" : 4,
+            "friction" : 2
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_wheelhousecenter.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNorAo",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_wheelhousecenter_ao.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropZ",
+         "showInInventory" : false,
+         "sticky" : "-X+X-Z",
+         "uuid" : "ba83357d-db8f-4b41-9e08-145f0f82f263"
+      },
+      {
+         "box" : {
+            "x" : 6,
+            "y" : 1,
+            "z" : 3
+         },
+         "color" : "2e4d6c",
+         "flammable" : false,
+         "name" : "obj_vehicle_windscreen",
+         "physicsMaterial" : "Glass",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 3,
+            "durability" : 2,
+            "friction" : 2
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/farmer_car_parts/obj_vehicle_windscreen.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "Glass",
+                        "textureList" : [
+                           "$GAME_DATA/Objects/Textures/Blocks/blk_glass_dif.tga",
+                           "$GAME_DATA/Objects/Textures/Blocks/blk_glass_asg.tga",
+                           "$GAME_DATA/Objects/Textures/Blocks/blk_glass_nor.tga"
+                        ]
+                     },
+                     {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_dif.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_vehicle_atlas_nor.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "showInInventory" : false,
+         "sticky" : "-Y",
+         "uuid" : "455c0d71-757d-47a4-91d1-0adcc8c87f56"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "#c36512",
+         "flammable" : false,
+         "name" : "obj_industrial_staircasewedgecorner",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 1,
+            "density" : 3,
+            "durability" : 2,
+            "friction" : 2
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Objects/Mesh/decorative/obj_industrial_staircasewedgecorner.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_atlas_generic_dif.TGA",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_atlas_generic_asg.TGA",
+                           "$CONTENT_DATA/Objects/Textures/Car/obj_atlas_generic_nor.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "showInInventory" : false,
+         "sticky" : "-X-Y-Z",
+         "uuid" : "b6e916dd-280c-4840-97d2-116ec32d5976"
+      }
+   ]
+}

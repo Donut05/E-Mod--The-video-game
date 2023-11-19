@@ -1,0 +1,139 @@
+
+{
+	"bodies" : 
+	[
+		
+		{
+			"childs" : 
+			[
+				
+				{
+					"color" : "C52319",
+					"controller" : 
+					{
+						"containers" : 
+						[
+							
+							{
+								"container" : 
+								[
+									
+									{
+										"quantity" : 20.0,
+										"uuid" : "d4d68946-aa03-4b8f-b1af-96b81ad4e305"
+									},
+									
+									{
+										"quantity" : 20.0,
+										"uuid" : "d4d68946-aa03-4b8f-b1af-96b81ad4e305"
+									},
+									
+									{
+										"quantity" : 20.0,
+										"uuid" : "d4d68946-aa03-4b8f-b1af-96b81ad4e305"
+									},
+									
+									{
+										"quantity" : 20.0,
+										"uuid" : "d4d68946-aa03-4b8f-b1af-96b81ad4e305"
+									},
+									
+									{
+										"quantity" : 20.0,
+										"uuid" : "d4d68946-aa03-4b8f-b1af-96b81ad4e305"
+									}
+								],
+								"filters" : 
+								[
+									
+									{
+										"uuid" : "d4d68946-aa03-4b8f-b1af-96b81ad4e305"
+									}
+								],
+								"id" : 0.0,
+								"slots" : 5.0,
+								"stackSize" : 20.0
+							}
+						],
+						"controllers" : 
+						[
+							
+							{
+								"id" : 24.0
+							}
+						],
+						"id" : 23.0
+					},
+					"pos" : 
+					{
+						"x" : 1.0,
+						"y" : 2.0,
+						"z" : 10.0
+					},
+					"shapeId" : "056e5ff1-f030-40df-946a-b830bf494c92",
+					"xaxis" : 1.0,
+					"zaxis" : -2.0
+				},
+				
+				{
+					"color" : "222222",
+					"controller" : 
+					{
+						"id" : 24.0,
+						"level" : 0.0
+					},
+					"pos" : 
+					{
+						"x" : 2.0,
+						"y" : -1.0,
+						"z" : 13.0
+					},
+					"shapeId" : "a736ffdf-22c1-40f2-8e40-988cab7c0559",
+					"xaxis" : -3.0,
+					"zaxis" : -2.0
+				},
+				
+				{
+					"color" : "DF7F01",
+					"controller" : 
+					{
+						"active" : false,
+						"controllers" : 
+						[
+							
+							{
+								"id" : 24.0
+							}
+						],
+						"id" : 25.0
+					},
+					"pos" : 
+					{
+						"x" : 1.0,
+						"y" : 0.0,
+						"z" : 13.0
+					},
+					"shapeId" : "7cf717d7-d167-4f2d-a6e7-6b2c70aa3986",
+					"xaxis" : 1.0,
+					"zaxis" : -2.0
+				}
+			],
+			"type" : 0.0
+		}
+	],
+	"dependencies" : 
+	[
+		
+		{
+			"contentId" : "6db9449a-2b49-4ee7-8711-ad91ff4119ec",
+			"name" : "E",
+			"shapeIds" : 
+			[
+				"056e5ff1-f030-40df-946a-b830bf494c92",
+				"7cf717d7-d167-4f2d-a6e7-6b2c70aa3986"
+			],
+			"steamFileId" : 2809667982.0
+		}
+	],
+	"version" : 4.0
+}

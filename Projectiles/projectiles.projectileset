@@ -1,0 +1,53 @@
+{
+   "projectiles" : [
+      {
+         "attachedEffect" : "00Fard - DMCAbullet_attached",
+         "audiomass" : 1000.0,
+         "destruction" : {
+            "destructionLevels" : []
+         },
+         "effect" : "00Fard - DMCAbullet_hit",
+         "effectmaterial" : "Mechanical",
+         "enableGravity" : true,
+         "enableImpactEffect" : true,
+         "friction" : 100.0,
+         "mass" : 100.0,
+         "mesh" : "$CONTENT_DATA/Projectiles/Renderables/DMCA_bullet.rend",
+         "name" : "DMCAbullet",
+         "radius" : 1.0,
+         "spin" : 42.0,
+         "uuid" : "6bb9aa22-8b36-4fed-a740-028e5360a617"
+      },
+      {
+         "attachedEffect" : "BallSpider - Laser_burst",
+         "audiomass" : 250.0,
+         "destruction" : {
+            "destructionLevels" : [
+               {
+                  "chance" : 1.0,
+                  "qualityLevel" : 2
+               },
+               {
+                  "chance" : 0.40,
+                  "qualityLevel" : 3
+               },
+               {
+                  "chance" : 0.20,
+                  "qualityLevel" : 4
+               }
+            ]
+         },
+         "effect" : "",
+         "effectmaterial" : "Default",
+         "enableGravity" : true,
+         "enableImpactEffect" : false,
+         "friction" : 0.0,
+         "mass" : 0.0,
+         "mesh" : "$CONTENT_DATA/Projectiles/Renderables/DMCA_bullet.rend",
+         "name" : "BallSpiderBurstLazer",
+         "radius" : 0.250,
+         "spin" : 7.0,
+         "uuid" : "9012f301-ea27-4122-95f4-764210a510c5"
+      }
+   ]
+}

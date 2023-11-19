@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyGUI type="Layout" version="3.2.0">
+    <Widget type="Widget" skin="PanelEmpty" position="90 115 190 265">
+        <Widget type="ImageBox" skin="ImageBox" position="-25 75 415 370" name="Crack">
+            <Property key="ImageTexture" value="cracked_screen.png"/>
+        </Widget>
+        <Widget type="ImageBox" skin="ImageBox" position="60 15 135 130" name="Crack">
+            <Property key="ImageTexture" value="cracked_screen.png"/>
+        </Widget>
+        <Widget type="ImageBox" skin="ImageBox" position="-145 -85 265 250" name="Crack">
+            <Property key="ImageTexture" value="cracked_screen.png"/>
+        </Widget>
+    </Widget>
+    <CodeGeneratorSettings/>
+</MyGUI>

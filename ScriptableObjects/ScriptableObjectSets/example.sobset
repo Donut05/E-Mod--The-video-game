@@ -1,0 +1,28 @@
+{
+   "scriptableObjectList" : [
+      {
+         "classname" : "WeatherManager",
+         "filename" : "$CONTENT_DATA/Scripts/managers/WeatherManager.lua",
+         "name" : "WeatherManager",
+         "uuid" : "88c4f979-0feb-44d3-8b59-51da00338430"
+      },
+      {
+         "classname" : "SillyManager",
+         "filename" : "$CONTENT_DATA/Scripts/managers/SillyManager.lua",
+         "name" : "SillyManager",
+         "uuid" : "d696f6ae-615f-499b-b22a-20e8cea14831"
+      },
+      {
+         "classname" : "SkyManager",
+         "filename" : "$CONTENT_DATA/Scripts/managers/SkyManager.lua",
+         "name" : "SkyManager",
+         "uuid" : "cd770721-1acb-400e-a175-28cd6511010f"
+      },
+      {
+         "classname" : "HudManager",
+         "filename" : "$CONTENT_DATA/Scripts/managers/HudManager.lua",
+         "name" : "HudManager",
+         "uuid" : "be34f6d8-0c1e-4fc0-b243-522da04a4409"
+      }
+   ]
+}

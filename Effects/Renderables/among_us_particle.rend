@@ -1,0 +1,17 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$CONTENT_DATA/Effects/Meshes/amogus.fbx",
+         "subMeshList" : [
+            {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$CONTENT_DATA/Effects/Textures/amogus_dif_no_color.tga",
+                  "$CONTENT_DATA/Effects/Textures/blank_asg.tga",
+                  "$CONTENT_DATA/Effects/Textures/blank_nor.tga"
+               ]
+            }
+         ]
+      }
+   ]
+}

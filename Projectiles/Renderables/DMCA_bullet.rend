@@ -1,0 +1,17 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$CONTENT_DATA/Objects/Mesh/part.fbx",
+         "subMeshList" : [
+            {
+               "material" : "DifAsgAlpha",
+               "textureList" : [
+                  "$GAME_DATA/Textures/white.png",
+                  "$GAME_DATA/Textures/transparent.tga",
+                  "$GAME_DATA/Textures/transparent.tga"
+               ]
+            }
+         ]
+      }
+   ]
+}

@@ -1,0 +1,376 @@
+{
+    "system": {
+        "emitters": [
+            {
+                "angle": 45.0,
+                "bounce": 0.5,
+                "box": [
+                    0.0,
+                    1.0,
+                    0.0
+                ],
+                "category": "1 - Looping bubbles left",
+                "collision": "bounce",
+                "depth": [
+                    0.50,
+                    0.250
+                ],
+                "direction": [
+                    -1.0,
+                    0.0,
+                    0.0
+                ],
+                "direction_type": "constant",
+                "duration": 1.0,
+                "effects": [
+                    {
+                        "animation": "sheet",
+                        "end_texture_coords_range": 16,
+                        "fps": 30,
+                        "guid": 7,
+                        "name": "TextureAnimator"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                0.0
+                            ],
+                            [
+                                0.06266000000000001,
+                                1.157870
+                            ],
+                            [
+                                0.10,
+                                1.0
+                            ],
+                            [
+                                0.8720600000000001,
+                                1.098680
+                            ],
+                            [
+                                0.9556000000000001,
+                                1.230260
+                            ],
+                            [
+                                1.0,
+                                1.43420
+                            ]
+                        ],
+                        "guid": 8,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "burst",
+                "emission_rate": 5,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    0.50
+                ],
+                "friction": 1.0,
+                "guid": 6,
+                "height": [
+                    0.50,
+                    0.250
+                ],
+                "keep_local": false,
+                "material_name": "LiquidAlphaUvAnim",
+                "max_particles": 10,
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "camera_faceing",
+                "min_quality": "medium",
+                "name": "Fancy Bubbles Facing x axis x",
+                "particle": "mesh",
+                "position": [
+                    -0.300010,
+                    0.0,
+                    0.10
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation": [
+                    0.0,
+                    180.0
+                ],
+                "rotation_axis": [
+                    1.0,
+                    -0.0,
+                    0.0
+                ],
+                "rotation_speed": [
+                    0.0,
+                    180.0
+                ],
+                "tiles": [
+                    4,
+                    4
+                ],
+                "time_to_live": [
+                    3.0,
+                    1.0
+                ],
+                "type": "box",
+                "velocity": [
+                    1.0,
+                    0.750
+                ],
+                "width": [
+                    0.50,
+                    0.250
+                ]
+            },
+            {
+                "angle": 45.0,
+                "bounce": 0.5,
+                "box": [
+                    0.0,
+                    1.0,
+                    0.0
+                ],
+                "category": "2 - Looping bubbles right",
+                "collision": "bounce",
+                "depth": [
+                    0.50,
+                    0.250
+                ],
+                "direction": [
+                    1.0,
+                    0.0,
+                    0.0
+                ],
+                "direction_type": "constant",
+                "duration": 1.0,
+                "effects": [
+                    {
+                        "animation": "sheet",
+                        "end_texture_coords_range": 16,
+                        "fps": 30,
+                        "guid": 10,
+                        "name": "TextureAnimator"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                0.0
+                            ],
+                            [
+                                0.06266000000000001,
+                                1.157870
+                            ],
+                            [
+                                0.10,
+                                1.0
+                            ],
+                            [
+                                0.8720600000000001,
+                                1.098680
+                            ],
+                            [
+                                0.9556000000000001,
+                                1.230260
+                            ],
+                            [
+                                1.0,
+                                1.43420
+                            ]
+                        ],
+                        "guid": 11,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "burst",
+                "emission_rate": 5,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    0.50
+                ],
+                "friction": 1.0,
+                "guid": 9,
+                "height": [
+                    0.50,
+                    0.250
+                ],
+                "keep_local": false,
+                "material_name": "LiquidAlphaUvAnim",
+                "max_particles": 10,
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "camera_faceing",
+                "min_quality": "medium",
+                "name": "Fancy Bubbles Facing x axis x",
+                "particle": "mesh",
+                "position": [
+                    0.30,
+                    0.0,
+                    0.10
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation": [
+                    0.0,
+                    180.0
+                ],
+                "rotation_axis": [
+                    1.0,
+                    -0.0,
+                    0.0
+                ],
+                "rotation_speed": [
+                    0.0,
+                    180.0
+                ],
+                "tiles": [
+                    4,
+                    4
+                ],
+                "time_to_live": [
+                    3.0,
+                    1.0
+                ],
+                "type": "box",
+                "velocity": [
+                    1.0,
+                    0.750
+                ],
+                "width": [
+                    0.50,
+                    0.250
+                ]
+            },
+            {
+                "angle": 45.0,
+                "bounce": 0.5,
+                "box": [
+                    1.0,
+                    0.0,
+                    0.0
+                ],
+                "category": "3 - Looping bubbles front",
+                "collision": "bounce",
+                "depth": [
+                    0.50,
+                    0.250
+                ],
+                "direction": [
+                    0.0,
+                    1.0,
+                    0.0
+                ],
+                "direction_type": "constant",
+                "duration": 1.0,
+                "effects": [
+                    {
+                        "animation": "sheet",
+                        "end_texture_coords_range": 16,
+                        "fps": 30,
+                        "guid": 16,
+                        "name": "TextureAnimator"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                0.0
+                            ],
+                            [
+                                0.06266000000000001,
+                                1.157870
+                            ],
+                            [
+                                0.10,
+                                1.0
+                            ],
+                            [
+                                0.8720600000000001,
+                                1.098680
+                            ],
+                            [
+                                0.9556000000000001,
+                                1.230260
+                            ],
+                            [
+                                1.0,
+                                1.43420
+                            ]
+                        ],
+                        "guid": 17,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "burst",
+                "emission_rate": 100,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    0.50
+                ],
+                "friction": 1.0,
+                "guid": 15,
+                "height": [
+                    0.50,
+                    0.250
+                ],
+                "keep_local": false,
+                "material_name": "LiquidAlphaUvAnim",
+                "max_particles": 100,
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "camera_faceing",
+                "min_quality": "medium",
+                "name": "Fancy Bubbles Facing x axis x",
+                "particle": "mesh",
+                "position": [
+                    0.0,
+                    -0.400010,
+                    0.10
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation": [
+                    0.0,
+                    180.0
+                ],
+                "rotation_axis": [
+                    1.0,
+                    -0.0,
+                    0.0
+                ],
+                "rotation_speed": [
+                    0.0,
+                    180.0
+                ],
+                "spawn_chance": 0.50,
+                "tiles": [
+                    4,
+                    4
+                ],
+                "time_to_live": [
+                    3.0,
+                    1.0
+                ],
+                "type": "box",
+                "velocity": [
+                    -1.0,
+                    -0.750
+                ],
+                "width": [
+                    0.50,
+                    0.250
+                ]
+            }
+        ]
+    }
+}

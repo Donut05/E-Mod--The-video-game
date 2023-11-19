@@ -1,0 +1,32 @@
+{
+    "Dirtf - Tirade_flames": {
+        "effectList": [
+            {
+                "offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "particles": [
+                    "DMCA_tirade_flames"
+                ],
+                "type": "particle"
+            }
+        ]
+    },
+    "Medi - Beam_segment": {
+        "effectList": [
+            {
+                "offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "particles": [
+                    "medi_beam_segment"
+                ],
+                "type": "particle"
+            }
+        ]
+    }
+}

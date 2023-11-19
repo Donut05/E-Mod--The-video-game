@@ -1,0 +1,231 @@
+{
+    "system": {
+        "emitters": [
+            {
+                "bounce": 0.5,
+                "box": [
+                    0.50,
+                    0.0,
+                    0.50
+                ],
+                "category": "0 - Looping bubbles front",
+                "collision": "bounce",
+                "depth": [
+                    0.50,
+                    0.250
+                ],
+                "direction": [
+                    0.0,
+                    1.0,
+                    0.0
+                ],
+                "direction_type": "constant",
+                "duration": 1.0,
+                "effects": [
+                    {
+                        "animation": "sheet",
+                        "end_texture_coords_range": 16,
+                        "fps": 30,
+                        "guid": 13,
+                        "name": "TextureAnimator"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                0.0
+                            ],
+                            [
+                                0.06266000000000001,
+                                1.157870
+                            ],
+                            [
+                                0.10,
+                                1.0
+                            ],
+                            [
+                                0.8720600000000001,
+                                1.098680
+                            ],
+                            [
+                                0.9556000000000001,
+                                1.230260
+                            ],
+                            [
+                                1.0,
+                                1.43420
+                            ]
+                        ],
+                        "guid": 14,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 2,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    0.50
+                ],
+                "guid": 10,
+                "height": [
+                    0.50,
+                    0.250
+                ],
+                "keep_local": false,
+                "material_name": "LiquidAlphaUvAnim",
+                "max_particles": 6,
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "camera_faceing",
+                "min_quality": "medium",
+                "name": "Fancy Bubbles Facing x axis x",
+                "particle": "mesh",
+                "position": [
+                    0.0,
+                    -0.200010,
+                    0.0
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation": [
+                    0.0,
+                    180.0
+                ],
+                "rotation_axis": [
+                    1.0,
+                    -0.0,
+                    0.0
+                ],
+                "rotation_speed": [
+                    0.0,
+                    180.0
+                ],
+                "sub": [
+                    {
+                        "bounce": 0.5,
+                        "collision": "bounce",
+                        "depth": [
+                            0.349990,
+                            0.150
+                        ],
+                        "direction": [
+                            0.0,
+                            1.0,
+                            0.0
+                        ],
+                        "direction_type": "constant",
+                        "duration": 2.0,
+                        "effects": [
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.565760
+                                    ],
+                                    [
+                                        0.140990,
+                                        1.138120
+                                    ],
+                                    [
+                                        0.347250,
+                                        1.322360
+                                    ],
+                                    [
+                                        0.5953000000000001,
+                                        1.118420
+                                    ],
+                                    [
+                                        0.7754300000000001,
+                                        0.710520
+                                    ],
+                                    [
+                                        1.0,
+                                        0.0
+                                    ]
+                                ],
+                                "guid": 12,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            }
+                        ],
+                        "emission_mode": "burst",
+                        "emission_rate": 3,
+                        "force_vector": [
+                            0.0,
+                            0.0,
+                            1.0
+                        ],
+                        "friction": 5.0,
+                        "guid": 11,
+                        "height": [
+                            0.349990,
+                            0.150
+                        ],
+                        "inherit_velocity": true,
+                        "keep_local": false,
+                        "material_name": "LiquidAlphaUvAnim",
+                        "max_particles": 5,
+                        "mesh_size": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "mesh_type": "camera_faceing",
+                        "min_quality": "medium",
+                        "name": "Sub bubbles",
+                        "particle": "mesh",
+                        "position": [
+                            0.0,
+                            -0.200010,
+                            0.0
+                        ],
+                        "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                        "rotation": [
+                            0.0,
+                            180.0
+                        ],
+                        "rotation_axis": [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        "rotation_speed": [
+                            0.0,
+                            180.0
+                        ],
+                        "sphere_radius": 0.10,
+                        "sub_emit": "birth",
+                        "time_to_live": [
+                            1.0,
+                            0.250
+                        ],
+                        "type": "sphere",
+                        "velocity": -0.1000000014901161,
+                        "width": [
+                            0.349990,
+                            0.150
+                        ]
+                    }
+                ],
+                "tiles": [
+                    4,
+                    4
+                ],
+                "time_to_live": [
+                    3.0,
+                    1.0
+                ],
+                "type": "box",
+                "velocity": -0.1000000014901161,
+                "width": [
+                    0.50,
+                    0.250
+                ]
+            }
+        ]
+    }
+}

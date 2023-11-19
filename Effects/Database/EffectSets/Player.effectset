@@ -1,0 +1,38 @@
+{
+    "Player - Anime_lines": {
+        "effectList": [
+            {
+                "offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "particles": [
+                    "p_enviroment_fallingeffect_01"
+                ],
+                "type": "particle"
+            }
+        ]
+    },
+    "Player - Slam": {
+        "effectList": [
+            {
+                "offset": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "particles": [
+                    "ground_slam"
+                ],
+                "type": "particle"
+            },
+            {
+                "audio": [
+                    "event:/char/npc/bots/enemies/farmbot/farmbot_takedamage"
+                ],
+                "type": "audio"
+            }
+        ]
+    }
+}

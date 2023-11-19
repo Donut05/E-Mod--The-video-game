@@ -1,0 +1,74 @@
+{
+   "Amogus - Twerk" : {
+      "effectList" : [
+         {
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "particles" : [ "Amogus_twerk" ],
+            "type" : "particle"
+         }
+      ]
+   },
+   "Cloak_generator - Activation_plus_idle" : {
+      "effectList" : [
+         {
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "particles" : [ "invis_activate_plus_idle" ],
+            "type" : "particle"
+         }
+      ]
+   },
+   "Connector - Connection" : {
+      "effectList" : [
+         {
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "particles" : [ "connection" ],
+            "type" : "particle"
+         }
+      ]
+   },
+   "Connector - Connection_first" : {
+      "effectList" : [
+         {
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "particles" : [ "connection_first" ],
+            "type" : "particle"
+         }
+      ]
+   },
+   "Connector - Connection_last" : {
+      "effectList" : [
+         {
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "particles" : [ "connection_last" ],
+            "type" : "particle"
+         }
+      ]
+   },
+   "Connector - Pointer" : {
+      "effectList" : [
+         {
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "particles" : [ "raycast_visual" ],
+            "type" : "particle"
+         }
+      ]
+   },
+   "SUS" : {
+      "effectList" : [
+         {
+            "attached" : true,
+            "particles" : [ "SUS" ],
+            "type" : "particle"
+         }
+      ]
+   },
+   "Thruster - Exhaust" : {
+      "effectList" : [
+         {
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "particles" : [ "thruster_exhaust" ],
+            "type" : "particle"
+         }
+      ]
+   }
+}

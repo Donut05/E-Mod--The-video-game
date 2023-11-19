@@ -1,0 +1,205 @@
+{
+    "system": {
+        "emitters": [
+            {
+                "angle": 15.0,
+                "bounce": 0.5,
+                "box": [
+                    0.50,
+                    0.20,
+                    0.10
+                ],
+                "category": "0 - Bubbles front",
+                "collision": "bounce",
+                "depth": [
+                    0.50,
+                    0.250
+                ],
+                "direction": [
+                    0.0,
+                    1.0,
+                    0.0
+                ],
+                "direction_type": "constant",
+                "duration": 1.0,
+                "effects": [
+                    {
+                        "animation": "sheet",
+                        "end_texture_coords_range": 16,
+                        "fps": 30,
+                        "guid": 1,
+                        "name": "TextureAnimator"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                0.0
+                            ],
+                            [
+                                0.06266000000000001,
+                                1.157870
+                            ],
+                            [
+                                0.10,
+                                1.0
+                            ],
+                            [
+                                0.8720600000000001,
+                                1.098680
+                            ],
+                            [
+                                0.9556000000000001,
+                                1.230260
+                            ],
+                            [
+                                1.0,
+                                1.43420
+                            ]
+                        ],
+                        "guid": 2,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "burst",
+                "emission_rate": 20,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    0.50
+                ],
+                "friction": 1.0,
+                "guid": 0,
+                "height": [
+                    0.50,
+                    0.250
+                ],
+                "keep_local": false,
+                "material_name": "LiquidAlphaUvAnim",
+                "max_particles": 20,
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "camera_faceing",
+                "min_quality": "medium",
+                "name": "Fancy Bubbles Facing x axis x",
+                "particle": "mesh",
+                "position": [
+                    0.0,
+                    -0.200030,
+                    0.200240
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation": [
+                    0.0,
+                    180.0
+                ],
+                "rotation_axis": [
+                    1.0,
+                    -0.0,
+                    0.0
+                ],
+                "rotation_speed": [
+                    0.0,
+                    180.0
+                ],
+                "spawn_chance": 0.50,
+                "surface": true,
+                "tiles": [
+                    4,
+                    4
+                ],
+                "time_to_live": [
+                    3.0,
+                    1.0
+                ],
+                "type": "box",
+                "velocity": [
+                    -1.0,
+                    -0.750
+                ],
+                "width": [
+                    0.50,
+                    0.250
+                ]
+            },
+            {
+                "angle": 45.0,
+                "bounce": 0.5,
+                "category": "1 - Contents wash out",
+                "collision": "bounce",
+                "diffuse": "$GAME_DATA/Particles/Textures/Debri/debri_confetti_01.tga",
+                "direction_type": "shape",
+                "duration": 1.0,
+                "effects": [
+                    {
+                        "animation": "sheet",
+                        "end_texture_coords_range": 64,
+                        "fps": 60,
+                        "guid": 5,
+                        "mode": "over_time",
+                        "name": "TextureAnimator",
+                        "repeat": true
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                [
+                                    1.0,
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                ]
+                            ],
+                            [
+                                1.0,
+                                [
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    1.0
+                                ]
+                            ]
+                        ],
+                        "guid": 6,
+                        "name": "Color"
+                    }
+                ],
+                "emission_mode": "burst",
+                "emission_rate": 10,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    -0.200030
+                ],
+                "friction": 0.50,
+                "guid": 4,
+                "height": 0.50,
+                "keep_local": true,
+                "max_particles": 5,
+                "min_quality": "medium",
+                "name": "Papper",
+                "position": [
+                    0.0,
+                    -0.300010,
+                    0.059980
+                ],
+                "scene_blend": "addative",
+                "tiles": [
+                    8,
+                    8
+                ],
+                "time_to_live": 5.0,
+                "velocity": [
+                    0.750,
+                    0.50
+                ],
+                "width": 0.50
+            }
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$CONTENT_DATA/Objects/Mesh/interactive/auto_connector.fbx",
+         "subMeshMap" : {
+            "Connect_tool" : {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$GAME_DATA/Character/Char_Tools/Char_connecttool/char_connecttool_dif.tga",
+                  "$GAME_DATA/Character/Char_Tools/Char_connecttool/char_connecttool_asg.tga",
+                  "$GAME_DATA/Character/Char_Tools/Char_connecttool/char_connecttool_nor.tga"
+               ]
+            },
+            "Hand" : {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$GAME_DATA/Objects/Textures/decor/obj_decor_mannequinhand_dif.tga",
+                  "$GAME_DATA/Objects/Textures/decor/obj_decor_mannequinhand_asg.tga",
+                  "$GAME_DATA/Objects/Textures/decor/obj_decor_sign01_nor.tga"
+               ]
+            }
+         }
+      }
+   ]
+}

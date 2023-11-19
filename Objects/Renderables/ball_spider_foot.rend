@@ -1,0 +1,25 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$CONTENT_DATA/Objects/Mesh/enemies/drill_rig_foot.fbx",
+         "subMeshMap" : {
+            "Concrete" : {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$CONTENT_DATA/Objects/Textures/Ball_spider/concrete_dif.png",
+                  "$GAME_DATA/Objects/Textures/Blocks/blk_concrete01_asg.tga",
+                  "$CONTENT_DATA/Objects/Textures/Ball_spider/concrete_nor.png"
+               ]
+            },
+            "Metal" : {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$CONTENT_DATA/Objects/Textures/simple_color_pallet.png",
+                  "$SURVIVAL_DATA/Objects/Textures/building/obj_building_elevatorwall_asg.tga",
+                  "$GAME_DATA/Objects/Textures/Blocks/blk_metal01_nor.tga"
+               ]
+            }
+         }
+      }
+   ]
+}

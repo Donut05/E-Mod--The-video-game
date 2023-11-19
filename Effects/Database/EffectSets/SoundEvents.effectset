@@ -1,0 +1,130 @@
+{
+   "Action - Chest_Close" : {
+      "effectList" : [
+         {
+            "audio" : [ "event:/ui/openclose/chest_close" ],
+            "type" : "audio"
+         }
+      ]
+   },
+   "Action - Chest_Open" : {
+      "effectList" : [
+         {
+            "audio" : [ "event:/ui/openclose/chest_open" ],
+            "type" : "audio"
+         }
+      ]
+   },
+   "Action - File_cabinet_close" : {
+      "effectList" : [
+         {
+            "audio" : [ "event:/tools/handbook/handbook_close" ],
+            "type" : "audio"
+         },
+         {
+            "audio" : [ "event:/char/npc/bots/utility/dressbot/db_door_open" ],
+            "type" : "audio"
+         }
+      ]
+   },
+   "Action - File_cabinet_open" : {
+      "effectList" : [
+         {
+            "audio" : [ "event:/tools/handbook/handbook_turnpage" ],
+            "type" : "audio"
+         },
+         {
+            "audio" : [ "event:/char/npc/bots/utility/dressbot/db_door_open" ],
+            "type" : "audio"
+         }
+      ]
+   },
+   "Action - Locker" : {
+      "effectList" : [
+         {
+            "audio" : [ "event:/char/npc/bots/enemies/tapebot/tapebot_foley_gunrattle" ],
+            "type" : "audio"
+         }
+      ]
+   },
+   "Action - Microwave_close" : {
+      "effectList" : [
+         {
+            "name" : "MicrowaveClose01",
+            "type" : "audio"
+         }
+      ]
+   },
+   "Action - Microwave_close2" : {
+      "effectList" : [
+         {
+            "name" : "MicrowaveClose02",
+            "type" : "audio"
+         }
+      ]
+   },
+   "Action - Microwave_open" : {
+      "effectList" : [
+         {
+            "name" : "MicrowaveOpen01",
+            "type" : "audio"
+         }
+      ]
+   },
+   "Action - Microwave_open2" : {
+      "effectList" : [
+         {
+            "name" : "MicrowaveOpen02",
+            "type" : "audio"
+         }
+      ]
+   },
+   "Environment - Rain_sound_DLL" : {
+      "effectList" : [
+         {
+            "name" : "Rain",
+            "parameters" : [ "CAE_Volume" ],
+            "type" : "audio"
+         }
+      ],
+      "parameterList" : {
+         "CAE_Volume" : 1.0
+      }
+   },
+   "Environment - Rain_sound_inside_DLL" : {
+      "effectList" : [
+         {
+            "name" : "RainInside",
+            "parameters" : [ "CAE_Volume" ],
+            "type" : "audio"
+         }
+      ],
+      "parameterList" : {
+         "CAE_Volume" : 1.0
+      }
+   },
+   "Environment - Rain_sound_noDLL" : {
+      "effectList" : [
+         {
+            "audio" : [ "event:/coll/dust_rocket" ],
+            "type" : "audio"
+         }
+      ]
+   },
+   "Sounds - Metal_pipe" : {
+      "effectList" : [
+         {
+            "name" : "MetalPipe",
+            "type" : "audio"
+         }
+      ]
+   },
+   "Sounds - TapeBot_headshot_sound" : {
+      "effectList" : [
+         {
+            "name" : "MeetTheSniper",
+            "type" : "audio"
+         }
+      ]
+   }
+}

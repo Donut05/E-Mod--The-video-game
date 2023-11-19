@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyGUI type="Layout" version="3.2.0">
+    <Widget type="ImageBox" skin="ImageBox" position_real="0.44791666666666669 0.40740740740740738 0.091145833333333329 0.16666666666666666" name="HandIcon">
+        <Property key="NeedKey" value="false"/>
+        <Property key="NeedMouse" value="false"/>
+    </Widget>
+    <CodeGeneratorSettings/>
+</MyGUI>

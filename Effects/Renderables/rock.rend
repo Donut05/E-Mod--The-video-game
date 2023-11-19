@@ -1,0 +1,17 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$GAME_DATA/Terrain/Mesh/Rocks/env_rocks_rock04.fbx",
+         "subMeshList" : [
+            {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$GAME_DATA/Terrain/Textures/Rocks/env_rocks_general_dif.tga",
+                  "$GAME_DATA/Terrain/Textures/Rocks/env_rocks_rock01_asg.tga",
+                  "$GAME_DATA/Terrain/Textures/Rocks/env_rocks_rock04_nor.tga"
+               ]
+            }
+         ]
+      }
+   ]
+}

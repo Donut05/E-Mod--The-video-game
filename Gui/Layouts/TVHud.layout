@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyGUI type="Layout" version="3.2.0">
+    <Widget type="Widget" skin="PanelEmpty" position="1480 0 440 460"/>
+    <Widget type="ImageBox" skin="ImageBox" position="1520 -10 424 416" name="TV">
+        <Property key="ImageTexture" value="TV.png"/>
+        <Widget type="ImageBox" skin="ImageBox" position="80 115 260 180" name="FG">
+            <Property key="ImageTexture" value="FG_test.jpg"/>
+        </Widget>
+    </Widget>
+    <CodeGeneratorSettings/>
+</MyGUI>

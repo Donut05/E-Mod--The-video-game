@@ -1,0 +1,46 @@
+{
+   "Enemies - Bee_swarm" : {
+      "effectList" : [
+         {
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "particles" : [ "bee_swarm" ],
+            "type" : "particle"
+         },
+         {
+            "audio" : [ "event:/props/beehive" ],
+            "type" : "audio"
+         }
+      ]
+   },
+   "Enemies - DrillSpawner" : {
+      "effectList" : [
+         {
+            "delay" : 0.0,
+            "duration" : 0.40,
+            "name" : "",
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "parameters" : [ "shakeStrength", "shakeRadius" ],
+            "type" : "cameraShake"
+         },
+         {
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "particles" : [ "drillship_dig_out" ],
+            "type" : "particle"
+         }
+      ],
+      "parameterList" : {
+         "shakeRadius" : 40.0,
+         "shakeStrength" : 0.50,
+         "size" : 1.0
+      }
+   },
+   "Enemies - Fake_totebot_head" : {
+      "effectList" : [
+         {
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "particles" : [ "fake_head" ],
+            "type" : "particle"
+         }
+      ]
+   }
+}

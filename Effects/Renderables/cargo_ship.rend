@@ -1,0 +1,118 @@
+{
+   "lodList" : [
+      {
+         "includes" : [ "POSITION", "UV0", "UV1", "NORMAL", "TANGENTS" ],
+         "mesh" : "$CONTENT_DATA/Effects/Meshes/Spaceship.fbx",
+         "subMeshList" : [
+            {
+               "material" : "DifAsgNorAo",
+               "textureList" : [
+                  "$CONTENT_DATA/Effects/Textures/sky/tiling_spaceship_metal01_dif.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/tiling_spaceship_metal01_asg.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/tiling_spaceship_metal01_nor.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/env_spaceship_orange_ao.tga"
+               ]
+            },
+            {
+               "material" : "DifAsgNorAo",
+               "textureList" : [
+                  "$CONTENT_DATA/Effects/Textures/sky/tiling_spaceship_metal02_dif.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/tiling_spaceship_metal02_asg.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/tiling_spaceship_metal02_nor.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/env_spaceship_metal02_ao.tga"
+               ]
+            },
+            {
+               "material" : "DifAsgNorAo",
+               "textureList" : [
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/tiling_spaceship_shiny01_dif.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/tiling_spaceship_shiny01_asg.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/tiling_spaceship_shiny01_nor.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/env_spaceship_shiny01_ao.tga"
+               ]
+            },
+            {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/env_spaceship_atlas_dif.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/env_spaceship_atlas_asg.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/env_spaceship_atlas_nor.tga"
+               ]
+            },
+            {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$SURVIVAL_DATA/Objects/Textures/spaceship/trimsheet_dif.tga",
+                  "$SURVIVAL_DATA/Objects/Textures/spaceship/trimsheet_asg.tga",
+                  "$SURVIVAL_DATA/Objects/Textures/spaceship/trimsheet_nor.tga"
+               ]
+            },
+            {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$CONTENT_DATA/Effects/Textures/sky/env_spaceship_rubberfloor_tiling_o_dif.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/env_spaceship_rubberfloor_tiling_asg.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/env_spaceship_rubberfloor_tiling_nor.tga"
+               ]
+            },
+            {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$SURVIVAL_DATA/Objects/Textures/spaceship/obj_spaceship_vents_dif.tga",
+                  "$SURVIVAL_DATA/Objects/Textures/spaceship/obj_spaceship_vents_asg.tga",
+                  "$SURVIVAL_DATA/Objects/Textures/spaceship/obj_spaceship_vents_nor.tga"
+               ]
+            },
+            {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$CONTENT_DATA/Effects/Textures/sky/env_spaceship_rubberfloor_tiling_dif.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/env_spaceship_rubberfloor_tiling_asg.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/env_spaceship_rubberfloor_tiling_nor.tga"
+               ]
+            },
+            {
+               "material" : "DifAsgNorAo",
+               "textureList" : [
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/tiling_spaceship_metal01_dif.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/tiling_spaceship_metal01_asg.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/tiling_spaceship_metal01_nor.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/env_spaceship_metal01_ao.tga"
+               ]
+            },
+            {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/tiling_spaceship_metal01_dif.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/tiling_spaceship_metal01_asg.tga",
+                  "$SURVIVAL_DATA/Terrain/Textures/Spaceship/tiling_spaceship_metal01_nor.tga"
+               ]
+            },
+            {
+               "material" : "Glass",
+               "textureList" : [
+                  "$CONTENT_DATA/Effects/Textures/sky/blk_glass_dif.tga",
+                  "$GAME_DATA/Objects/Textures/Blocks/blk_glass_asg.tga",
+                  "$GAME_DATA/Objects/Textures/Blocks/blk_glass_nor.tga"
+               ]
+            },
+            {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$SURVIVAL_DATA/Objects/Textures/spaceship/obj_spaceship_floor_light_dif.tga",
+                  "$SURVIVAL_DATA/Objects/Textures/spaceship/obj_spaceship_floor_light_asg.tga",
+                  "$SURVIVAL_DATA/Objects/Textures/spaceship/obj_spaceship_floor_light_nor.tga"
+               ]
+            },
+            {
+               "material" : "DifAlphaFlip",
+               "textureList" : [ "$CONTENT_DATA/Effects/Textures/sky/decals_road_dif.tga" ]
+            },
+            {
+               "material" : "DifAlphaFlip",
+               "textureList" : [ "$SURVIVAL_DATA/Terrain/Textures/Decal/t_decal_logo_dif.tga" ]
+            }
+         ]
+      }
+   ]
+}

@@ -1,0 +1,16 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$CONTENT_DATA/Effects/Meshes/SkyDome.obj",
+         "subMeshList" : [
+            {
+               "material" : "DifAsg",
+               "textureList" : [
+                  "$CONTENT_DATA/Effects/Textures/sky/epic_start_texture_dif.png",
+                  "$CONTENT_DATA/Effects/Textures/sky/epic_start_texture_asg.png"
+               ]
+            }
+         ]
+      }
+   ]
+}

@@ -1,0 +1,4101 @@
+{
+    "system": {
+        "emitters": [
+            {
+                "ASG_map": "resources/watersplashes/p_mesh_watersplash_01_asg.tga",
+                "bounce": 0.50,
+                "category": "1",
+                "collision": "bounce",
+                "cylinder_height": 1.0,
+                "cylinder_radius_end": 10.0,
+                "cylinder_radius_start": 10.0,
+                "depth": [
+                    0.250,
+                    0.050
+                ],
+                "direction_type": "shape",
+                "duration": 0.10,
+                "editorColor": [
+                    0.597150,
+                    1.0,
+                    0.484360,
+                    1.0
+                ],
+                "effects": [
+                    {
+                        "axis": "y-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                0.5526300000000001
+                            ],
+                            [
+                                0.23070,
+                                1.276290
+                            ],
+                            [
+                                0.5600000000000001,
+                                1.671040
+                            ],
+                            [
+                                1.0,
+                                1.888120
+                            ]
+                        ],
+                        "guid": 5,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "x-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.184560,
+                                2.092080
+                            ],
+                            [
+                                0.446150,
+                                1.37170
+                            ],
+                            [
+                                1.0,
+                                0.9900000000000001
+                            ]
+                        ],
+                        "guid": 6,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "z-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.239950,
+                                1.726950
+                            ],
+                            [
+                                0.4892300000000001,
+                                1.194030
+                            ],
+                            [
+                                1.0,
+                                0.9990000000000001
+                            ]
+                        ],
+                        "guid": 7,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                1.0
+                            ],
+                            [
+                                0.6615300000000001,
+                                0.8717100000000001
+                            ],
+                            [
+                                0.8215100000000001,
+                                0.773020
+                            ],
+                            [
+                                0.9076700000000001,
+                                0.5986800000000001
+                            ],
+                            [
+                                1.0,
+                                0.0
+                            ]
+                        ],
+                        "guid": 8,
+                        "max_scale": 1.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 100,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    -5.0
+                ],
+                "friction": 1.0,
+                "guid": 0,
+                "height": [
+                    0.1250,
+                    0.050
+                ],
+                "keep_local": false,
+                "lifetime_loss": 0.50,
+                "material_name": "LiquidNoNormalMap",
+                "max_particles": 10000000,
+                "mesh": "resources/watersplashes/p_mesh_waterdrop.fbx",
+                "mesh_diffuse": "resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "projectile",
+                "name": "Drop1 Spread (low)",
+                "particle": "mesh",
+                "position": [
+                    0.0,
+                    0.0,
+                    15.0
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation_axis": [
+                    -1.0,
+                    -1.0,
+                    1.0
+                ],
+                "sub": [
+                    {
+                        "ASG_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_asg.tga",
+                        "category": "2",
+                        "depth": [
+                            0.850,
+                            0.20
+                        ],
+                        "direction_type": "constant",
+                        "duration": 0.009990000000000001,
+                        "editorColor": [
+                            0.597150,
+                            1.0,
+                            0.484360,
+                            1.0
+                        ],
+                        "effects": [
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.7500000000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        2.792740
+                                    ]
+                                ],
+                                "guid": 2,
+                                "max_scale": 3.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "y-scale",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.239840,
+                                        0.6511600000000001
+                                    ],
+                                    [
+                                        0.661610,
+                                        1.075580
+                                    ],
+                                    [
+                                        1.0,
+                                        1.290680
+                                    ]
+                                ],
+                                "guid": 3,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "animation": "sheet",
+                                "end_texture_coords_range": 40,
+                                "fps": 30,
+                                "graph": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.305220,
+                                        0.076770
+                                    ],
+                                    [
+                                        0.792150,
+                                        0.9063500000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                "guid": 4,
+                                "name": "TextureAnimator",
+                                "use_graph": true
+                            }
+                        ],
+                        "emission_mode": "burst",
+                        "emission_rate": 1111,
+                        "guid": 1,
+                        "height": [
+                            0.60,
+                            0.150
+                        ],
+                        "keep_local": false,
+                        "material_name": "LiquidAlphaUvAnim",
+                        "max_particles": 1,
+                        "mesh": "$GAME_DATA/Particles/resources/watersplashes/p_watercylinder03.fbx",
+                        "mesh_diffuse": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                        "mesh_size": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "mesh_type": "projectile",
+                        "min_quality": "medium",
+                        "name": "Cylinder",
+                        "normal_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_nor.tga",
+                        "particle": "mesh",
+                        "rotation": [
+                            0.0,
+                            180.0
+                        ],
+                        "rotation_speed": [
+                            0.0,
+                            45.0
+                        ],
+                        "tiles": [
+                            20,
+                            2
+                        ],
+                        "time_to_live": [
+                            0.30,
+                            0.050
+                        ],
+                        "velocity": 0.001000000047497451,
+                        "width": [
+                            0.60,
+                            0.150
+                        ]
+                    }
+                ],
+                "time_to_live": 20.0,
+                "type": "cylinder",
+                "velocity": 0.0,
+                "width": [
+                    0.1250,
+                    0.050
+                ]
+            },
+            {
+                "box": [
+                    20.0,
+                    20.0,
+                    1.0
+                ],
+                "category": "2 - Fake clouds",
+                "depth": 1.50,
+                "diffuse": "$GAME_DATA/Particles/Textures/Smoke/smoke_looping_clouds04.tga",
+                "direction_type": "constant",
+                "duration": 0.0,
+                "effects": [
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                [
+                                    1.0,
+                                    1.0,
+                                    1.0,
+                                    0.0
+                                ]
+                            ],
+                            [
+                                0.2680,
+                                [
+                                    1.0,
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                ]
+                            ],
+                            [
+                                0.7789800000000001,
+                                [
+                                    1.0,
+                                    1.0,
+                                    1.0,
+                                    0.6366900000000001
+                                ]
+                            ],
+                            [
+                                1.0,
+                                [
+                                    1.0,
+                                    1.0,
+                                    1.0,
+                                    0.0
+                                ]
+                            ]
+                        ],
+                        "guid": 10,
+                        "name": "Color"
+                    },
+                    {
+                        "animation": "sheet",
+                        "end_texture_coords_range": 32,
+                        "fps": 12,
+                        "guid": 11,
+                        "mode": "over_time",
+                        "name": "TextureAnimator",
+                        "repeat": true
+                    },
+                    {
+                        "axis": "x",
+                        "control_point": [
+                            [
+                                0.0,
+                                0.0
+                            ],
+                            [
+                                1.0,
+                                2.0
+                            ]
+                        ],
+                        "guid": 12,
+                        "local": false,
+                        "max": 2.0,
+                        "name": "Velocity"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 100,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    0.050
+                ],
+                "friction": [
+                    0.10,
+                    0.10
+                ],
+                "gradient": {
+                    "control_point": [
+                        [
+                            0.0,
+                            [
+                                1.0,
+                                1.0,
+                                1.0,
+                                1.0
+                            ]
+                        ],
+                        [
+                            1.0,
+                            [
+                                0.277330,
+                                0.277330,
+                                0.277330,
+                                1.0
+                            ]
+                        ]
+                    ]
+                },
+                "guid": 9,
+                "height": [
+                    15.0,
+                    1.0
+                ],
+                "keep_local": true,
+                "max_particles": 150,
+                "name": "Smoke 2  (Low)",
+                "position": [
+                    0.0,
+                    0.0,
+                    14.0
+                ],
+                "rotation": [
+                    9.0,
+                    180.0
+                ],
+                "rotation_speed": [
+                    0.0,
+                    25.0
+                ],
+                "scene_blend": "alpha_blend",
+                "shadows": true,
+                "soft_particles_bias": 128,
+                "start_color": "random",
+                "tiles": [
+                    4,
+                    8
+                ],
+                "time_to_live": [
+                    10.0,
+                    1.0
+                ],
+                "type": "box",
+                "velocity": [
+                    0.0250,
+                    0.10
+                ],
+                "width": [
+                    15.0,
+                    1.0
+                ]
+            },
+            {
+                "box": [
+                    15.0,
+                    15.0,
+                    0.0
+                ],
+                "category": "2 - Fake clouds",
+                "direction_type": "shape",
+                "duration": 0.0,
+                "effects": [
+                    {
+                        "axis": "x",
+                        "control_point": [
+                            [
+                                0.0,
+                                1.039980
+                            ],
+                            [
+                                0.152970,
+                                2.6390
+                            ],
+                            [
+                                0.2360,
+                                2.859980
+                            ],
+                            [
+                                0.3740000000000001,
+                                0.0
+                            ],
+                            [
+                                0.5260,
+                                0.650
+                            ],
+                            [
+                                0.6209800000000001,
+                                2.6390
+                            ],
+                            [
+                                0.7530000000000001,
+                                2.9250
+                            ],
+                            [
+                                0.8529800000000001,
+                                1.8850
+                            ],
+                            [
+                                0.9330000000000001,
+                                0.259990
+                            ],
+                            [
+                                1.0,
+                                0.0
+                            ]
+                        ],
+                        "guid": 24,
+                        "local": false,
+                        "max": 13.0,
+                        "name": "Velocity"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 11,
+                "guid": 13,
+                "height": 0.001000000047497451,
+                "keep_local": false,
+                "max_particles": 1,
+                "min_quality": "medium",
+                "name": "Dynamic Swirls (Medium)",
+                "position": [
+                    0.0,
+                    0.0,
+                    14.0
+                ],
+                "rotation_axis": [
+                    1.0,
+                    0.0,
+                    0.0
+                ],
+                "scene_blend": "alpha_blend",
+                "shadows": true,
+                "sub": [
+                    {
+                        "box": [
+                            0.250,
+                            0.250,
+                            0.50
+                        ],
+                        "diffuse": "$GAME_DATA/Particles/Textures/Smoke/smoke_dustaftermarth01.tga",
+                        "direction_type": "shape",
+                        "duration": 5.0,
+                        "effects": [
+                            {
+                                "axis": "z",
+                                "base": -3.750,
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.0810,
+                                        2.234990
+                                    ],
+                                    [
+                                        0.1650,
+                                        3.74250
+                                    ],
+                                    [
+                                        0.2280,
+                                        2.27250
+                                    ],
+                                    [
+                                        0.2860,
+                                        -2.077520
+                                    ],
+                                    [
+                                        0.330,
+                                        -3.750
+                                    ],
+                                    [
+                                        0.4160,
+                                        -2.212520
+                                    ],
+                                    [
+                                        0.5619900000000001,
+                                        2.849990
+                                    ],
+                                    [
+                                        0.6299800000000001,
+                                        3.750
+                                    ],
+                                    [
+                                        0.694980,
+                                        2.8350
+                                    ],
+                                    [
+                                        0.7530000000000001,
+                                        -2.850
+                                    ],
+                                    [
+                                        0.790,
+                                        -3.742540
+                                    ],
+                                    [
+                                        0.8790000000000001,
+                                        -2.940050
+                                    ],
+                                    [
+                                        0.949980,
+                                        -0.540
+                                    ],
+                                    [
+                                        1.0,
+                                        0.0
+                                    ]
+                                ],
+                                "guid": 15,
+                                "local": false,
+                                "max": 7.50,
+                                "name": "Velocity"
+                            },
+                            {
+                                "axis": "x",
+                                "base": -3.750,
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.0670,
+                                        1.61250
+                                    ],
+                                    [
+                                        0.20,
+                                        3.39750
+                                    ],
+                                    [
+                                        0.250,
+                                        3.750
+                                    ],
+                                    [
+                                        0.282990,
+                                        3.30
+                                    ],
+                                    [
+                                        0.4070,
+                                        -2.325020
+                                    ],
+                                    [
+                                        0.4519900000000001,
+                                        -3.337520
+                                    ],
+                                    [
+                                        0.50,
+                                        -3.750
+                                    ],
+                                    [
+                                        0.5450,
+                                        -3.41250
+                                    ],
+                                    [
+                                        0.5839800000000001,
+                                        -2.302520
+                                    ],
+                                    [
+                                        0.7070000000000001,
+                                        3.32250
+                                    ],
+                                    [
+                                        0.7500000000000001,
+                                        3.74250
+                                    ],
+                                    [
+                                        0.7929900000000001,
+                                        3.449990
+                                    ],
+                                    [
+                                        0.8859900000000001,
+                                        1.46250
+                                    ],
+                                    [
+                                        1.0,
+                                        0.0
+                                    ]
+                                ],
+                                "guid": 16,
+                                "local": false,
+                                "max": 7.50,
+                                "name": "Velocity"
+                            },
+                            {
+                                "axis": "y",
+                                "base": -1.250,
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.23750
+                                    ],
+                                    [
+                                        0.460,
+                                        0.41250
+                                    ],
+                                    [
+                                        0.6499900000000001,
+                                        0.620
+                                    ],
+                                    [
+                                        0.7300000000000001,
+                                        0.670
+                                    ],
+                                    [
+                                        0.7799900000000001,
+                                        0.5125000000000001
+                                    ],
+                                    [
+                                        0.8360000000000001,
+                                        -1.24750
+                                    ],
+                                    [
+                                        1.0,
+                                        -1.24750
+                                    ]
+                                ],
+                                "guid": 17,
+                                "local": false,
+                                "max": 2.50,
+                                "name": "Velocity"
+                            },
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        [
+                                            1.0,
+                                            1.0,
+                                            1.0,
+                                            0.0
+                                        ]
+                                    ],
+                                    [
+                                        0.157710,
+                                        [
+                                            1.0,
+                                            1.0,
+                                            1.0,
+                                            0.536660
+                                        ]
+                                    ],
+                                    [
+                                        0.732990,
+                                        [
+                                            1.0,
+                                            1.0,
+                                            1.0,
+                                            0.456660
+                                        ]
+                                    ],
+                                    [
+                                        1.0,
+                                        [
+                                            1.0,
+                                            1.0,
+                                            1.0,
+                                            0.0
+                                        ]
+                                    ]
+                                ],
+                                "guid": 18,
+                                "name": "Color"
+                            },
+                            {
+                                "base_scale": 0.875980,
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.8759800000000001
+                                    ],
+                                    [
+                                        0.7710,
+                                        1.185960
+                                    ],
+                                    [
+                                        1.0,
+                                        1.555960
+                                    ]
+                                ],
+                                "guid": 19,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "x-scale",
+                                "base_scale": 0.550,
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.550
+                                    ],
+                                    [
+                                        0.273990,
+                                        1.299990
+                                    ],
+                                    [
+                                        0.6290,
+                                        1.725990
+                                    ],
+                                    [
+                                        1.0,
+                                        1.220
+                                    ]
+                                ],
+                                "guid": 20,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "x",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.532980,
+                                        0.010
+                                    ],
+                                    [
+                                        0.787980,
+                                        0.8500000000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        10.0
+                                    ]
+                                ],
+                                "guid": 21,
+                                "local": false,
+                                "name": "Velocity"
+                            },
+                            {
+                                "animation": "sheet",
+                                "end_texture_coords_range": 16,
+                                "fps": 30,
+                                "guid": 22,
+                                "name": "TextureAnimator",
+                                "repeat": true
+                            },
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.50
+                                    ],
+                                    [
+                                        0.8240000000000001,
+                                        0.6679900000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                "fade": 0.10,
+                                "guid": 23,
+                                "length": 0.60,
+                                "name": "Cutoff"
+                            }
+                        ],
+                        "emission_mode": "burst",
+                        "emission_rate": 15,
+                        "gradient": {
+                            "control_point": [
+                                [
+                                    0.0,
+                                    [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                [
+                                    1.0,
+                                    [
+                                        0.277330,
+                                        0.277330,
+                                        0.277330,
+                                        1.0
+                                    ]
+                                ]
+                            ]
+                        },
+                        "guid": 14,
+                        "height": [
+                            2.0,
+                            0.60
+                        ],
+                        "keep_local": false,
+                        "max_particles": 35,
+                        "min_quality": "medium",
+                        "name": "- SE - Clouds (High)",
+                        "position": [
+                            0.0,
+                            0.0,
+                            0.50
+                        ],
+                        "rotation": [
+                            0.0,
+                            180.0
+                        ],
+                        "rotation_axis": [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        "rotation_speed": [
+                            180.0,
+                            45.0
+                        ],
+                        "scene_blend": "alpha_blend",
+                        "shadows": true,
+                        "start_color": "random",
+                        "sub_emit": "birth",
+                        "tiles": [
+                            4,
+                            4
+                        ],
+                        "time_to_live": [
+                            2.0,
+                            0.250
+                        ],
+                        "type": "box",
+                        "velocity": [
+                            0.0,
+                            0.250
+                        ],
+                        "width": [
+                            2.0,
+                            0.60
+                        ],
+                        "wind": [
+                            5.0,
+                            1.0
+                        ]
+                    }
+                ],
+                "time_to_live": [
+                    4.0,
+                    2.0
+                ],
+                "type": "box",
+                "velocity": 0.0,
+                "width": 0.001000000047497451
+            },
+            {
+                "category": "2 - Fake clouds",
+                "cone_angle": 0.0,
+                "cone_radius": 10.0,
+                "direction_type": "shape",
+                "duration": 0.0,
+                "effects": [
+                    {
+                        "axis": "x",
+                        "control_point": [
+                            [
+                                0.0,
+                                1.039980
+                            ],
+                            [
+                                0.151960,
+                                2.340
+                            ],
+                            [
+                                0.2360,
+                                2.859980
+                            ],
+                            [
+                                0.3740000000000001,
+                                0.0
+                            ],
+                            [
+                                0.5260,
+                                0.650
+                            ],
+                            [
+                                0.6209800000000001,
+                                2.6390
+                            ],
+                            [
+                                0.7530000000000001,
+                                2.9250
+                            ],
+                            [
+                                0.8309900000000001,
+                                1.5340
+                            ],
+                            [
+                                0.9330000000000001,
+                                0.259990
+                            ],
+                            [
+                                1.0,
+                                0.0
+                            ]
+                        ],
+                        "guid": 36,
+                        "local": false,
+                        "max": 13.0,
+                        "name": "Velocity"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 1,
+                "guid": 25,
+                "height": 0.001000000047497451,
+                "keep_local": false,
+                "max_particles": 1,
+                "min_quality": "high",
+                "name": "Dynamic Swirls 2 (High)",
+                "position": [
+                    0.0,
+                    0.0,
+                    14.0
+                ],
+                "rotation_axis": [
+                    1.0,
+                    0.0,
+                    0.0
+                ],
+                "scene_blend": "alpha_blend",
+                "shadows": true,
+                "sub": [
+                    {
+                        "box": [
+                            0.250,
+                            0.250,
+                            0.10
+                        ],
+                        "diffuse": "$GAME_DATA/Particles/Textures/Smoke/smoke_looping_clouds04.tga",
+                        "direction_type": "shape",
+                        "duration": 4.0,
+                        "effects": [
+                            {
+                                "axis": "z",
+                                "base": -3.750,
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.0810,
+                                        2.234990
+                                    ],
+                                    [
+                                        0.1650,
+                                        3.74250
+                                    ],
+                                    [
+                                        0.2280,
+                                        2.27250
+                                    ],
+                                    [
+                                        0.2860,
+                                        -2.077520
+                                    ],
+                                    [
+                                        0.330,
+                                        -3.750
+                                    ],
+                                    [
+                                        0.4160,
+                                        -2.212520
+                                    ],
+                                    [
+                                        0.5619900000000001,
+                                        2.849990
+                                    ],
+                                    [
+                                        0.6299800000000001,
+                                        3.750
+                                    ],
+                                    [
+                                        0.694980,
+                                        2.8350
+                                    ],
+                                    [
+                                        0.7530000000000001,
+                                        -2.850
+                                    ],
+                                    [
+                                        0.790,
+                                        -3.742540
+                                    ],
+                                    [
+                                        0.8790000000000001,
+                                        -2.940050
+                                    ],
+                                    [
+                                        0.949980,
+                                        -0.540
+                                    ],
+                                    [
+                                        1.0,
+                                        0.0
+                                    ]
+                                ],
+                                "guid": 27,
+                                "local": false,
+                                "max": 7.50,
+                                "name": "Velocity"
+                            },
+                            {
+                                "axis": "x",
+                                "base": -3.750,
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.0670,
+                                        1.61250
+                                    ],
+                                    [
+                                        0.20,
+                                        3.39750
+                                    ],
+                                    [
+                                        0.250,
+                                        3.750
+                                    ],
+                                    [
+                                        0.282990,
+                                        3.30
+                                    ],
+                                    [
+                                        0.4070,
+                                        -2.325020
+                                    ],
+                                    [
+                                        0.4519900000000001,
+                                        -3.337520
+                                    ],
+                                    [
+                                        0.50,
+                                        -3.750
+                                    ],
+                                    [
+                                        0.5450,
+                                        -3.41250
+                                    ],
+                                    [
+                                        0.5839800000000001,
+                                        -2.302520
+                                    ],
+                                    [
+                                        0.7070000000000001,
+                                        3.32250
+                                    ],
+                                    [
+                                        0.7500000000000001,
+                                        3.74250
+                                    ],
+                                    [
+                                        0.7929900000000001,
+                                        3.449990
+                                    ],
+                                    [
+                                        0.8859900000000001,
+                                        1.46250
+                                    ],
+                                    [
+                                        1.0,
+                                        0.0
+                                    ]
+                                ],
+                                "guid": 28,
+                                "local": false,
+                                "max": 7.50,
+                                "name": "Velocity"
+                            },
+                            {
+                                "axis": "y",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.6399800000000001,
+                                        0.172490
+                                    ],
+                                    [
+                                        1.0,
+                                        0.412490
+                                    ]
+                                ],
+                                "guid": 29,
+                                "local": false,
+                                "max": 1.250,
+                                "name": "Velocity"
+                            },
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        [
+                                            1.0,
+                                            1.0,
+                                            1.0,
+                                            0.0
+                                        ]
+                                    ],
+                                    [
+                                        0.182980,
+                                        [
+                                            1.0,
+                                            1.0,
+                                            1.0,
+                                            0.536660
+                                        ]
+                                    ],
+                                    [
+                                        0.7408400000000001,
+                                        [
+                                            1.0,
+                                            1.0,
+                                            1.0,
+                                            0.0
+                                        ]
+                                    ],
+                                    [
+                                        1.0,
+                                        [
+                                            1.0,
+                                            1.0,
+                                            1.0,
+                                            0.0
+                                        ]
+                                    ]
+                                ],
+                                "guid": 30,
+                                "name": "Color"
+                            },
+                            {
+                                "base_scale": 0.875980,
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.8759800000000001
+                                    ],
+                                    [
+                                        0.7710,
+                                        1.185960
+                                    ],
+                                    [
+                                        1.0,
+                                        1.555960
+                                    ]
+                                ],
+                                "guid": 31,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "x-scale",
+                                "base_scale": 0.550,
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.550
+                                    ],
+                                    [
+                                        0.273990,
+                                        1.299990
+                                    ],
+                                    [
+                                        0.6290,
+                                        1.725990
+                                    ],
+                                    [
+                                        1.0,
+                                        1.220
+                                    ]
+                                ],
+                                "guid": 32,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "x",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.532980,
+                                        0.010
+                                    ],
+                                    [
+                                        0.787980,
+                                        0.8500000000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        10.0
+                                    ]
+                                ],
+                                "guid": 33,
+                                "local": false,
+                                "name": "Velocity"
+                            },
+                            {
+                                "animation": "sheet",
+                                "end_texture_coords_range": 32,
+                                "fps": 30,
+                                "guid": 34,
+                                "name": "TextureAnimator",
+                                "repeat": true
+                            },
+                            {
+                                "axis": "y-scale",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.207230
+                                    ],
+                                    [
+                                        0.127930,
+                                        0.355260
+                                    ],
+                                    [
+                                        0.214090,
+                                        0.6447200000000001
+                                    ],
+                                    [
+                                        0.282990,
+                                        0.8730000000000001
+                                    ],
+                                    [
+                                        0.4550,
+                                        0.9750000000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                "guid": 35,
+                                "max_scale": 1.0,
+                                "name": "Scale"
+                            }
+                        ],
+                        "emission_mode": "burst",
+                        "emission_rate": 15,
+                        "force_vector": [
+                            0.0,
+                            0.0,
+                            0.50
+                        ],
+                        "gradient": {
+                            "control_point": [
+                                [
+                                    0.0,
+                                    [
+                                        1.0,
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                [
+                                    1.0,
+                                    [
+                                        0.277330,
+                                        0.277330,
+                                        0.277330,
+                                        1.0
+                                    ]
+                                ]
+                            ]
+                        },
+                        "guid": 26,
+                        "height": [
+                            2.0,
+                            0.50
+                        ],
+                        "keep_local": false,
+                        "max_particles": 50,
+                        "min_quality": "high",
+                        "name": "- SE - Clouds (High)",
+                        "rotation": [
+                            0.0,
+                            180.0
+                        ],
+                        "rotation_axis": [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        "rotation_speed": [
+                            120.0,
+                            30.0
+                        ],
+                        "scene_blend": "alpha_blend",
+                        "shadows": true,
+                        "start_color": "random",
+                        "sub_emit": "birth",
+                        "tiles": [
+                            4,
+                            8
+                        ],
+                        "time_to_live": [
+                            2.0,
+                            0.250
+                        ],
+                        "type": "box",
+                        "velocity": [
+                            0.0,
+                            1.0
+                        ],
+                        "width": [
+                            2.0,
+                            0.50
+                        ],
+                        "wind": [
+                            5.0,
+                            1.0
+                        ]
+                    }
+                ],
+                "time_to_live": [
+                    3.0,
+                    1.0
+                ],
+                "type": "cone",
+                "velocity": 0.0,
+                "width": 0.001000000047497451
+            },
+            {
+                "ASG_map": "resources/watersplashes/p_mesh_watersplash_01_asg.tga",
+                "bounce": 0.50,
+                "category": "1",
+                "collision": "bounce",
+                "cylinder_height": 1.0,
+                "cylinder_radius_end": 10.0,
+                "cylinder_radius_start": 10.0,
+                "depth": [
+                    0.250,
+                    0.050
+                ],
+                "direction_type": "shape",
+                "duration": 0.10,
+                "editorColor": [
+                    0.597150,
+                    1.0,
+                    0.484360,
+                    1.0
+                ],
+                "effects": [
+                    {
+                        "axis": "y-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                0.5526300000000001
+                            ],
+                            [
+                                0.23070,
+                                1.276290
+                            ],
+                            [
+                                0.5600000000000001,
+                                1.671040
+                            ],
+                            [
+                                1.0,
+                                1.888120
+                            ]
+                        ],
+                        "guid": 42,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "x-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.184560,
+                                2.092080
+                            ],
+                            [
+                                0.446150,
+                                1.37170
+                            ],
+                            [
+                                1.0,
+                                0.9900000000000001
+                            ]
+                        ],
+                        "guid": 43,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "z-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.239950,
+                                1.726950
+                            ],
+                            [
+                                0.4892300000000001,
+                                1.194030
+                            ],
+                            [
+                                1.0,
+                                0.9990000000000001
+                            ]
+                        ],
+                        "guid": 44,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                1.0
+                            ],
+                            [
+                                0.6615300000000001,
+                                0.8717100000000001
+                            ],
+                            [
+                                0.8215100000000001,
+                                0.773020
+                            ],
+                            [
+                                0.9076700000000001,
+                                0.5986800000000001
+                            ],
+                            [
+                                1.0,
+                                0.0
+                            ]
+                        ],
+                        "guid": 45,
+                        "max_scale": 1.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 100,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    -5.0
+                ],
+                "friction": 1.0,
+                "guid": 37,
+                "height": [
+                    0.1250,
+                    0.050
+                ],
+                "keep_local": false,
+                "lifetime_loss": 0.50,
+                "material_name": "LiquidNoNormalMap",
+                "max_particles": 10000000,
+                "mesh": "resources/watersplashes/p_mesh_waterdrop.fbx",
+                "mesh_diffuse": "resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "projectile",
+                "name": "Drop2 Spread (low)",
+                "particle": "mesh",
+                "position": [
+                    0.0,
+                    0.0,
+                    15.0
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation_axis": [
+                    -1.0,
+                    -1.0,
+                    1.0
+                ],
+                "sub": [
+                    {
+                        "ASG_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_asg.tga",
+                        "category": "2",
+                        "depth": [
+                            0.850,
+                            0.20
+                        ],
+                        "direction_type": "constant",
+                        "duration": 0.009990000000000001,
+                        "editorColor": [
+                            0.597150,
+                            1.0,
+                            0.484360,
+                            1.0
+                        ],
+                        "effects": [
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.7500000000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        2.792740
+                                    ]
+                                ],
+                                "guid": 39,
+                                "max_scale": 3.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "y-scale",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.239840,
+                                        0.6511600000000001
+                                    ],
+                                    [
+                                        0.661610,
+                                        1.075580
+                                    ],
+                                    [
+                                        1.0,
+                                        1.290680
+                                    ]
+                                ],
+                                "guid": 40,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "animation": "sheet",
+                                "end_texture_coords_range": 40,
+                                "fps": 30,
+                                "graph": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.305220,
+                                        0.076770
+                                    ],
+                                    [
+                                        0.792150,
+                                        0.9063500000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                "guid": 41,
+                                "name": "TextureAnimator",
+                                "use_graph": true
+                            }
+                        ],
+                        "emission_mode": "burst",
+                        "emission_rate": 1111,
+                        "guid": 38,
+                        "height": [
+                            0.60,
+                            0.150
+                        ],
+                        "keep_local": false,
+                        "material_name": "LiquidAlphaUvAnim",
+                        "max_particles": 1,
+                        "mesh": "$GAME_DATA/Particles/resources/watersplashes/p_watercylinder03.fbx",
+                        "mesh_diffuse": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                        "mesh_size": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "mesh_type": "projectile",
+                        "min_quality": "medium",
+                        "name": "Cylinder",
+                        "normal_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_nor.tga",
+                        "particle": "mesh",
+                        "rotation": [
+                            0.0,
+                            180.0
+                        ],
+                        "rotation_speed": [
+                            0.0,
+                            45.0
+                        ],
+                        "tiles": [
+                            20,
+                            2
+                        ],
+                        "time_to_live": [
+                            0.30,
+                            0.050
+                        ],
+                        "velocity": 0.001000000047497451,
+                        "width": [
+                            0.60,
+                            0.150
+                        ]
+                    }
+                ],
+                "time_to_live": 20.0,
+                "type": "cylinder",
+                "velocity": 0.0,
+                "width": [
+                    0.1250,
+                    0.050
+                ]
+            },
+            {
+                "ASG_map": "resources/watersplashes/p_mesh_watersplash_01_asg.tga",
+                "bounce": 0.50,
+                "category": "1",
+                "collision": "bounce",
+                "cylinder_height": 1.0,
+                "cylinder_radius_end": 10.0,
+                "cylinder_radius_start": 10.0,
+                "depth": [
+                    0.250,
+                    0.050
+                ],
+                "direction_type": "shape",
+                "duration": 0.10,
+                "editorColor": [
+                    0.597150,
+                    1.0,
+                    0.484360,
+                    1.0
+                ],
+                "effects": [
+                    {
+                        "axis": "y-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                0.5526300000000001
+                            ],
+                            [
+                                0.23070,
+                                1.276290
+                            ],
+                            [
+                                0.5600000000000001,
+                                1.671040
+                            ],
+                            [
+                                1.0,
+                                1.888120
+                            ]
+                        ],
+                        "guid": 51,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "x-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.184560,
+                                2.092080
+                            ],
+                            [
+                                0.446150,
+                                1.37170
+                            ],
+                            [
+                                1.0,
+                                0.9900000000000001
+                            ]
+                        ],
+                        "guid": 52,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "z-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.239950,
+                                1.726950
+                            ],
+                            [
+                                0.4892300000000001,
+                                1.194030
+                            ],
+                            [
+                                1.0,
+                                0.9990000000000001
+                            ]
+                        ],
+                        "guid": 53,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                1.0
+                            ],
+                            [
+                                0.6615300000000001,
+                                0.8717100000000001
+                            ],
+                            [
+                                0.8215100000000001,
+                                0.773020
+                            ],
+                            [
+                                0.9076700000000001,
+                                0.5986800000000001
+                            ],
+                            [
+                                1.0,
+                                0.0
+                            ]
+                        ],
+                        "guid": 54,
+                        "max_scale": 1.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 100,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    -5.0
+                ],
+                "friction": 1.0,
+                "guid": 46,
+                "height": [
+                    0.1250,
+                    0.050
+                ],
+                "keep_local": false,
+                "lifetime_loss": 0.50,
+                "material_name": "LiquidNoNormalMap",
+                "max_particles": 10000000,
+                "mesh": "resources/watersplashes/p_mesh_waterdrop.fbx",
+                "mesh_diffuse": "resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "projectile",
+                "name": "Drop3 Spread (low)",
+                "particle": "mesh",
+                "position": [
+                    0.0,
+                    0.0,
+                    15.0
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation_axis": [
+                    -1.0,
+                    -1.0,
+                    1.0
+                ],
+                "sub": [
+                    {
+                        "ASG_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_asg.tga",
+                        "category": "2",
+                        "depth": [
+                            0.850,
+                            0.20
+                        ],
+                        "direction_type": "constant",
+                        "duration": 0.009990000000000001,
+                        "editorColor": [
+                            0.597150,
+                            1.0,
+                            0.484360,
+                            1.0
+                        ],
+                        "effects": [
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.7500000000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        2.792740
+                                    ]
+                                ],
+                                "guid": 48,
+                                "max_scale": 3.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "y-scale",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.239840,
+                                        0.6511600000000001
+                                    ],
+                                    [
+                                        0.661610,
+                                        1.075580
+                                    ],
+                                    [
+                                        1.0,
+                                        1.290680
+                                    ]
+                                ],
+                                "guid": 49,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "animation": "sheet",
+                                "end_texture_coords_range": 40,
+                                "fps": 30,
+                                "graph": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.305220,
+                                        0.076770
+                                    ],
+                                    [
+                                        0.792150,
+                                        0.9063500000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                "guid": 50,
+                                "name": "TextureAnimator",
+                                "use_graph": true
+                            }
+                        ],
+                        "emission_mode": "burst",
+                        "emission_rate": 1111,
+                        "guid": 47,
+                        "height": [
+                            0.60,
+                            0.150
+                        ],
+                        "keep_local": false,
+                        "material_name": "LiquidAlphaUvAnim",
+                        "max_particles": 1,
+                        "mesh": "$GAME_DATA/Particles/resources/watersplashes/p_watercylinder03.fbx",
+                        "mesh_diffuse": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                        "mesh_size": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "mesh_type": "projectile",
+                        "min_quality": "medium",
+                        "name": "Cylinder",
+                        "normal_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_nor.tga",
+                        "particle": "mesh",
+                        "rotation": [
+                            0.0,
+                            180.0
+                        ],
+                        "rotation_speed": [
+                            0.0,
+                            45.0
+                        ],
+                        "tiles": [
+                            20,
+                            2
+                        ],
+                        "time_to_live": [
+                            0.30,
+                            0.050
+                        ],
+                        "velocity": 0.001000000047497451,
+                        "width": [
+                            0.60,
+                            0.150
+                        ]
+                    }
+                ],
+                "time_to_live": 20.0,
+                "type": "cylinder",
+                "velocity": 0.0,
+                "width": [
+                    0.1250,
+                    0.050
+                ]
+            },
+            {
+                "ASG_map": "resources/watersplashes/p_mesh_watersplash_01_asg.tga",
+                "bounce": 0.50,
+                "category": "1",
+                "collision": "bounce",
+                "cylinder_height": 1.0,
+                "cylinder_radius_end": 10.0,
+                "cylinder_radius_start": 10.0,
+                "depth": [
+                    0.250,
+                    0.050
+                ],
+                "direction_type": "shape",
+                "duration": 0.10,
+                "editorColor": [
+                    0.597150,
+                    1.0,
+                    0.484360,
+                    1.0
+                ],
+                "effects": [
+                    {
+                        "axis": "y-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                0.5526300000000001
+                            ],
+                            [
+                                0.23070,
+                                1.276290
+                            ],
+                            [
+                                0.5600000000000001,
+                                1.671040
+                            ],
+                            [
+                                1.0,
+                                1.888120
+                            ]
+                        ],
+                        "guid": 60,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "x-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.184560,
+                                2.092080
+                            ],
+                            [
+                                0.446150,
+                                1.37170
+                            ],
+                            [
+                                1.0,
+                                0.9900000000000001
+                            ]
+                        ],
+                        "guid": 61,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "z-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.239950,
+                                1.726950
+                            ],
+                            [
+                                0.4892300000000001,
+                                1.194030
+                            ],
+                            [
+                                1.0,
+                                0.9990000000000001
+                            ]
+                        ],
+                        "guid": 62,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                1.0
+                            ],
+                            [
+                                0.6615300000000001,
+                                0.8717100000000001
+                            ],
+                            [
+                                0.8215100000000001,
+                                0.773020
+                            ],
+                            [
+                                0.9076700000000001,
+                                0.5986800000000001
+                            ],
+                            [
+                                1.0,
+                                0.0
+                            ]
+                        ],
+                        "guid": 63,
+                        "max_scale": 1.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 100,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    -5.0
+                ],
+                "friction": 1.0,
+                "guid": 55,
+                "height": [
+                    0.1250,
+                    0.050
+                ],
+                "keep_local": false,
+                "lifetime_loss": 0.50,
+                "material_name": "LiquidNoNormalMap",
+                "max_particles": 10000000,
+                "mesh": "resources/watersplashes/p_mesh_waterdrop.fbx",
+                "mesh_diffuse": "resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "projectile",
+                "name": "Drop4 Spread (low)",
+                "particle": "mesh",
+                "position": [
+                    0.0,
+                    0.0,
+                    15.0
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation_axis": [
+                    -1.0,
+                    -1.0,
+                    1.0
+                ],
+                "sub": [
+                    {
+                        "ASG_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_asg.tga",
+                        "category": "2",
+                        "depth": [
+                            0.850,
+                            0.20
+                        ],
+                        "direction_type": "constant",
+                        "duration": 0.009990000000000001,
+                        "editorColor": [
+                            0.597150,
+                            1.0,
+                            0.484360,
+                            1.0
+                        ],
+                        "effects": [
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.7500000000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        2.792740
+                                    ]
+                                ],
+                                "guid": 57,
+                                "max_scale": 3.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "y-scale",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.239840,
+                                        0.6511600000000001
+                                    ],
+                                    [
+                                        0.661610,
+                                        1.075580
+                                    ],
+                                    [
+                                        1.0,
+                                        1.290680
+                                    ]
+                                ],
+                                "guid": 58,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "animation": "sheet",
+                                "end_texture_coords_range": 40,
+                                "fps": 30,
+                                "graph": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.305220,
+                                        0.076770
+                                    ],
+                                    [
+                                        0.792150,
+                                        0.9063500000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                "guid": 59,
+                                "name": "TextureAnimator",
+                                "use_graph": true
+                            }
+                        ],
+                        "emission_mode": "burst",
+                        "emission_rate": 1111,
+                        "guid": 56,
+                        "height": [
+                            0.60,
+                            0.150
+                        ],
+                        "keep_local": false,
+                        "material_name": "LiquidAlphaUvAnim",
+                        "max_particles": 1,
+                        "mesh": "$GAME_DATA/Particles/resources/watersplashes/p_watercylinder03.fbx",
+                        "mesh_diffuse": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                        "mesh_size": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "mesh_type": "projectile",
+                        "min_quality": "medium",
+                        "name": "Cylinder",
+                        "normal_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_nor.tga",
+                        "particle": "mesh",
+                        "rotation": [
+                            0.0,
+                            180.0
+                        ],
+                        "rotation_speed": [
+                            0.0,
+                            45.0
+                        ],
+                        "tiles": [
+                            20,
+                            2
+                        ],
+                        "time_to_live": [
+                            0.30,
+                            0.050
+                        ],
+                        "velocity": 0.001000000047497451,
+                        "width": [
+                            0.60,
+                            0.150
+                        ]
+                    }
+                ],
+                "time_to_live": 20.0,
+                "type": "cylinder",
+                "velocity": 0.0,
+                "width": [
+                    0.1250,
+                    0.050
+                ]
+            },
+            {
+                "ASG_map": "resources/watersplashes/p_mesh_watersplash_01_asg.tga",
+                "bounce": 0.50,
+                "category": "1",
+                "collision": "bounce",
+                "cylinder_height": 1.0,
+                "cylinder_radius_end": 10.0,
+                "cylinder_radius_start": 10.0,
+                "depth": [
+                    0.250,
+                    0.050
+                ],
+                "direction_type": "shape",
+                "duration": 0.10,
+                "editorColor": [
+                    0.597150,
+                    1.0,
+                    0.484360,
+                    1.0
+                ],
+                "effects": [
+                    {
+                        "axis": "y-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                0.5526300000000001
+                            ],
+                            [
+                                0.23070,
+                                1.276290
+                            ],
+                            [
+                                0.5600000000000001,
+                                1.671040
+                            ],
+                            [
+                                1.0,
+                                1.888120
+                            ]
+                        ],
+                        "guid": 69,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "x-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.184560,
+                                2.092080
+                            ],
+                            [
+                                0.446150,
+                                1.37170
+                            ],
+                            [
+                                1.0,
+                                0.9900000000000001
+                            ]
+                        ],
+                        "guid": 70,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "z-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.239950,
+                                1.726950
+                            ],
+                            [
+                                0.4892300000000001,
+                                1.194030
+                            ],
+                            [
+                                1.0,
+                                0.9990000000000001
+                            ]
+                        ],
+                        "guid": 71,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                1.0
+                            ],
+                            [
+                                0.6615300000000001,
+                                0.8717100000000001
+                            ],
+                            [
+                                0.8215100000000001,
+                                0.773020
+                            ],
+                            [
+                                0.9076700000000001,
+                                0.5986800000000001
+                            ],
+                            [
+                                1.0,
+                                0.0
+                            ]
+                        ],
+                        "guid": 72,
+                        "max_scale": 1.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 100,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    -5.0
+                ],
+                "friction": 1.0,
+                "guid": 64,
+                "height": [
+                    0.1250,
+                    0.050
+                ],
+                "keep_local": false,
+                "lifetime_loss": 0.50,
+                "material_name": "LiquidNoNormalMap",
+                "max_particles": 10000000,
+                "mesh": "resources/watersplashes/p_mesh_waterdrop.fbx",
+                "mesh_diffuse": "resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "projectile",
+                "name": "Drop5 Spread (low)",
+                "particle": "mesh",
+                "position": [
+                    0.0,
+                    0.0,
+                    15.0
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation_axis": [
+                    -1.0,
+                    -1.0,
+                    1.0
+                ],
+                "sub": [
+                    {
+                        "ASG_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_asg.tga",
+                        "category": "2",
+                        "depth": [
+                            0.850,
+                            0.20
+                        ],
+                        "direction_type": "constant",
+                        "duration": 0.009990000000000001,
+                        "editorColor": [
+                            0.597150,
+                            1.0,
+                            0.484360,
+                            1.0
+                        ],
+                        "effects": [
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.7500000000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        2.792740
+                                    ]
+                                ],
+                                "guid": 66,
+                                "max_scale": 3.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "y-scale",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.239840,
+                                        0.6511600000000001
+                                    ],
+                                    [
+                                        0.661610,
+                                        1.075580
+                                    ],
+                                    [
+                                        1.0,
+                                        1.290680
+                                    ]
+                                ],
+                                "guid": 67,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "animation": "sheet",
+                                "end_texture_coords_range": 40,
+                                "fps": 30,
+                                "graph": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.305220,
+                                        0.076770
+                                    ],
+                                    [
+                                        0.792150,
+                                        0.9063500000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                "guid": 68,
+                                "name": "TextureAnimator",
+                                "use_graph": true
+                            }
+                        ],
+                        "emission_mode": "burst",
+                        "emission_rate": 1111,
+                        "guid": 65,
+                        "height": [
+                            0.60,
+                            0.150
+                        ],
+                        "keep_local": false,
+                        "material_name": "LiquidAlphaUvAnim",
+                        "max_particles": 1,
+                        "mesh": "$GAME_DATA/Particles/resources/watersplashes/p_watercylinder03.fbx",
+                        "mesh_diffuse": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                        "mesh_size": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "mesh_type": "projectile",
+                        "min_quality": "medium",
+                        "name": "Cylinder",
+                        "normal_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_nor.tga",
+                        "particle": "mesh",
+                        "rotation": [
+                            0.0,
+                            180.0
+                        ],
+                        "rotation_speed": [
+                            0.0,
+                            45.0
+                        ],
+                        "tiles": [
+                            20,
+                            2
+                        ],
+                        "time_to_live": [
+                            0.30,
+                            0.050
+                        ],
+                        "velocity": 0.001000000047497451,
+                        "width": [
+                            0.60,
+                            0.150
+                        ]
+                    }
+                ],
+                "time_to_live": 20.0,
+                "type": "cylinder",
+                "velocity": 0.0,
+                "width": [
+                    0.1250,
+                    0.050
+                ]
+            },
+            {
+                "ASG_map": "resources/watersplashes/p_mesh_watersplash_01_asg.tga",
+                "bounce": 0.50,
+                "category": "1",
+                "collision": "bounce",
+                "cylinder_height": 1.0,
+                "cylinder_radius_end": 10.0,
+                "cylinder_radius_start": 10.0,
+                "depth": [
+                    0.250,
+                    0.050
+                ],
+                "direction_type": "shape",
+                "duration": 0.10,
+                "editorColor": [
+                    0.597150,
+                    1.0,
+                    0.484360,
+                    1.0
+                ],
+                "effects": [
+                    {
+                        "axis": "y-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                0.5526300000000001
+                            ],
+                            [
+                                0.23070,
+                                1.276290
+                            ],
+                            [
+                                0.5600000000000001,
+                                1.671040
+                            ],
+                            [
+                                1.0,
+                                1.888120
+                            ]
+                        ],
+                        "guid": 78,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "x-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.184560,
+                                2.092080
+                            ],
+                            [
+                                0.446150,
+                                1.37170
+                            ],
+                            [
+                                1.0,
+                                0.9900000000000001
+                            ]
+                        ],
+                        "guid": 79,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "z-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.239950,
+                                1.726950
+                            ],
+                            [
+                                0.4892300000000001,
+                                1.194030
+                            ],
+                            [
+                                1.0,
+                                0.9990000000000001
+                            ]
+                        ],
+                        "guid": 80,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                1.0
+                            ],
+                            [
+                                0.6615300000000001,
+                                0.8717100000000001
+                            ],
+                            [
+                                0.8215100000000001,
+                                0.773020
+                            ],
+                            [
+                                0.9076700000000001,
+                                0.5986800000000001
+                            ],
+                            [
+                                1.0,
+                                0.0
+                            ]
+                        ],
+                        "guid": 81,
+                        "max_scale": 1.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 100,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    -5.0
+                ],
+                "friction": 1.0,
+                "guid": 73,
+                "height": [
+                    0.1250,
+                    0.050
+                ],
+                "keep_local": false,
+                "lifetime_loss": 0.50,
+                "material_name": "LiquidNoNormalMap",
+                "max_particles": 10000000,
+                "mesh": "resources/watersplashes/p_mesh_waterdrop.fbx",
+                "mesh_diffuse": "resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "projectile",
+                "min_quality": "medium",
+                "name": "Drop6 Spread (low)",
+                "particle": "mesh",
+                "position": [
+                    0.0,
+                    0.0,
+                    15.0
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation_axis": [
+                    -1.0,
+                    -1.0,
+                    1.0
+                ],
+                "sub": [
+                    {
+                        "ASG_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_asg.tga",
+                        "category": "2",
+                        "depth": [
+                            0.850,
+                            0.20
+                        ],
+                        "direction_type": "constant",
+                        "duration": 0.009990000000000001,
+                        "editorColor": [
+                            0.597150,
+                            1.0,
+                            0.484360,
+                            1.0
+                        ],
+                        "effects": [
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.7500000000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        2.792740
+                                    ]
+                                ],
+                                "guid": 75,
+                                "max_scale": 3.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "y-scale",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.239840,
+                                        0.6511600000000001
+                                    ],
+                                    [
+                                        0.661610,
+                                        1.075580
+                                    ],
+                                    [
+                                        1.0,
+                                        1.290680
+                                    ]
+                                ],
+                                "guid": 76,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "animation": "sheet",
+                                "end_texture_coords_range": 40,
+                                "fps": 30,
+                                "graph": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.305220,
+                                        0.076770
+                                    ],
+                                    [
+                                        0.792150,
+                                        0.9063500000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                "guid": 77,
+                                "name": "TextureAnimator",
+                                "use_graph": true
+                            }
+                        ],
+                        "emission_mode": "burst",
+                        "emission_rate": 1111,
+                        "guid": 74,
+                        "height": [
+                            0.60,
+                            0.150
+                        ],
+                        "keep_local": false,
+                        "material_name": "LiquidAlphaUvAnim",
+                        "max_particles": 1,
+                        "mesh": "$GAME_DATA/Particles/resources/watersplashes/p_watercylinder03.fbx",
+                        "mesh_diffuse": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                        "mesh_size": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "mesh_type": "projectile",
+                        "min_quality": "medium",
+                        "name": "Cylinder",
+                        "normal_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_nor.tga",
+                        "particle": "mesh",
+                        "rotation": [
+                            0.0,
+                            180.0
+                        ],
+                        "rotation_speed": [
+                            0.0,
+                            45.0
+                        ],
+                        "tiles": [
+                            20,
+                            2
+                        ],
+                        "time_to_live": [
+                            0.30,
+                            0.050
+                        ],
+                        "velocity": 0.001000000047497451,
+                        "width": [
+                            0.60,
+                            0.150
+                        ]
+                    }
+                ],
+                "time_to_live": 20.0,
+                "type": "cylinder",
+                "velocity": 0.0,
+                "width": [
+                    0.1250,
+                    0.050
+                ]
+            },
+            {
+                "ASG_map": "resources/watersplashes/p_mesh_watersplash_01_asg.tga",
+                "bounce": 0.50,
+                "category": "1",
+                "collision": "bounce",
+                "cylinder_height": 1.0,
+                "cylinder_radius_end": 10.0,
+                "cylinder_radius_start": 10.0,
+                "depth": [
+                    0.250,
+                    0.050
+                ],
+                "direction_type": "shape",
+                "duration": 0.10,
+                "editorColor": [
+                    0.597150,
+                    1.0,
+                    0.484360,
+                    1.0
+                ],
+                "effects": [
+                    {
+                        "axis": "y-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                0.5526300000000001
+                            ],
+                            [
+                                0.23070,
+                                1.276290
+                            ],
+                            [
+                                0.5600000000000001,
+                                1.671040
+                            ],
+                            [
+                                1.0,
+                                1.888120
+                            ]
+                        ],
+                        "guid": 87,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "x-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.184560,
+                                2.092080
+                            ],
+                            [
+                                0.446150,
+                                1.37170
+                            ],
+                            [
+                                1.0,
+                                0.9900000000000001
+                            ]
+                        ],
+                        "guid": 88,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "z-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.239950,
+                                1.726950
+                            ],
+                            [
+                                0.4892300000000001,
+                                1.194030
+                            ],
+                            [
+                                1.0,
+                                0.9990000000000001
+                            ]
+                        ],
+                        "guid": 89,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                1.0
+                            ],
+                            [
+                                0.6615300000000001,
+                                0.8717100000000001
+                            ],
+                            [
+                                0.8215100000000001,
+                                0.773020
+                            ],
+                            [
+                                0.9076700000000001,
+                                0.5986800000000001
+                            ],
+                            [
+                                1.0,
+                                0.0
+                            ]
+                        ],
+                        "guid": 90,
+                        "max_scale": 1.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 100,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    -5.0
+                ],
+                "friction": 1.0,
+                "guid": 82,
+                "height": [
+                    0.1250,
+                    0.050
+                ],
+                "keep_local": false,
+                "lifetime_loss": 0.50,
+                "material_name": "LiquidNoNormalMap",
+                "max_particles": 10000000,
+                "mesh": "resources/watersplashes/p_mesh_waterdrop.fbx",
+                "mesh_diffuse": "resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "projectile",
+                "min_quality": "medium",
+                "name": "Drop7 Spread (low)",
+                "particle": "mesh",
+                "position": [
+                    0.0,
+                    0.0,
+                    15.0
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation_axis": [
+                    -1.0,
+                    -1.0,
+                    1.0
+                ],
+                "sub": [
+                    {
+                        "ASG_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_asg.tga",
+                        "category": "2",
+                        "depth": [
+                            0.850,
+                            0.20
+                        ],
+                        "direction_type": "constant",
+                        "duration": 0.009990000000000001,
+                        "editorColor": [
+                            0.597150,
+                            1.0,
+                            0.484360,
+                            1.0
+                        ],
+                        "effects": [
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.7500000000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        2.792740
+                                    ]
+                                ],
+                                "guid": 84,
+                                "max_scale": 3.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "y-scale",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.239840,
+                                        0.6511600000000001
+                                    ],
+                                    [
+                                        0.661610,
+                                        1.075580
+                                    ],
+                                    [
+                                        1.0,
+                                        1.290680
+                                    ]
+                                ],
+                                "guid": 85,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "animation": "sheet",
+                                "end_texture_coords_range": 40,
+                                "fps": 30,
+                                "graph": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.305220,
+                                        0.076770
+                                    ],
+                                    [
+                                        0.792150,
+                                        0.9063500000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                "guid": 86,
+                                "name": "TextureAnimator",
+                                "use_graph": true
+                            }
+                        ],
+                        "emission_mode": "burst",
+                        "emission_rate": 1111,
+                        "guid": 83,
+                        "height": [
+                            0.60,
+                            0.150
+                        ],
+                        "keep_local": false,
+                        "material_name": "LiquidAlphaUvAnim",
+                        "max_particles": 1,
+                        "mesh": "$GAME_DATA/Particles/resources/watersplashes/p_watercylinder03.fbx",
+                        "mesh_diffuse": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                        "mesh_size": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "mesh_type": "projectile",
+                        "min_quality": "medium",
+                        "name": "Cylinder",
+                        "normal_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_nor.tga",
+                        "particle": "mesh",
+                        "rotation": [
+                            0.0,
+                            180.0
+                        ],
+                        "rotation_speed": [
+                            0.0,
+                            45.0
+                        ],
+                        "tiles": [
+                            20,
+                            2
+                        ],
+                        "time_to_live": [
+                            0.30,
+                            0.050
+                        ],
+                        "velocity": 0.001000000047497451,
+                        "width": [
+                            0.60,
+                            0.150
+                        ]
+                    }
+                ],
+                "time_to_live": 20.0,
+                "type": "cylinder",
+                "velocity": 0.0,
+                "width": [
+                    0.1250,
+                    0.050
+                ]
+            },
+            {
+                "ASG_map": "resources/watersplashes/p_mesh_watersplash_01_asg.tga",
+                "bounce": 0.50,
+                "category": "1",
+                "collision": "bounce",
+                "cylinder_height": 1.0,
+                "cylinder_radius_end": 10.0,
+                "cylinder_radius_start": 10.0,
+                "depth": [
+                    0.250,
+                    0.050
+                ],
+                "direction_type": "shape",
+                "duration": 0.10,
+                "editorColor": [
+                    0.597150,
+                    1.0,
+                    0.484360,
+                    1.0
+                ],
+                "effects": [
+                    {
+                        "axis": "y-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                0.5526300000000001
+                            ],
+                            [
+                                0.23070,
+                                1.276290
+                            ],
+                            [
+                                0.5600000000000001,
+                                1.671040
+                            ],
+                            [
+                                1.0,
+                                1.888120
+                            ]
+                        ],
+                        "guid": 96,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "x-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.184560,
+                                2.092080
+                            ],
+                            [
+                                0.446150,
+                                1.37170
+                            ],
+                            [
+                                1.0,
+                                0.9900000000000001
+                            ]
+                        ],
+                        "guid": 97,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "z-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.239950,
+                                1.726950
+                            ],
+                            [
+                                0.4892300000000001,
+                                1.194030
+                            ],
+                            [
+                                1.0,
+                                0.9990000000000001
+                            ]
+                        ],
+                        "guid": 98,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                1.0
+                            ],
+                            [
+                                0.6615300000000001,
+                                0.8717100000000001
+                            ],
+                            [
+                                0.8215100000000001,
+                                0.773020
+                            ],
+                            [
+                                0.9076700000000001,
+                                0.5986800000000001
+                            ],
+                            [
+                                1.0,
+                                0.0
+                            ]
+                        ],
+                        "guid": 99,
+                        "max_scale": 1.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 100,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    -5.0
+                ],
+                "friction": 1.0,
+                "guid": 91,
+                "height": [
+                    0.1250,
+                    0.050
+                ],
+                "keep_local": false,
+                "lifetime_loss": 0.50,
+                "material_name": "LiquidNoNormalMap",
+                "max_particles": 10000000,
+                "mesh": "resources/watersplashes/p_mesh_waterdrop.fbx",
+                "mesh_diffuse": "resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "projectile",
+                "min_quality": "medium",
+                "name": "Drop8 Spread (low)",
+                "particle": "mesh",
+                "position": [
+                    0.0,
+                    0.0,
+                    15.0
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation_axis": [
+                    -1.0,
+                    -1.0,
+                    1.0
+                ],
+                "sub": [
+                    {
+                        "ASG_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_asg.tga",
+                        "category": "2",
+                        "depth": [
+                            0.850,
+                            0.20
+                        ],
+                        "direction_type": "constant",
+                        "duration": 0.009990000000000001,
+                        "editorColor": [
+                            0.597150,
+                            1.0,
+                            0.484360,
+                            1.0
+                        ],
+                        "effects": [
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.7500000000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        2.792740
+                                    ]
+                                ],
+                                "guid": 93,
+                                "max_scale": 3.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "y-scale",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.239840,
+                                        0.6511600000000001
+                                    ],
+                                    [
+                                        0.661610,
+                                        1.075580
+                                    ],
+                                    [
+                                        1.0,
+                                        1.290680
+                                    ]
+                                ],
+                                "guid": 94,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "animation": "sheet",
+                                "end_texture_coords_range": 40,
+                                "fps": 30,
+                                "graph": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.305220,
+                                        0.076770
+                                    ],
+                                    [
+                                        0.792150,
+                                        0.9063500000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                "guid": 95,
+                                "name": "TextureAnimator",
+                                "use_graph": true
+                            }
+                        ],
+                        "emission_mode": "burst",
+                        "emission_rate": 1111,
+                        "guid": 92,
+                        "height": [
+                            0.60,
+                            0.150
+                        ],
+                        "keep_local": false,
+                        "material_name": "LiquidAlphaUvAnim",
+                        "max_particles": 1,
+                        "mesh": "$GAME_DATA/Particles/resources/watersplashes/p_watercylinder03.fbx",
+                        "mesh_diffuse": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                        "mesh_size": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "mesh_type": "projectile",
+                        "min_quality": "medium",
+                        "name": "Cylinder",
+                        "normal_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_nor.tga",
+                        "particle": "mesh",
+                        "rotation": [
+                            0.0,
+                            180.0
+                        ],
+                        "rotation_speed": [
+                            0.0,
+                            45.0
+                        ],
+                        "tiles": [
+                            20,
+                            2
+                        ],
+                        "time_to_live": [
+                            0.30,
+                            0.050
+                        ],
+                        "velocity": 0.001000000047497451,
+                        "width": [
+                            0.60,
+                            0.150
+                        ]
+                    }
+                ],
+                "time_to_live": 20.0,
+                "type": "cylinder",
+                "velocity": 0.0,
+                "width": [
+                    0.1250,
+                    0.050
+                ]
+            },
+            {
+                "ASG_map": "resources/watersplashes/p_mesh_watersplash_01_asg.tga",
+                "bounce": 0.50,
+                "category": "1",
+                "collision": "bounce",
+                "cylinder_height": 1.0,
+                "cylinder_radius_end": 10.0,
+                "cylinder_radius_start": 10.0,
+                "depth": [
+                    0.250,
+                    0.050
+                ],
+                "direction_type": "shape",
+                "duration": 0.10,
+                "editorColor": [
+                    0.597150,
+                    1.0,
+                    0.484360,
+                    1.0
+                ],
+                "effects": [
+                    {
+                        "axis": "y-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                0.5526300000000001
+                            ],
+                            [
+                                0.23070,
+                                1.276290
+                            ],
+                            [
+                                0.5600000000000001,
+                                1.671040
+                            ],
+                            [
+                                1.0,
+                                1.888120
+                            ]
+                        ],
+                        "guid": 105,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "x-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.184560,
+                                2.092080
+                            ],
+                            [
+                                0.446150,
+                                1.37170
+                            ],
+                            [
+                                1.0,
+                                0.9900000000000001
+                            ]
+                        ],
+                        "guid": 106,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "z-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.239950,
+                                1.726950
+                            ],
+                            [
+                                0.4892300000000001,
+                                1.194030
+                            ],
+                            [
+                                1.0,
+                                0.9990000000000001
+                            ]
+                        ],
+                        "guid": 107,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                1.0
+                            ],
+                            [
+                                0.6615300000000001,
+                                0.8717100000000001
+                            ],
+                            [
+                                0.8215100000000001,
+                                0.773020
+                            ],
+                            [
+                                0.9076700000000001,
+                                0.5986800000000001
+                            ],
+                            [
+                                1.0,
+                                0.0
+                            ]
+                        ],
+                        "guid": 108,
+                        "max_scale": 1.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 100,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    -5.0
+                ],
+                "friction": 1.0,
+                "guid": 100,
+                "height": [
+                    0.1250,
+                    0.050
+                ],
+                "keep_local": false,
+                "lifetime_loss": 0.50,
+                "material_name": "LiquidNoNormalMap",
+                "max_particles": 10000000,
+                "mesh": "resources/watersplashes/p_mesh_waterdrop.fbx",
+                "mesh_diffuse": "resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "projectile",
+                "min_quality": "medium",
+                "name": "Drop9 Spread (low)",
+                "particle": "mesh",
+                "position": [
+                    0.0,
+                    0.0,
+                    15.0
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation_axis": [
+                    -1.0,
+                    -1.0,
+                    1.0
+                ],
+                "sub": [
+                    {
+                        "ASG_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_asg.tga",
+                        "category": "2",
+                        "depth": [
+                            0.850,
+                            0.20
+                        ],
+                        "direction_type": "constant",
+                        "duration": 0.009990000000000001,
+                        "editorColor": [
+                            0.597150,
+                            1.0,
+                            0.484360,
+                            1.0
+                        ],
+                        "effects": [
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.7500000000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        2.792740
+                                    ]
+                                ],
+                                "guid": 102,
+                                "max_scale": 3.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "y-scale",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.239840,
+                                        0.6511600000000001
+                                    ],
+                                    [
+                                        0.661610,
+                                        1.075580
+                                    ],
+                                    [
+                                        1.0,
+                                        1.290680
+                                    ]
+                                ],
+                                "guid": 103,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "animation": "sheet",
+                                "end_texture_coords_range": 40,
+                                "fps": 30,
+                                "graph": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.305220,
+                                        0.076770
+                                    ],
+                                    [
+                                        0.792150,
+                                        0.9063500000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                "guid": 104,
+                                "name": "TextureAnimator",
+                                "use_graph": true
+                            }
+                        ],
+                        "emission_mode": "burst",
+                        "emission_rate": 1111,
+                        "guid": 101,
+                        "height": [
+                            0.60,
+                            0.150
+                        ],
+                        "keep_local": false,
+                        "material_name": "LiquidAlphaUvAnim",
+                        "max_particles": 1,
+                        "mesh": "$GAME_DATA/Particles/resources/watersplashes/p_watercylinder03.fbx",
+                        "mesh_diffuse": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                        "mesh_size": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "mesh_type": "projectile",
+                        "min_quality": "medium",
+                        "name": "Cylinder",
+                        "normal_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_nor.tga",
+                        "particle": "mesh",
+                        "rotation": [
+                            0.0,
+                            180.0
+                        ],
+                        "rotation_speed": [
+                            0.0,
+                            45.0
+                        ],
+                        "tiles": [
+                            20,
+                            2
+                        ],
+                        "time_to_live": [
+                            0.30,
+                            0.050
+                        ],
+                        "velocity": 0.001000000047497451,
+                        "width": [
+                            0.60,
+                            0.150
+                        ]
+                    }
+                ],
+                "time_to_live": 20.0,
+                "type": "cylinder",
+                "velocity": 0.0,
+                "width": [
+                    0.1250,
+                    0.050
+                ]
+            },
+            {
+                "ASG_map": "resources/watersplashes/p_mesh_watersplash_01_asg.tga",
+                "bounce": 0.50,
+                "category": "1",
+                "collision": "bounce",
+                "cylinder_height": 1.0,
+                "cylinder_radius_end": 10.0,
+                "cylinder_radius_start": 10.0,
+                "depth": [
+                    0.250,
+                    0.050
+                ],
+                "direction_type": "shape",
+                "duration": 0.10,
+                "editorColor": [
+                    0.597150,
+                    1.0,
+                    0.484360,
+                    1.0
+                ],
+                "effects": [
+                    {
+                        "axis": "y-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                0.5526300000000001
+                            ],
+                            [
+                                0.23070,
+                                1.276290
+                            ],
+                            [
+                                0.5600000000000001,
+                                1.671040
+                            ],
+                            [
+                                1.0,
+                                1.888120
+                            ]
+                        ],
+                        "guid": 114,
+                        "max_scale": 2.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "x-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.184560,
+                                2.092080
+                            ],
+                            [
+                                0.446150,
+                                1.37170
+                            ],
+                            [
+                                1.0,
+                                0.9900000000000001
+                            ]
+                        ],
+                        "guid": 115,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "axis": "z-scale",
+                        "control_point": [
+                            [
+                                0.0,
+                                3.0
+                            ],
+                            [
+                                0.239950,
+                                1.726950
+                            ],
+                            [
+                                0.4892300000000001,
+                                1.194030
+                            ],
+                            [
+                                1.0,
+                                0.9990000000000001
+                            ]
+                        ],
+                        "guid": 116,
+                        "max_scale": 3.0,
+                        "name": "Scale"
+                    },
+                    {
+                        "control_point": [
+                            [
+                                0.0,
+                                1.0
+                            ],
+                            [
+                                0.6615300000000001,
+                                0.8717100000000001
+                            ],
+                            [
+                                0.8215100000000001,
+                                0.773020
+                            ],
+                            [
+                                0.9076700000000001,
+                                0.5986800000000001
+                            ],
+                            [
+                                1.0,
+                                0.0
+                            ]
+                        ],
+                        "guid": 117,
+                        "max_scale": 1.0,
+                        "name": "Scale"
+                    }
+                ],
+                "emission_mode": "loop",
+                "emission_rate": 100,
+                "force_vector": [
+                    0.0,
+                    0.0,
+                    -5.0
+                ],
+                "friction": 1.0,
+                "guid": 109,
+                "height": [
+                    0.1250,
+                    0.050
+                ],
+                "keep_local": false,
+                "lifetime_loss": 0.50,
+                "material_name": "LiquidNoNormalMap",
+                "max_particles": 10000000,
+                "mesh": "resources/watersplashes/p_mesh_waterdrop.fbx",
+                "mesh_diffuse": "resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                "mesh_size": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "mesh_type": "projectile",
+                "min_quality": "medium",
+                "name": "Drop10 Spread (low)",
+                "particle": "mesh",
+                "position": [
+                    0.0,
+                    0.0,
+                    15.0
+                ],
+                "renderable": "$GAME_DATA/Particles/Renderable/watersplashes/p_watersplashes_drop01.rend",
+                "rotation_axis": [
+                    -1.0,
+                    -1.0,
+                    1.0
+                ],
+                "sub": [
+                    {
+                        "ASG_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_asg.tga",
+                        "category": "2",
+                        "depth": [
+                            0.850,
+                            0.20
+                        ],
+                        "direction_type": "constant",
+                        "duration": 0.009990000000000001,
+                        "editorColor": [
+                            0.597150,
+                            1.0,
+                            0.484360,
+                            1.0
+                        ],
+                        "effects": [
+                            {
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.7500000000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        2.792740
+                                    ]
+                                ],
+                                "guid": 111,
+                                "max_scale": 3.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "axis": "y-scale",
+                                "control_point": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.239840,
+                                        0.6511600000000001
+                                    ],
+                                    [
+                                        0.661610,
+                                        1.075580
+                                    ],
+                                    [
+                                        1.0,
+                                        1.290680
+                                    ]
+                                ],
+                                "guid": 112,
+                                "max_scale": 2.0,
+                                "name": "Scale"
+                            },
+                            {
+                                "animation": "sheet",
+                                "end_texture_coords_range": 40,
+                                "fps": 30,
+                                "graph": [
+                                    [
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.305220,
+                                        0.076770
+                                    ],
+                                    [
+                                        0.792150,
+                                        0.9063500000000001
+                                    ],
+                                    [
+                                        1.0,
+                                        1.0
+                                    ]
+                                ],
+                                "guid": 113,
+                                "name": "TextureAnimator",
+                                "use_graph": true
+                            }
+                        ],
+                        "emission_mode": "burst",
+                        "emission_rate": 1111,
+                        "guid": 110,
+                        "height": [
+                            0.60,
+                            0.150
+                        ],
+                        "keep_local": false,
+                        "material_name": "LiquidAlphaUvAnim",
+                        "max_particles": 1,
+                        "mesh": "$GAME_DATA/Particles/resources/watersplashes/p_watercylinder03.fbx",
+                        "mesh_diffuse": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_01_dif.tga",
+                        "mesh_size": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "mesh_type": "projectile",
+                        "min_quality": "medium",
+                        "name": "Cylinder",
+                        "normal_map": "$GAME_DATA/Particles/resources/watersplashes/p_mesh_watersplash_anim_03_nor.tga",
+                        "particle": "mesh",
+                        "rotation": [
+                            0.0,
+                            180.0
+                        ],
+                        "rotation_speed": [
+                            0.0,
+                            45.0
+                        ],
+                        "tiles": [
+                            20,
+                            2
+                        ],
+                        "time_to_live": [
+                            0.30,
+                            0.050
+                        ],
+                        "velocity": 0.001000000047497451,
+                        "width": [
+                            0.60,
+                            0.150
+                        ]
+                    }
+                ],
+                "time_to_live": 20.0,
+                "type": "cylinder",
+                "velocity": 0.0,
+                "width": [
+                    0.1250,
+                    0.050
+                ]
+            }
+        ],
+        "min_quality": "low"
+    }
+}

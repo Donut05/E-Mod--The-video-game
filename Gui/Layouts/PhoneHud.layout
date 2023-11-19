@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyGUI type="Layout" version="3.2.0">
+    <Widget type="Widget" skin="PanelEmpty" position="50 35 320 430">
+        <Widget type="ImageBox" skin="ImageBox" position="0 0 265 430" name="Iphone">
+            <Property key="ImageTexture" value="iphone.png"/>
+            <Widget type="ImageBox" skin="ImageBox" position="40 80 190 265" align="Center" name="SS_gameplay">
+                <Property key="ImageTexture" value="SS_test.jpg"/>
+            </Widget>
+        </Widget>
+    </Widget>
+    <CodeGeneratorSettings/>
+</MyGUI>

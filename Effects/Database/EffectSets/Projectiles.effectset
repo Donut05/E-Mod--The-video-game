@@ -1,0 +1,36 @@
+{
+   "00Fard - DMCAbullet_attached" : {
+      "effectList" : [
+         {
+            "audio" : [ "event:/vehicle/gasengines/gasengine05" ],
+            "type" : "audio"
+         },
+         {
+            "attached" : true,
+            "particles" : [ "DMCAbullet" ],
+            "type" : "particle"
+         }
+      ]
+   },
+   "00Fard - DMCAbullet_hit" : {
+      "effectList" : [
+         {
+            "audio" : [ "event:/vehicle/triggers/encryptor_on" ],
+            "type" : "audio"
+         },
+         {
+            "particles" : [ "DMCAbullet_hit" ],
+            "type" : "particle"
+         }
+      ]
+   },
+   "BallSpider - Laser_burst" : {
+      "effectList" : [
+         {
+            "offset" : [ 0.0, 0.0, 0.0 ],
+            "particles" : [ "ballspider_laser_burst" ],
+            "type" : "particle"
+         }
+      ]
+   }
+}

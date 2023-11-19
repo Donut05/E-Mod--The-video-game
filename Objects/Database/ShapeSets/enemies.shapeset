@@ -1,0 +1,124 @@
+{
+   "partList" : [
+      {
+         "cylinder" : {
+            "axis" : "Y",
+            "depth" : 7,
+            "diameter" : 5
+         },
+         "flammable" : true,
+         "hull" : {
+            "x" : 6,
+            "y" : 7,
+            "z" : 6
+         },
+         "name" : "enemy_test",
+         "physicsMaterial" : "Mechanical",
+         "ratings" : {
+            "buoyancy" : 10,
+            "density" : 5,
+            "durability" : 5,
+            "friction" : 5
+         },
+         "renderable" : "$CONTENT_DATA/Objects/Renderables/placeholder.rend",
+         "rotationSet" : "Default",
+         "scripted" : {
+            "classname" : "WelderHive",
+            "filename" : "$CONTENT_DATA/Scripts/enemies/WelderHive.lua"
+         },
+         "uuid" : "c6e64537-cbfe-4039-ad0b-73ec22d3727c"
+      },
+      {
+         "flammable" : true,
+         "hull" : {
+            "pointList" : [
+               {
+                  "x" : 0,
+                  "y" : 0,
+                  "z" : 1
+               },
+               {
+                  "x" : 1,
+                  "y" : 1,
+                  "z" : 0
+               },
+               {
+                  "x" : -1,
+                  "y" : -1,
+                  "z" : 0
+               },
+               {
+                  "x" : 1,
+                  "y" : -1,
+                  "z" : 0
+               },
+               {
+                  "x" : -1,
+                  "y" : 1,
+                  "z" : 0
+               }
+            ],
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "name" : "bees",
+         "physicsMaterial" : "Default",
+         "ratings" : {
+            "buoyancy" : 1000,
+            "density" : 0,
+            "durability" : 1000,
+            "friction" : 0
+         },
+         "renderable" : "$CONTENT_DATA/Objects/Renderables/invis_wall.rend",
+         "rotationSet" : "Default",
+         "scripted" : {
+            "classname" : "Bees",
+            "filename" : "$CONTENT_DATA/Scripts/enemies/Bees.lua"
+         },
+         "showInInventory" : true,
+         "sphere" : {
+            "diameter" : 1
+         },
+         "uuid" : "8df36720-5446-4c9a-96ad-98247a0a67a3"
+      },
+      {
+         "color" : "9f2600",
+         "flammable" : false,
+         "name" : "enemy_ball_spider_middle",
+         "physicsMaterial" : "Metal",
+         "ratings" : {
+            "buoyancy" : 5,
+            "density" : 4,
+            "durability" : 10,
+            "friction" : 3
+         },
+         "renderable" : "$CONTENT_DATA/Objects/Renderables/PLACEHOLDER_ball.rend",
+         "rotationSet" : "Default",
+         "scripted" : {
+            "classname" : "BallSpider",
+            "filename" : "$CONTENT_DATA/Scripts/enemies/BallSpider.lua"
+         },
+         "sphere" : {
+            "diameter" : 5
+         },
+         "uuid" : "fc7920ef-7ea3-4e2a-8b86-a18781505c87"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "name" : "PATHING_TEST",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/Objects/Renderables/effect block.rend",
+         "rotationSet" : "Default",
+         "scripted" : {
+            "classname" : "PathfinderTest",
+            "filename" : "$CONTENT_DATA/Scripts/enemies/PathfinderTest.lua"
+         },
+         "uuid" : "ce5ad053-73f9-48d9-84eb-4586b2f69a41"
+      }
+   ]
+}

@@ -1,0 +1,57 @@
+{
+   "meleeAttacks" : [
+      {
+         "destruction" : {
+            "destructionLevels" : [
+               {
+                  "chance" : 1.0,
+                  "qualityLevel" : 1
+               },
+               {
+                  "chance" : 1.0,
+                  "qualityLevel" : 2
+               },
+               {
+                  "chance" : 1.0,
+                  "qualityLevel" : 3
+               },
+               {
+                  "chance" : 0.750,
+                  "qualityLevel" : 4
+               },
+               {
+                  "chance" : 0.70,
+                  "qualityLevel" : 5
+               },
+               {
+                  "chance" : 0.60,
+                  "qualityLevel" : 6
+               },
+               {
+                  "chance" : 0.50,
+                  "qualityLevel" : 7
+               },
+               {
+                  "chance" : 0.30,
+                  "qualityLevel" : 8
+               },
+               {
+                  "chance" : 0.250,
+                  "qualityLevel" : 9
+               },
+               {
+                  "chance" : 0.10,
+                  "qualityLevel" : 10
+               }
+            ]
+         },
+         "hitBox" : {
+            "halfHeight" : 0.40,
+            "halfWidth" : 0.40
+         },
+         "impactEffect" : "",
+         "name" : "Destroy",
+         "uuid" : "38fe8287-d408-492f-a3a0-996f5f13ecda"
+      }
+   ]
+}

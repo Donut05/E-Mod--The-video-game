@@ -1,0 +1,7 @@
+{
+   "characterSetList" : [
+      "$CONTENT_DATA/Characters/Database/CharacterSets/example.characterset",
+      "$CONTENT_DATA/Characters/Database/CharacterSets/robots.characterset",
+      "$CONTENT_DATA/Characters/Database/CharacterSets/animals.characterset"
+   ]
+}

@@ -1,0 +1,1 @@
+{"system":{"emitters":[{"color":[1.0,0.679660,0.0,1.0],"direction_type":"shape","duration":1.0,"emission_mode":"loop","emission_rate":10,"guid":0,"keep_local":true,"max_particles":1,"mesh_size":[1.0,1.0,1.0],"name":"Pipe","particle":"mesh","shapeUuid":"0dba257b-b907-4919-baaf-2fefe19f4e24","time_to_live":1.0,"velocity":0.0}],"min_quality":"low"}}

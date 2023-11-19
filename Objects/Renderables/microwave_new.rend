@@ -1,0 +1,18 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$CONTENT_DATA/Objects/Mesh/microwave_remaster/obj_spaceship_microwaveNew_off.fbx",
+         "pose0" : "$CONTENT_DATA/Objects/Mesh/microwave_remaster/obj_spaceship_microwaveNew_on.fbx",
+         "subMeshList" : [
+            {
+               "material" : "PoseAnimDifAsgNor",
+               "textureList" : [
+                  "$CONTENT_DATA/Objects/Textures/microwave_remaster/obj_spaceship_microwaveNew_dif.tga",
+                  "$CONTENT_DATA/Objects/Textures/microwave_remaster/obj_spaceship_microwaveNew_asg.tga",
+                  "$CONTENT_DATA/Objects/Textures/microwave_remaster/obj_spaceship_microwaveNew_nor.tga"
+               ]
+            }
+         ]
+      }
+   ]
+}
