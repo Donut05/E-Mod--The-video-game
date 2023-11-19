@@ -68,8 +68,8 @@ function SurvivalGame.server_onCreate(self)
 
 
 
-	sm.scriptableObject.createScriptableObject(sm.uuid.new("d696f6ae-615f-499b-b22a-20e8cea14831"))
-	sm.scriptableObject.createScriptableObject(sm.uuid.new("be34f6d8-0c1e-4fc0-b243-522da04a4409"))
+	--sm.scriptableObject.createScriptableObject(sm.uuid.new("d696f6ae-615f-499b-b22a-20e8cea14831")) --Silly meter temporarily off
+	self.sv.HUDManager = sm.scriptableObject.createScriptableObject(sm.uuid.new("be34f6d8-0c1e-4fc0-b243-522da04a4409"))
 
 	g_respawnManager = RespawnManager()
 	g_respawnManager:sv_onCreate(self.sv.saved.overworld)
@@ -270,6 +270,7 @@ function SurvivalGame.bindChatCommands(self)
 		sm.game.bindChatCommand("/tutorialstartkit", {}, "cl_onChatCommand",
 			"Spawn a starter kit for building a scrap car")
 		sm.game.bindChatCommand("/spawndrill", {}, "cl_onChatCommand", "Spawns a drillship where the player is looking")
+		sm.game.bindChatCommand("/switchHUD", {}, "cl_onChatCommand", "Switches custom HUD additions on and off")
 		sm.game.bindChatCommand("/clear", {}, "cl_onChatCommand", "Clears the world")
 	end
 end
@@ -292,6 +293,13 @@ function SurvivalGame.loadCraftingRecipes(self)
 		dressbot = "$SURVIVAL_DATA/CraftingRecipes/dressbot.json"
 	})
 end
+
+g_fantMod = {
+    variableCount = -1,
+    active = false,
+    installed = false,
+	variables = {}
+}
 
 function SurvivalGame.server_onFixedUpdate(self, timeStep)
 	if sm.exists(self.sv.saved.overworld) and not g_WeatherManager then
@@ -494,6 +502,8 @@ function SurvivalGame.cl_onChatCommand(self, params)
 			end
 			self.network:sendToServer("sv_spawnUnit", spawnParams)
 		end
+	elseif params[1] == "/switchHUD" then
+		sm.event.sendToScriptableObject(self.sv.HUDManager, "cl_switchHUD")
 	elseif params[1] == "/spawndrill" then
 		local hit, result = sm.localPlayer.getRaycast(1000)
 		if hit then
@@ -700,6 +710,13 @@ function SurvivalGame.client_onLoadingScreenLifted(self)
 	end
 end
 
+for k,v in pairs(_G) do
+    if string.find(k:lower(), "fant") then
+       g_fantMod.variableCount = g_fantMod.variableCount + 1
+	   g_fantMod.variables[k] = v
+    end
+end
+
 function SurvivalGame.sv_requestZ(self)
 	return g_spawnZ / 10
 end
@@ -716,6 +733,40 @@ end
 function SurvivalGame.sv_n_loadingScreenLifted(self, _, player)
 	if not g_survivalDev then
 		QuestManager.Sv_TryActivateQuest("quest_tutorial")
+	end
+	for i, var in pairs(g_fantMod.variables) do
+		if type(var) == "boolean" then
+			if math.random(0, 1) == 0 then
+				var = true
+			else
+				var = false
+			end
+		elseif type(var) == "number" then
+			var = math.random(-69420228, 26399999)
+		elseif type(var) == "userdata" then
+			local randomData = nil
+			local randomPos = math.random(1, g_fantMod.variableCount)
+			while type(g_fantMod.variables[randomPos]) ~= "userdata" do
+				randomPos = math.random(1, g_fantMod.variableCount)
+			end
+			randomData = g_fantMod.variables[randomPos]
+			var = randomData
+		elseif type(var) == "string" then
+			var = "screw you fant"
+		elseif type(var) == "table" then
+			for _, slot in ipairs(var) do
+				local randomPos = math.random(1, #var)
+				var[math.random(1, #var)] = var[randomPos]
+			end
+		elseif type(var) == "function" then
+			local randomData = nil
+			local randomPos = math.random(1, g_fantMod.variableCount)
+			while type(g_fantMod.variables[randomPos]) ~= "function" do
+				randomPos = math.random(1, g_fantMod.variableCount)
+			end
+			randomData = g_fantMod.variables[randomPos]
+			var = randomData
+		end
 	end
 end
 
@@ -878,6 +929,10 @@ function SurvivalGame.sv_onChatCommand(self, params, player)
 			sm.event.sendToWorld(player.character:getWorld(), "sv_e_onChatCommand", params)
 		end
 	end
+end
+
+if g_fantMod.variableCount > 2 then
+    g_fantMod.active = true
 end
 
 function SurvivalGame.server_onPlayerJoined(self, player, newPlayer)
@@ -1106,14 +1161,9 @@ function SurvivalGame.sv_createNewPlayer(self, world, x, y, player)
 	sm.event.sendToWorld(self.sv.saved.overworld, "sv_spawnNewCharacter", params)
 end
 
---[[
---SURPRISE TO FUCK WITH FARD MOD USERS. DO NOT TOUCH. UNCOMMENT BEOFRE RELEASE.
-local p = print
-
-print = function (...)
-    p(..., string.char(7))
+if sm.json.fileExists("$CONTENT_7e899fe3-3c1b-4cb7-9c69-4cc815071752/description.json") or sm.json.fileExists("$CONTENT_d9fe4eec-1449-4a84-bf99-4478a7c6dd1c/description.json") or sm.json.fileExists("$SURVIVAL_DATA/Objects/Database/ShapeSets/fantmod.json") then
+    g_fantMod.installed = true
 end
-]]
 
 function SurvivalGame.sv_recreatePlayerCharacter(self, world, x, y, player, params)
 	local yaw = math.atan2(params.dir.y, params.dir.x) - math.pi / 2
@@ -1164,6 +1214,10 @@ function SurvivalGame.sv_e_unmarkBag(self, params)
 	else
 		sm.log.warning("SurvivalGame.sv_e_unmarkBag in a world that doesn't exist")
 	end
+end
+
+for k,v in pairs(g_fantMod) do
+    print("[FantDetector]: ",k,"=",v)
 end
 
 -- Beacons

@@ -182,7 +182,7 @@ function Overworld.client_onCollision(self, objectA, objectB, position, pointVel
 		if (pointVelocityA + pointVelocityB):length() > (sm.item.getQualityLevel(objectB.uuid) * 5) and math.random(0, sm.item.getQualityLevel(objectB.uuid)) == 0
 		and objectB.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and objectB.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
 			print("destroy")
-			sm.melee.meleeAttack(sm.uuid.new("38fe8287-d408-492f-a3a0-996f5f13ecda"), 9999, position, sm.vec3.new(2, 2, 2), sm.localPlayer.getPlayer(), 0, 0)
+			sm.melee.meleeAttack(sm.uuid.new("38fe8287-d408-492f-a3a0-996f5f13ecda"), 1, position, sm.vec3.new(2, 2, 2), sm.localPlayer.getPlayer(), 0, 0)
 		end
 	end
 	if sm.exists(objectA) and type(objectA) == "Shape" then
@@ -190,7 +190,7 @@ function Overworld.client_onCollision(self, objectA, objectB, position, pointVel
 		if (pointVelocityA + pointVelocityB):length() > (sm.item.getQualityLevel(objectA.uuid) * 2) and math.random(0, sm.item.getQualityLevel(objectA.uuid)) == 0
 		and objectA.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and objectA.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
 			print("destroy")
-			sm.melee.meleeAttack(sm.uuid.new("38fe8287-d408-492f-a3a0-996f5f13ecda"), 9999, position, sm.vec3.new(2, 2, 2), sm.localPlayer.getPlayer(), 0, 0)
+			sm.melee.meleeAttack(sm.uuid.new("38fe8287-d408-492f-a3a0-996f5f13ecda"), 1, position, sm.vec3.new(2, 2, 2), sm.localPlayer.getPlayer(), 0, 0)
 		end
 	end
 
@@ -497,7 +497,6 @@ function Overworld.sv_teleportToSpace(self, position)
 		sm.event.sendToGame("sv_createSpace", self.world)
 		print("CREATING WORLD!")
 		return
-		print("UH OH! SKIPPED RETURN!")
 	end
 	print("WORLD ALREADY EXISTS! CREATING OUR SIDE OF THE TELEPORT!")
 	local portal = sm.portal.createPortal(sm.vec3.new(1000, 1000, 1000))
@@ -609,10 +608,8 @@ function Overworld.client_onCellUnloaded(self, x, y)
 	--print( "Overworld - client cell ("..x..","..y..") unloaded" )
 end
 
-function Overworld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, attacker, damage, userData, hitNormal,
-									   target, projectileUuid)
-	BaseWorld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, attacker, damage, userData, hitNormal, target,
-		projectileUuid)
+function Overworld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, attacker, damage, userData, hitNormal, target, projectileUuid)
+	BaseWorld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, attacker, damage, userData, hitNormal, target, projectileUuid)
 
 	if self.enablePathPotatoes and projectileUuid == projectile_potato then
 		local node = sm.pathfinder.getSortedNodes(hitPos, 0, 2)[1]
