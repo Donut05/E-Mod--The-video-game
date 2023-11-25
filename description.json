@@ -3,11 +3,6 @@
    "custom_icons" : false,
    "dependencies" : [
       {
-         "fileId" : 2504530003,
-         "localId" : "40639a2c-bb9f-4d4f-b88c-41bfe264ffa8",
-         "name" : "ModDatabase"
-      },
-      {
          "fileId" : 2809667982.0,
          "localId" : "6db9449a-2b49-4ee7-8711-ad91ff4119ec",
          "name" : "E"
