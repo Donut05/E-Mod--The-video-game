@@ -53,6 +53,7 @@ function Overworld.client_onCreate(self)
 	g_slam_velocity = 0
 	self.pipeCooldown = false
 	self.pipeCooldownTick = sm.game.getCurrentTick()
+	self.collisionDestructionSwitch = true
 
 	self.ambienceEffect = sm.effect.createEffect("OutdoorAmbience")
 	self.ambienceEffect:start()
@@ -171,14 +172,14 @@ function Overworld.client_onCollision(self, objectA, objectB, position, pointVel
 		local successfulRoll = math.random(0, 250) == 0
 		if AisShape then
 			if successfulRoll and
-			(objectA.material == "Metal" or "Mechanical") and
+			(objectA.material == "Metal" or objectA.material == "Mechanical") and
 			objectA.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and
 			objectA.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
 				canPlay = true
 			end
 		else
 			if successfulRoll and
-			(objectB.material == "Metal" or "Mechanical") and
+			(objectB.material == "Metal" or objectB.material == "Mechanical") and
 			objectB.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and
 			objectB.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
 				canPlay = true
@@ -200,20 +201,22 @@ function Overworld.client_onCollision(self, objectA, objectB, position, pointVel
 	end
 
 	--=COLLISION DESTRUCTION=--
-	if sm.exists(objectB) and type(objectB) == "Shape" then
-		print("bonk!")
-		if (pointVelocityA + pointVelocityB):length() > (sm.item.getQualityLevel(objectB.uuid) * 5) and math.random(0, sm.item.getQualityLevel(objectB.uuid)) == 0
-		and objectB.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and objectB.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
-			print("destroy")
-			sm.melee.meleeAttack(sm.uuid.new("38fe8287-d408-492f-a3a0-996f5f13ecda"), 1, position, sm.vec3.new(2, 2, 2), sm.localPlayer.getPlayer(), 0, 0)
+	if self.collisionDestructionSwitch then
+		if sm.exists(objectB) and type(objectB) == "Shape" then
+			print("bonk!")
+			if (pointVelocityA + pointVelocityB):length() > (sm.item.getQualityLevel(objectB.uuid) * 5) and math.random(0, sm.item.getQualityLevel(objectB.uuid)) == 0
+			and objectB.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and objectB.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
+				print("destroy")
+				sm.melee.meleeAttack(sm.uuid.new("38fe8287-d408-492f-a3a0-996f5f13ecda"), 1, position, sm.vec3.new(2, 2, 2), sm.localPlayer.getPlayer(), 0, 0)
+			end
 		end
-	end
-	if sm.exists(objectA) and type(objectA) == "Shape" then
-		print("bonk!")
-		if (pointVelocityA + pointVelocityB):length() > (sm.item.getQualityLevel(objectA.uuid) * 2) and math.random(0, sm.item.getQualityLevel(objectA.uuid)) == 0
-		and objectA.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and objectA.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
-			print("destroy")
-			sm.melee.meleeAttack(sm.uuid.new("38fe8287-d408-492f-a3a0-996f5f13ecda"), 1, position, sm.vec3.new(2, 2, 2), sm.localPlayer.getPlayer(), 0, 0)
+		if sm.exists(objectA) and type(objectA) == "Shape" then
+			print("bonk!")
+			if (pointVelocityA + pointVelocityB):length() > (sm.item.getQualityLevel(objectA.uuid) * 2) and math.random(0, sm.item.getQualityLevel(objectA.uuid)) == 0
+			and objectA.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and objectA.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
+				print("destroy")
+				sm.melee.meleeAttack(sm.uuid.new("38fe8287-d408-492f-a3a0-996f5f13ecda"), 1, position, sm.vec3.new(2, 2, 2), sm.localPlayer.getPlayer(), 0, 0)
+			end
 		end
 	end
 
@@ -223,6 +226,11 @@ function Overworld.client_onCollision(self, objectA, objectB, position, pointVel
 			sm.effect.playEffect("Player - Slam", objectA.worldPosition)
 		end
 	end
+end
+
+function Overworld.cl_switchDestruction(self)
+	self.collisionDestructionSwitch = not self.collisionDestructionSwitch
+	sm.gui.chatMessage("COLLISION DESTRUCTION IS " .. (self.collisionDestructionSwitch and "ON" or "OFF"))
 end
 
 function Overworld.cl_playDigEffect(self, data)
@@ -467,6 +475,38 @@ function Overworld.sv_spawnNewCharacter(self, params)
 	params.player:setCharacter(character)
 end
 
+local function selectHarvestableToPlace( keyword )
+	if keyword == "stone" then
+		local stones = {
+			hvs_stone_small01, hvs_stone_small02, hvs_stone_small03
+			--hvs_stone_medium01, hvs_stone_medium02, hvs_stone_medium03,
+			--hvs_stone_large01, hvs_stone_large02, hvs_stone_large03
+		}
+		return stones[math.random( 1, #stones )]
+	elseif keyword == "tree" then
+		local trees = {
+			hvs_tree_birch01, hvs_tree_birch02, hvs_tree_birch03,
+			hvs_tree_leafy01, hvs_tree_leafy02, hvs_tree_leafy03,
+			hvs_tree_spruce01, hvs_tree_spruce02, hvs_tree_spruce03,
+			hvs_tree_pine01, hvs_tree_pine02, hvs_tree_pine03
+		}
+		return trees[math.random( 1, #trees )]
+	elseif keyword == "birch" then
+		local trees = { hvs_tree_birch01, hvs_tree_birch02, hvs_tree_birch03 }
+		return trees[math.random( 1, #trees )]
+	elseif keyword == "leafy" then
+		local trees = { hvs_tree_leafy01, hvs_tree_leafy02, hvs_tree_leafy03 }
+		return trees[math.random( 1, #trees )]
+	elseif keyword == "spruce" then
+		local trees = {	hvs_tree_spruce01, hvs_tree_spruce02, hvs_tree_spruce03 }
+		return trees[math.random( 1, #trees )]
+	elseif keyword == "pine" then
+		local trees = { hvs_tree_pine01, hvs_tree_pine02, hvs_tree_pine03 }
+		return trees[math.random( 1, #trees )]
+	end
+	return nil
+end
+
 function Overworld.sv_e_onChatCommand(self, params)
 	BaseWorld.sv_e_onChatCommand(self, params)
 
@@ -486,6 +526,22 @@ function Overworld.sv_e_onChatCommand(self, params)
 		for _, body in ipairs(sm.body.getAllBodies()) do
 			for _, shape in ipairs(body:getShapes()) do
 				shape:destroyShape()
+			end
+		end
+	elseif params[1] == "/place" then
+		local harvestableUuid = selectHarvestableToPlace( params[2] )
+		if harvestableUuid and params.aimPosition then
+			local from = params.aimPosition + sm.vec3.new( 0, 0, 16.0 )
+			local to = params.aimPosition - sm.vec3.new( 0, 0, 16.0 )
+			local success, result = sm.physics.raycast( from, to, nil, sm.physics.filter.default )
+			if success and result.type == "terrainSurface" then
+				local harvestableYZRotation = sm.vec3.getRotation( sm.vec3.new( 0, 1, 0 ), sm.vec3.new( 0, 0, 1 ) )
+				local harvestableRotation = sm.quat.fromEuler( sm.vec3.new( 0, math.random( 0, 359 ), 0 ) )
+				local placePosition = result.pointWorld
+				if params[2] == "stone" then
+					placePosition = placePosition + sm.vec3.new( 0, 0, 2.0 )
+				end
+				sm.harvestable.createHarvestable( harvestableUuid, placePosition, harvestableYZRotation * harvestableRotation )
 			end
 		end
 	end
