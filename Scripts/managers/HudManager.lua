@@ -27,6 +27,7 @@ function HudManager.client_onCreate(self)
     self.TvHUD:setImage("TV", "$CONTENT_DATA/Gui/Images/Ui/memes/TV.png")
     self.phoneHUD:open()
     self.TvHUD:open()
+    sm.gui.chatMessage("USE /switchHUD to toggle custom HUD elements!")
 end
 
 function HudManager.client_onFixedUpdate(self, dt)

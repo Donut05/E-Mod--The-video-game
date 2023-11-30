@@ -165,14 +165,37 @@ end
 
 function Overworld.client_onCollision(self, objectA, objectB, position, pointVelocityA, pointVelocityB, normal)
 	--=METAL PIPE SOUND EFFECT=--
-	if type(objectA) == "Shape" then
-		if (sm.exists(objectA) and sm.exists(objectB)) and ((objectA.material == "Metal" or "Mechanical") or (objectB.material == "Metal" or "Mechanical"))
-		and (math.random(0, 250) == 0) and sm.cae_injected and (not self.pipeCooldown)
-		and objectA.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and objectA.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f")
-		and objectB.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and objectB.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
-			--local pitch = 3.0 - math.min(objectA.mass / 200, 2.5)
+	if sm.cae_injected and sm.exists(objectA) and sm.exists(objectB) and (type(objectA) == "Shape" or type(objectB) == "Shape") and not self.pipeCooldown then
+		local canPlay = false
+		local AisShape = type(objectA) == "Shape"
+		local successfulRoll = math.random(0, 250) == 0
+		if AisShape then
+			if successfulRoll and
+			(objectA.material == "Metal" or "Mechanical") and
+			objectA.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and
+			objectA.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
+				canPlay = true
+			end
+		else
+			if successfulRoll and
+			(objectB.material == "Metal" or "Mechanical") and
+			objectB.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and
+			objectB.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
+				canPlay = true
+			end
+		end
+
+		if type(objectA) == "Character" then -- BECAUSE IT'S A MECHANIC, HE HAS A MECHANICAL MATERIAL GET IT???
+			if objectA:isPlayer() then
+				canPlay = false
+			end
+		end
+
+		if canPlay then
+			--local pitch = 3.0 - math.min(objectA.mass / 200, 2.5)		THIS WILL NEVER GET ADDED BACK, BUT I WANT TO KEEP THE SCALING FORMULA, IT IS TOO GOOD
 			sm.effect.playEffect("Sounds - Metal_pipe", position)
 			self.pipeCooldown = true
+			canPlay = false
 		end
 	end
 
@@ -194,7 +217,7 @@ function Overworld.client_onCollision(self, objectA, objectB, position, pointVel
 		end
 	end
 
-		--=SLAM EFFECT=--
+	--=SLAM EFFECT=--
 	if type(objectA) == "Character" then
 		if sm.exists(objectA) and objectA:isPlayer() and math.abs(pointVelocityA.z) > 20 then
 			sm.effect.playEffect("Player - Slam", objectA.worldPosition)
