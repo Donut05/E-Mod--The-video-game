@@ -83,6 +83,7 @@ function SkyManager.client_onUpdate(self, dt)
     if self.time > self.moonStartTime or self.time <= self.starEndTime then
         if not self.effects.stars:isPlaying() then
             self.effects.stars:start()
+            self.starAngle = 0
         end
         self.effects.stars:setPosition(sm.localPlayer.getPlayer().character.worldPosition)
     elseif self.time > self.starEndTime then
@@ -92,10 +93,10 @@ function SkyManager.client_onUpdate(self, dt)
     end
     if self.time > self.moonStartTime or self.time <= self.moonEndTime then
         self.starAngle = self.starAngle + 0.0011
-        self.effects.stars:setRotation(sm.quat.angleAxis((self.starAngle * (math.pi/180)), sm.vec3.new(0, -1, 0)))
     elseif self.time > self.moonEndTime then
         self.starAngle = 0
     end
+    self.effects.stars:setRotation(sm.quat.angleAxis((self.starAngle * (math.pi/180)), sm.vec3.new(0, -1, 0)))
     -- #endregion
 end
 

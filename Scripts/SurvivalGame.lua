@@ -949,7 +949,7 @@ function SurvivalGame.sv_onChatCommand(self, params, player)
 		self:client_showMessage("FUEL CONSUMPTION IS " .. (sm.game.getEnableFuelConsumption() and "ON" or "OFF"))
 	elseif params[1] == "/partupgrade" then
 		sm.game.setEnableUpgrade(not sm.game.getEnableUpgrade())
-		self:client_showMessage("INTERACTIVE PARTS NOW " .. (sm.game.getEnableAmmoConsumption() and "CAN" or "CAN'T" .. " BE UPGRADED"))
+		self:client_showMessage("INTERACTIVE PARTS NOW " .. (sm.game.getEnableUpgrade() and "CAN" or "CAN'T") .. " BE UPGRADED")
 	-- End
 	else
 		params.player = player
