@@ -103,22 +103,6 @@
             "diameter" : 5
          },
          "uuid" : "fc7920ef-7ea3-4e2a-8b86-a18781505c87"
-      },
-      {
-         "box" : {
-            "x" : 1,
-            "y" : 1,
-            "z" : 1
-         },
-         "name" : "PATHING_TEST",
-         "physicsMaterial" : "Default",
-         "renderable" : "$CONTENT_DATA/Objects/Renderables/effect block.rend",
-         "rotationSet" : "Default",
-         "scripted" : {
-            "classname" : "PathfinderTest",
-            "filename" : "$CONTENT_DATA/Scripts/enemies/PathfinderTest.lua"
-         },
-         "uuid" : "ce5ad053-73f9-48d9-84eb-4586b2f69a41"
       }
    ]
 }
