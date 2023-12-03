@@ -21,17 +21,6 @@
             "file" : "$CONTENT_DATA/Scripts/Tools/MediGun.lua"
          },
          "uuid" : "8f3edcd1-2118-4759-855a-98cb7d06685d"
-      },
-      {
-         "name" : "tool_grab",
-         "previewRenderable" : "$GAME_DATA/Objects/Renderable/decor/obj_decor_mannequinhand.rend",
-         "previewRotation" : [ 1, 0, 0, 0, 0, -1, 0, 1, 0 ],
-         "script" : {
-            "class" : "Grab",
-            "data" : {},
-            "file" : "$CONTENT_DATA/Scripts/Tools/Grab.lua"
-         },
-         "uuid" : "b8e19e9d-8dc4-49e0-ad82-f056dc8c545f"
       }
    ]
 }
