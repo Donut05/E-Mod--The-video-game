@@ -1,9 +1,6 @@
 {
    "shapeSetList" : [
-      "$CONTENT_DATA/Objects/Database/ShapeSets/blocks.shapeset",
       "$CONTENT_DATA/Objects/Database/ShapeSets/enemies.shapeset",
-      "$CONTENT_DATA/Objects/Database/ShapeSets/VehicleLights.shapeset",
-      "$CONTENT_DATA/Objects/Database/ShapeSets/VehicleTwo.shapeset",
       "$CONTENT_DATA/Objects/Database/ShapeSets/override_vanilla/chests.shapeset",
       "$CONTENT_DATA/Objects/Database/ShapeSets/override_vanilla/interactivecontainers_shared.shapeset",
       "$GAME_DATA/Objects/Database/ShapeSets/blocks.json",

@@ -165,38 +165,56 @@ function Overworld.client_onUpdate(self, deltaTime)
 end
 
 function Overworld.client_onCollision(self, objectA, objectB, position, pointVelocityA, pointVelocityB, normal)
-	--=METAL PIPE SOUND EFFECT=--
-	if sm.cae_injected and sm.exists(objectA) and sm.exists(objectB) and (type(objectA) == "Shape" or type(objectB) == "Shape") and not self.pipeCooldown then
-		local canPlay = false
+	--=ALL STUFF THAT HAS TO DO WITH SHAPES=--
+	if sm.exists(objectA) and sm.exists(objectB) and (type(objectA) == "Shape" or type(objectB) == "Shape") then
 		local AisShape = type(objectA) == "Shape"
-		local successfulRoll = math.random(0, 250) == 0
+		--=MAKE PETER BLOCK BOUNCY=--
 		if AisShape then
-			if successfulRoll and
-			(objectA.material == "Metal" or objectA.material == "Mechanical") and
-			objectA.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and
-			objectA.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
-				canPlay = true
+			if objectA.uuid == sm.uuid.new("828bc42c-1f4a-4417-9d47-8fdcb67ff80e") then
+				print("petah")
+				local function reflectVector(vector, normal2)
+					local quat = sm.vec3.getRotation((vector * -1), normal2 * -1)
+					return quat * normal2
+				end
+				sm.physics.applyImpulse(objectB, reflectVector(pointVelocityB * objectB.mass, normal), true)
 			end
 		else
-			if successfulRoll and
-			(objectB.material == "Metal" or objectB.material == "Mechanical") and
-			objectB.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and
-			objectB.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
-				canPlay = true
+			if objectB.uuid == sm.uuid.new("828bc42c-1f4a-4417-9d47-8fdcb67ff80e") then
+				sm.physics.applyImpulse(objectA, (pointVelocityA * -1 * objectA.mass), true)
 			end
 		end
+		--=METAL PIPE SOUND EFFECT=--
+		if sm.cae_injected and not self.pipeCooldown then
+			local canPlay = false
+			local successfulRoll = math.random(0, 250) == 0
+			if AisShape then
+				if successfulRoll and
+				(objectA.material == "Metal" or objectA.material == "Mechanical") and
+				objectA.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and
+				objectA.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
+					canPlay = true
+				end
+			else
+				if successfulRoll and
+				(objectB.material == "Metal" or objectB.material == "Mechanical") and
+				objectB.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and
+				objectB.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
+					canPlay = true
+				end
+			end
 
-		if type(objectA) == "Character" then -- BECAUSE IT'S A MECHANIC, HE HAS A MECHANICAL MATERIAL GET IT???
-			if objectA:isPlayer() then
+			if type(objectA) == "Character" then -- BECAUSE IT'S A MECHANIC, HE HAS A MECHANICAL MATERIAL GET IT???
+				if objectA:isPlayer() then
+					canPlay = false
+				end
+			end
+
+			if canPlay then
+				--local pitch = 3.0 - math.min(objectA.mass / 200, 2.5)		THIS WILL NEVER GET ADDED BACK, BUT I WANT TO KEEP THE SCALING FORMULA, IT IS TOO GOOD
+				sm.effect.playEffect("Sounds - Metal_pipe", position)
+				self.pipeCooldown = true
 				canPlay = false
 			end
-		end
-
-		if canPlay then
-			--local pitch = 3.0 - math.min(objectA.mass / 200, 2.5)		THIS WILL NEVER GET ADDED BACK, BUT I WANT TO KEEP THE SCALING FORMULA, IT IS TOO GOOD
-			sm.effect.playEffect("Sounds - Metal_pipe", position)
-			self.pipeCooldown = true
-			canPlay = false
 		end
 	end
 
