@@ -168,19 +168,45 @@ function Overworld.client_onCollision(self, objectA, objectB, position, pointVel
 	--=ALL STUFF THAT HAS TO DO WITH SHAPES=--
 	if sm.exists(objectA) and sm.exists(objectB) and (type(objectA) == "Shape" or type(objectB) == "Shape") then
 		local AisShape = type(objectA) == "Shape"
+		local BisShape = type(objectB) == "Shape"
 		--=MAKE PETER BLOCK BOUNCY=--
+		local upScale = 200
+		local function reflectVector(vector, normal2)
+			local generalLimiter = 300
+			local result = vector - (normal2 * 2 * normal2:dot(vector))
+			if result:length() > generalLimiter then
+				print("limited")
+				result = result:normalize() * generalLimiter
+			end
+			return result
+		end
+		local function amplifyUp(vector, normal2, scale)
+			return vector + normal2 * scale
+		end
+		local function horizontalSpeedIsGreater(vector, normal2)
+			local horizontalProj = vector - normal2 * vector:dot(normal2)
+			local verticalProj = normal2 * vector:dot(normal2)
+
+			return horizontalProj:length() >= verticalProj:length()
+		end
 		if AisShape then
 			if objectA.uuid == sm.uuid.new("828bc42c-1f4a-4417-9d47-8fdcb67ff80e") then
-				print("petah")
-				local function reflectVector(vector, normal2)
-					local quat = sm.vec3.getRotation((vector * -1), normal2 * -1)
-					return quat * normal2
+				local vector = pointVelocityB * objectB.mass
+				if horizontalSpeedIsGreater(vector, normal) then
+					sm.physics.applyImpulse(objectB, reflectVector(vector, normal), true)
+				else
+					sm.physics.applyImpulse(objectB, amplifyUp(reflectVector(vector, normal), normal, upScale), true)
 				end
-				sm.physics.applyImpulse(objectB, reflectVector(pointVelocityB * objectB.mass, normal), true)
 			end
-		else
+		end
+		if BisShape then
 			if objectB.uuid == sm.uuid.new("828bc42c-1f4a-4417-9d47-8fdcb67ff80e") then
-				sm.physics.applyImpulse(objectA, (pointVelocityA * -1 * objectA.mass), true)
+				local vector = pointVelocityA * objectA.mass
+				if horizontalSpeedIsGreater(vector, normal) then
+					sm.physics.applyImpulse(objectA, reflectVector(vector, normal), true)
+				else
+					sm.physics.applyImpulse(objectA, amplifyUp(reflectVector(vector, normal), normal, upScale), true)
+				end
 			end
 		end
 		--=METAL PIPE SOUND EFFECT=--
