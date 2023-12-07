@@ -49,11 +49,19 @@ function Overworld.client_onCreate(self)
 	BaseWorld.client_onCreate(self)
 	print("Overworld.client_onCreate")
 
+	--SLAM EFFECT
 	g_slam_position = sm.vec3.zero()
 	g_slam_velocity = 0
+	--METAL PIPE SOUND EFFECT
 	self.pipeCooldown = false
 	self.pipeCooldownTick = sm.game.getCurrentTick()
+	--COLLISION DESTRUCTION
 	self.collisionDestructionSwitch = true
+	--DMCA STRIKE
+	self.isABase = false
+	self.capturedCreation = {}
+	self.captureTime = sm.game.getCurrentTick()
+	self.lockEffect = sm.effect.createEffect("00Fard - Creation_lock")
 
 	self.ambienceEffect = sm.effect.createEffect("OutdoorAmbience")
 	self.ambienceEffect:start()
@@ -91,6 +99,31 @@ function Overworld.server_onFixedUpdate(self)
 
 	g_unitManager:sv_onWorldFixedUpdate(self)
 end
+
+function Overworld.sv_switchBodyEncryption(data)
+	local body = data.body
+	body:setBuildable(data.state)
+	body:setConnectable(data.state)
+	body:setDestructable(data.state)
+	body:setErasable(data.state)
+	body:setLiftable(data.state)
+	body:setPaintable(data.state)
+	body:setUsable(data.state)
+end
+
+local function getCreationAabb(bodies)
+    local boxMin, boxMax
+    for _, body in ipairs(bodies) do
+        local a, b = body:getWorldAabb()
+        boxMin = (boxMin == nil) and a or boxMin:min(a)
+        boxMax = (boxMax == nil) and b or boxMax:max(b)
+    end
+
+    return boxMin, boxMax
+end
+
+local lockEffectPos = sm.vec3.zero()
+local loopBlock = false
 
 function Overworld.client_onFixedUpdate(self)
 	BaseWorld.client_onFixedUpdate(self)
@@ -130,6 +163,34 @@ function Overworld.client_onFixedUpdate(self)
 		self.pipeCooldown = false
 		self.pipeCooldownTick = sm.game.getCurrentTick()
 	end
+
+	if sm.game.getCurrentTick() >= self.captureTime then
+		self.lockEffect:stopImmediate()
+		if not loopBlock then
+			loopBlock = true
+			sm.particle.createParticle("DMCA_creation_unlock", lockEffectPos)
+		end
+		if #self.capturedCreation > 0 then
+			for _, body in pairs(self.capturedCreation) do
+				local data = {
+					body = body,
+					state = true
+				}
+				--self.network:sendToServer("sv_switchBodyEncryption", data)
+			end
+		end
+	else
+		loopBlock = false
+		if not self.lockEffect:isPlaying() then
+			self.lockEffect:start()
+		end
+		local boxMin, boxMax = sm.vec3.zero(), sm.vec3.zero()
+		if #self.capturedCreation > 0 then
+			boxMin, boxMax = getCreationAabb(self.capturedCreation)
+		end
+		lockEffectPos = sm.vec3.new(boxMax.x-boxMin.x, boxMax.y, boxMax.z-boxMin.z)
+		self.lockEffect:setPosition(lockEffectPos)
+	end
 end
 
 function Overworld.client_onUpdate(self, deltaTime)
@@ -164,6 +225,31 @@ function Overworld.client_onUpdate(self, deltaTime)
 	--print(sm.localPlayer.getPlayer().character.worldPosition)
 end
 
+--=ON COLLISION VARIABLES=--
+local PETER_BLOCK = sm.uuid.new("828bc42c-1f4a-4417-9d47-8fdcb67ff80e")
+local SMALL_WHEEL = sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d")
+local LARGE_WHEEL = sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f")
+
+--=PETER BLOCK FUNCTIONS=--
+local function reflectVector(vector, normal2)
+	local generalLimiter = 300
+	local result = vector - (normal2 * 2 * normal2:dot(vector))
+	if result:length() > generalLimiter then
+		print("limited")
+		result = result:normalize() * generalLimiter
+	end
+	return result
+end
+local function amplifyUp(vector, normal2, scale)
+	return vector + normal2 * scale
+end
+local function horizontalSpeedIsGreater(vector, normal2)
+	local horizontalProj = vector - normal2 * vector:dot(normal2)
+	local verticalProj = normal2 * vector:dot(normal2)
+
+	return horizontalProj:length() >= verticalProj:length()
+end
+
 function Overworld.client_onCollision(self, objectA, objectB, position, pointVelocityA, pointVelocityB, normal)
 	--=ALL STUFF THAT HAS TO DO WITH SHAPES=--
 	if sm.exists(objectA) and sm.exists(objectB) and (type(objectA) == "Shape" or type(objectB) == "Shape") then
@@ -171,26 +257,8 @@ function Overworld.client_onCollision(self, objectA, objectB, position, pointVel
 		local BisShape = type(objectB) == "Shape"
 		--=MAKE PETER BLOCK BOUNCY=--
 		local upScale = 200
-		local function reflectVector(vector, normal2)
-			local generalLimiter = 300
-			local result = vector - (normal2 * 2 * normal2:dot(vector))
-			if result:length() > generalLimiter then
-				print("limited")
-				result = result:normalize() * generalLimiter
-			end
-			return result
-		end
-		local function amplifyUp(vector, normal2, scale)
-			return vector + normal2 * scale
-		end
-		local function horizontalSpeedIsGreater(vector, normal2)
-			local horizontalProj = vector - normal2 * vector:dot(normal2)
-			local verticalProj = normal2 * vector:dot(normal2)
-
-			return horizontalProj:length() >= verticalProj:length()
-		end
 		if AisShape then
-			if objectA.uuid == sm.uuid.new("828bc42c-1f4a-4417-9d47-8fdcb67ff80e") then
+			if objectA.uuid == PETER_BLOCK then
 				local vector = pointVelocityB * objectB.mass
 				if horizontalSpeedIsGreater(vector, normal) then
 					sm.physics.applyImpulse(objectB, reflectVector(vector, normal), true)
@@ -200,7 +268,7 @@ function Overworld.client_onCollision(self, objectA, objectB, position, pointVel
 			end
 		end
 		if BisShape then
-			if objectB.uuid == sm.uuid.new("828bc42c-1f4a-4417-9d47-8fdcb67ff80e") then
+			if objectB.uuid == PETER_BLOCK then
 				local vector = pointVelocityA * objectA.mass
 				if horizontalSpeedIsGreater(vector, normal) then
 					sm.physics.applyImpulse(objectA, reflectVector(vector, normal), true)
@@ -216,15 +284,15 @@ function Overworld.client_onCollision(self, objectA, objectB, position, pointVel
 			if AisShape then
 				if successfulRoll and
 				(objectA.material == "Metal" or objectA.material == "Mechanical") and
-				objectA.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and
-				objectA.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
+				objectA.uuid ~= SMALL_WHEEL and
+				objectA.uuid ~= LARGE_WHEEL then
 					canPlay = true
 				end
 			else
 				if successfulRoll and
 				(objectB.material == "Metal" or objectB.material == "Mechanical") and
-				objectB.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and
-				objectB.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
+				objectB.uuid ~= SMALL_WHEEL and
+				objectB.uuid ~= LARGE_WHEEL then
 					canPlay = true
 				end
 			end
@@ -731,6 +799,8 @@ function Overworld.client_onCellUnloaded(self, x, y)
 	--print( "Overworld - client cell ("..x..","..y..") unloaded" )
 end
 
+local DMCA_strike = sm.uuid.new("6bb9aa22-8b36-4fed-a740-028e5360a617")
+
 function Overworld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, attacker, damage, userData, hitNormal, target, projectileUuid)
 	BaseWorld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, attacker, damage, userData, hitNormal, target, projectileUuid)
 
@@ -747,6 +817,54 @@ function Overworld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, at
 		self.prevPotatoNode = node
 	else
 		self.prevPotatoNode = nil
+	end
+	--=DMCA GUN ENCRYPTION=--
+	if projectileUuid == DMCA_strike then
+		if type(target) == "Lift" then
+			target:destroy()
+		elseif type(target) == "Shape" then
+			--If we already captured a creation, we free it
+			if #self.capturedCreation > 0 then
+				for _, body in pairs(self.capturedCreation) do
+					local data = {
+						body = body,
+						state = true
+					}
+					--self.network:sendToServer("sv_switchBodyEncryption", data)
+				end
+			end
+			--Start gathering info on the creation
+			--The creation
+			self.capturedCreation = {}
+			local shapes = target.body:getCreationShapes()
+			for i, shape in pairs(shapes) do
+				self.capturedCreation[i] = shape.body
+			end
+			--Time the creation will be capped for
+			local boxMin, boxMax = getCreationAabb(self.capturedCreation)
+			local baseCaptureTime = sm.game.getCurrentTick() + (boxMax - boxMin):length() * 40
+			--Determine if creation is a building or not (relies on sm being laggy and not allowing dynamic bases lol, I hope devs break this code *wink-wink*)
+			local staticBodies, dynamicBodies = 0, 0
+			for _, body in pairs(self.capturedCreation) do
+				if body:isStatic() then
+					staticBodies = staticBodies + 1
+				else
+					dynamicBodies = dynamicBodies + 1
+				end
+				--Might as well encrypt the creation
+				local data = {
+					body = body,
+					state = false
+				}
+				--self.network:sendToServer("sv_switchBodyEncryption", data)
+			end
+			if staticBodies > dynamicBodies then
+				self.captureTime = baseCaptureTime * 2
+				self.isABase = true
+			else
+				self.isABase = false
+			end
+		end
 	end
 end
 

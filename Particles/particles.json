@@ -34,6 +34,8 @@
       "particles/enemies/bees/bee_swarm.json",
       "particles/enemies/totebotGreen/fake_head.json",
       "particles/enemies/drillship/drillship_dig_out.json",
-      "particles/projectiles/ballspider_laser_burst.json"
+      "particles/projectiles/ballspider_laser_burst.json",
+      "particles/tools/dmcagun/DMCA_creation_locked.json",
+      "particles/tools/dmcagun/DMCA_creation_unlock.json"
    ]
 }
