@@ -58,7 +58,10 @@ function Overworld.client_onCreate(self)
 	--COLLISION DESTRUCTION
 	self.collisionDestructionSwitch = true
 	--DMCA STRIKE
+	self.captured = false
 	self.isABase = false
+	self.hostShape = nil
+	self.lockOffset = sm.vec3.zero()
 	self.capturedCreation = {}
 	self.captureTime = sm.game.getCurrentTick()
 	self.lockEffect = sm.effect.createEffect("00Fard - Creation_lock")
@@ -98,17 +101,21 @@ function Overworld.server_onFixedUpdate(self)
 	BaseWorld.server_onFixedUpdate(self)
 
 	g_unitManager:sv_onWorldFixedUpdate(self)
-end
 
-function Overworld.sv_switchBodyEncryption(data)
-	local body = data.body
-	body:setBuildable(data.state)
-	body:setConnectable(data.state)
-	body:setDestructable(data.state)
-	body:setErasable(data.state)
-	body:setLiftable(data.state)
-	body:setPaintable(data.state)
-	body:setUsable(data.state)
+	if sm.game.getCurrentTick() >= self.captureTime then
+		self.captured = false
+		for _, body in ipairs(self.capturedCreation) do
+			if sm.exists(body) then
+				body:setBuildable(true)
+				body:setConnectable(true)
+				body:setDestructable(true)
+				body:setErasable(true)
+				body:setLiftable(true)
+				body:setPaintable(true)
+				body:setUsable(true)
+			end
+		end
+	end
 end
 
 local function getCreationAabb(bodies)
@@ -122,8 +129,28 @@ local function getCreationAabb(bodies)
     return boxMin, boxMax
 end
 
-local lockEffectPos = sm.vec3.zero()
-local loopBlock = false
+local playOutro = false
+
+local function calculateCirclePositions(playerPos, circlePos, radius)
+	local circle = {}
+	for angle = 0, 359, 1 do
+		local radians = math.rad(angle)
+		local x = circlePos.x + radius * math.cos(radians)
+		local y = circlePos.y
+		local z = circlePos.z + radius * math.sin(radians)
+
+		local position = sm.vec3.new(x, y, z)
+		local lookDirection = (playerPos - position):normalize()
+
+		-- The resulting position is adjusted so that it's always pointing towards playerPos
+		table.insert(circle, { position = position, lookDirection = lookDirection })
+	end
+
+	return circle
+end
+
+local testTick = sm.game.getCurrentTick()
+local complete = 361
 
 function Overworld.client_onFixedUpdate(self)
 	BaseWorld.client_onFixedUpdate(self)
@@ -164,32 +191,35 @@ function Overworld.client_onFixedUpdate(self)
 		self.pipeCooldownTick = sm.game.getCurrentTick()
 	end
 
-	if sm.game.getCurrentTick() >= self.captureTime then
-		self.lockEffect:stopImmediate()
-		if not loopBlock then
-			loopBlock = true
-			sm.particle.createParticle("DMCA_creation_unlock", lockEffectPos)
-		end
-		if #self.capturedCreation > 0 then
-			for _, body in pairs(self.capturedCreation) do
-				local data = {
-					body = body,
-					state = true
-				}
-				--self.network:sendToServer("sv_switchBodyEncryption", data)
+	local circle = calculateCirclePositions(sm.localPlayer.getPlayer().character.worldPosition, sm.vec3.new(0, -10, -5), 2)
+
+	if sm.game.getCurrentTick() >= testTick + 15 then
+		testTick = sm.game.getCurrentTick()
+		for i, pos in ipairs(circle) do
+			if i < complete then
+				sm.particle.createParticle("construct_welding", pos.position)
 			end
 		end
-	else
-		loopBlock = false
+		complete = complete - 10
+		if complete <= 0 then
+			complete = 361
+		end
+	end
+
+	if self.captured then
+		playOutro = true
 		if not self.lockEffect:isPlaying() then
 			self.lockEffect:start()
 		end
-		local boxMin, boxMax = sm.vec3.zero(), sm.vec3.zero()
-		if #self.capturedCreation > 0 then
-			boxMin, boxMax = getCreationAabb(self.capturedCreation)
+		self.lockEffect:setPosition(self.hostShape.worldPosition + self.lockOffset)
+	else
+		if self.lockEffect:isPlaying() then
+			self.lockEffect:stopImmediate()
 		end
-		lockEffectPos = sm.vec3.new(boxMax.x-boxMin.x, boxMax.y, boxMax.z-boxMin.z)
-		self.lockEffect:setPosition(lockEffectPos)
+		if playOutro then
+			playOutro = false
+			sm.particle.createParticle("DMCA_creation_unlock", self.hostShape.worldPosition + self.lockOffset)
+		end
 	end
 end
 
@@ -256,14 +286,13 @@ function Overworld.client_onCollision(self, objectA, objectB, position, pointVel
 		local AisShape = type(objectA) == "Shape"
 		local BisShape = type(objectB) == "Shape"
 		--=MAKE PETER BLOCK BOUNCY=--
-		local upScale = 200
 		if AisShape then
 			if objectA.uuid == PETER_BLOCK then
 				local vector = pointVelocityB * objectB.mass
 				if horizontalSpeedIsGreater(vector, normal) then
 					sm.physics.applyImpulse(objectB, reflectVector(vector, normal), true)
 				else
-					sm.physics.applyImpulse(objectB, amplifyUp(reflectVector(vector, normal), normal, upScale), true)
+					sm.physics.applyImpulse(objectB, amplifyUp(reflectVector(vector, normal), normal, vector:length() / 2), true)
 				end
 			end
 		end
@@ -273,14 +302,14 @@ function Overworld.client_onCollision(self, objectA, objectB, position, pointVel
 				if horizontalSpeedIsGreater(vector, normal) then
 					sm.physics.applyImpulse(objectA, reflectVector(vector, normal), true)
 				else
-					sm.physics.applyImpulse(objectA, amplifyUp(reflectVector(vector, normal), normal, upScale), true)
+					sm.physics.applyImpulse(objectA, amplifyUp(reflectVector(vector, normal), normal, vector:length() / 2), true)
 				end
 			end
 		end
 		--=METAL PIPE SOUND EFFECT=--
 		if sm.cae_injected and not self.pipeCooldown then
 			local canPlay = false
-			local successfulRoll = math.random(0, 250) == 0
+			local successfulRoll = false--math.random(0, 250) == 0
 			if AisShape then
 				if successfulRoll and
 				(objectA.material == "Metal" or objectA.material == "Mechanical") and
@@ -823,21 +852,26 @@ function Overworld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, at
 		if type(target) == "Lift" then
 			target:destroy()
 		elseif type(target) == "Shape" then
-			--If we already captured a creation, we free it
+			--If we already captured a creation, free it
 			if #self.capturedCreation > 0 then
-				for _, body in pairs(self.capturedCreation) do
-					local data = {
-						body = body,
-						state = true
-					}
-					--self.network:sendToServer("sv_switchBodyEncryption", data)
+				self.captured = false
+				for _, body in ipairs(self.capturedCreation) do
+					if sm.exists(body) then
+						body:setBuildable(true)
+						body:setConnectable(true)
+						body:setDestructable(true)
+						body:setErasable(true)
+						body:setLiftable(true)
+						body:setPaintable(true)
+						body:setUsable(true)
+					end
 				end
 			end
 			--Start gathering info on the creation
 			--The creation
 			self.capturedCreation = {}
 			local shapes = target.body:getCreationShapes()
-			for i, shape in pairs(shapes) do
+			for i, shape in ipairs(shapes) do
 				self.capturedCreation[i] = shape.body
 			end
 			--Time the creation will be capped for
@@ -845,24 +879,54 @@ function Overworld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, at
 			local baseCaptureTime = sm.game.getCurrentTick() + (boxMax - boxMin):length() * 40
 			--Determine if creation is a building or not (relies on sm being laggy and not allowing dynamic bases lol, I hope devs break this code *wink-wink*)
 			local staticBodies, dynamicBodies = 0, 0
-			for _, body in pairs(self.capturedCreation) do
+			for _, body in ipairs(self.capturedCreation) do
 				if body:isStatic() then
 					staticBodies = staticBodies + 1
 				else
 					dynamicBodies = dynamicBodies + 1
 				end
-				--Might as well encrypt the creation
-				local data = {
-					body = body,
-					state = false
-				}
-				--self.network:sendToServer("sv_switchBodyEncryption", data)
 			end
 			if staticBodies > dynamicBodies then
-				self.captureTime = baseCaptureTime * 2
+				self.captureTime = baseCaptureTime * 1.001
 				self.isABase = true
 			else
+				self.captureTime = baseCaptureTime + 200
 				self.isABase = false
+			end
+			print(self.captureTime)
+			--Calculate where the lock will be
+			local visualCenter = sm.vec3.zero()
+			local counter = 0
+			for _, body in ipairs(self.capturedCreation) do
+				for _, shape in ipairs(body:getShapes()) do
+					counter = counter + 1
+					visualCenter = visualCenter + shape.worldPosition
+				end
+			end
+			visualCenter = visualCenter / counter
+			local worldLockEffectPos = sm.vec3.new(visualCenter.x, visualCenter.y, boxMax.z + 1)
+			local bodyCount = math.floor(#self.capturedCreation / 2)
+			if bodyCount <= 1 then
+				bodyCount = 1
+			end
+			local shapeCount = math.floor(#(self.capturedCreation[math.floor(bodyCount)]:getShapes()) / 2)
+			if shapeCount <= 1 then
+				shapeCount = 1
+			end
+			self.hostShape = self.capturedCreation[bodyCount]:getShapes()[shapeCount] --We just take a random shape and attach the effect to it
+			self.lockOffset = worldLockEffectPos - self.hostShape.worldPosition --Offset is always the same
+			--Encrypt
+			self.captured = true
+			for _, body in ipairs(self.capturedCreation) do
+				if sm.exists(body) then
+					body:setBuildable(false)
+					body:setConnectable(false)
+					body:setDestructable(false)
+					body:setErasable(false)
+					body:setLiftable(false)
+					body:setPaintable(false)
+					body:setUsable(false)
+				end
 			end
 		end
 	end
