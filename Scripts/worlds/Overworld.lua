@@ -65,6 +65,7 @@ function Overworld.client_onCreate(self)
 	self.capturedCreation = {}
 	self.captureTime = sm.game.getCurrentTick()
 	self.lockEffect = sm.effect.createEffect("00Fard - Creation_lock")
+	self.timerGUI = sm.gui.createWorldIconGui(44, 44, "$GAME_DATA/Gui/Layouts/Hud/Hud_BeaconIcon.layout", false)
 
 	self.ambienceEffect = sm.effect.createEffect("OutdoorAmbience")
 	self.ambienceEffect:start()
@@ -130,7 +131,7 @@ local function getCreationAabb(bodies)
 end
 
 local playOutro = false
-
+--[[ FUCK THE CIRCLE
 local function calculateCirclePositions(playerPos, circlePos, radius)
 	local circle = {}
 	for angle = 0, 359, 1 do
@@ -151,7 +152,7 @@ end
 
 local testTick = sm.game.getCurrentTick()
 local complete = 361
-
+]]--
 function Overworld.client_onFixedUpdate(self)
 	BaseWorld.client_onFixedUpdate(self)
 
@@ -190,7 +191,7 @@ function Overworld.client_onFixedUpdate(self)
 		self.pipeCooldown = false
 		self.pipeCooldownTick = sm.game.getCurrentTick()
 	end
-
+--[[ FUCK IT FUCK IT FUCK IT
 	local circle = calculateCirclePositions(sm.localPlayer.getPlayer().character.worldPosition, sm.vec3.new(0, -10, -5), 2)
 
 	if sm.game.getCurrentTick() >= testTick + 15 then
@@ -205,20 +206,35 @@ function Overworld.client_onFixedUpdate(self)
 			complete = 361
 		end
 	end
-
+]]
 	if self.captured then
+		--Handle lock effect
 		playOutro = true
 		if not self.lockEffect:isPlaying() then
 			self.lockEffect:start()
 		end
 		self.lockEffect:setPosition(self.hostShape.worldPosition + self.lockOffset)
+		--Handle timer GUI
+		if not self.timerGUI:isActive() then
+			self.timerGUI:setColor("Icon", sm.color.new("00bcffff"))
+			self.timerGUI:setRequireLineOfSight(false)
+			self.timerGUI:open()
+		end
+		self.timerGUI:setWorldPosition(self.hostShape.worldPosition + self.lockOffset)
+		local frameIndex = math.floor((sm.game.getCurrentTick() % self.captureTime) / (self.captureTime / 360)) + 1
+		self.timerGUI:setItemIcon("Icon", "Rotations", "remove", tostring(1))
 	else
+		--Handle lock effect
 		if self.lockEffect:isPlaying() then
 			self.lockEffect:stopImmediate()
 		end
 		if playOutro then
 			playOutro = false
 			sm.particle.createParticle("DMCA_creation_unlock", self.hostShape.worldPosition + self.lockOffset)
+		end
+		--Handle timer GUI
+		if self.timerGUI:isActive() then
+			self.timerGUI:close()
 		end
 	end
 end

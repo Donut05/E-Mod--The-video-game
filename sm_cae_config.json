@@ -30,10 +30,14 @@
     },
     "Rain": {
       "path": "$CONTENT_DATA/Effects/Audio/sfx/env/rain.mp3",
-      "is3D": true
+      "is3D": false
     },
     "RainInside": {
       "path": "$CONTENT_DATA/Effects/Audio/sfx/env/rain_inside.mp3",
+      "is3D": true
+    },
+    "SovietMarch": {
+      "path": "$CONTENT_DATA/Effects/Audio/music/soviet_march.mp3",
       "is3D": true
     }
   }
