@@ -5,50 +5,11 @@
             <Index name="Empty">
                 <Frame point="0 0"/>
             </Index>
-            <Index name="056e5ff1-f030-40df-946a-b830bf494c92">
+            <Index name="ec58327b-7e28-491f-a5f8-16b1eacbd844">
                 <Frame point="0 0"/>
             </Index>
-            <Index name="da4833fd-f981-4e08-a9f7-48e630a7c146">
-                <Frame point="96 0"/>
-            </Index>
-            <Index name="ea10d1af-b97a-46fb-8895-dfd1becb53bb">
-                <Frame point="192 0"/>
-            </Index>
-            <Index name="096d4daf-639e-4947-a1a6-1890eaa94464">
-                <Frame point="288 0"/>
-            </Index>
-            <Index name="ad35f7e6-af8f-40fa-aef4-77d827ac8a8a">
-                <Frame point="384 0"/>
-            </Index>
-            <Index name="f08d772f-9851-400f-a014-d847900458a7">
-                <Frame point="0 96"/>
-            </Index>
-            <Index name="d0afb527-e786-4a22-a907-6da7e7cba8cb">
-                <Frame point="96 96"/>
-            </Index>
-            <Index name="90dbaebf-8ea1-4a5a-8f6f-86ddde77c6c8">
-                <Frame point="192 96"/>
-            </Index>
-            <Index name="fcfae5e2-1df9-47d8-bb9a-30bec9b5b1f5">
-                <Frame point="288 96"/>
-            </Index>
-            <Index name="d4e6c84c-a493-44b1-81aa-4f4741ea3ed8">
-                <Frame point="384 96"/>
-            </Index>
-            <Index name="c6e64537-cbfe-4039-ad0b-73ec22d3727c">
-                <Frame point="0 192"/>
-            </Index>
-            <Index name="8df36720-5446-4c9a-96ad-98247a0a67a3">
-                <Frame point="96 192"/>
-            </Index>
-            <Index name="fc7920ef-7ea3-4e2a-8b86-a18781505c87">
-                <Frame point="192 192"/>
-            </Index>
-            <Index name="ec58327b-7e28-491f-a5f8-16b1eacbd844">
-                <Frame point="288 192"/>
-            </Index>
             <Index name="8f3edcd1-2118-4759-855a-98cb7d06685d">
-                <Frame point="384 192"/>
+                <Frame point="96 0"/>
             </Index>
         </Group>
     </Resource>
