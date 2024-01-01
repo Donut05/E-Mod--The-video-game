@@ -8,39 +8,39 @@
                   "qualityLevel" : 1
                },
                {
-                  "chance" : 1.0,
+                  "chance" : 0.50,
                   "qualityLevel" : 2
                },
                {
-                  "chance" : 1.0,
+                  "chance" : 0.30,
                   "qualityLevel" : 3
                },
                {
-                  "chance" : 0.70,
+                  "chance" : 0.10,
                   "qualityLevel" : 4
                },
                {
-                  "chance" : 0.70,
+                  "chance" : 0.050,
                   "qualityLevel" : 5
                },
                {
-                  "chance" : 0.60,
+                  "chance" : 0.0250,
                   "qualityLevel" : 6
                },
                {
-                  "chance" : 0.50,
+                  "chance" : 0.010,
                   "qualityLevel" : 7
                },
                {
-                  "chance" : 0.30,
+                  "chance" : 0.010,
                   "qualityLevel" : 8
                },
                {
-                  "chance" : 0.250,
+                  "chance" : 0.0050,
                   "qualityLevel" : 9
                },
                {
-                  "chance" : 0.10,
+                  "chance" : 0.0010,
                   "qualityLevel" : 10
                }
             ]

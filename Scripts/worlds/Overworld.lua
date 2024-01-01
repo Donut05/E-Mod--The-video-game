@@ -5,11 +5,30 @@ dofile("$CONTENT_DATA/Scripts/SurvivalGame.lua")
 dofile("$CONTENT_DATA/Scripts/managers/WaterManager.lua")
 dofile("$SURVIVAL_DATA/Scripts/game/managers/PackingStationManager.lua")
 
+local function getCurrentMonth()
+	local currentTime = os.time()
+	local secondsInMonth = 30.44 * 24 * 60 * 60
+	local elapsedMonths = math.floor(currentTime / secondsInMonth)
+	local currentMonth = (elapsedMonths % 12) + 1
+	return currentMonth
+end
+
 ---@class Overworld : WorldClass
 Overworld = class(BaseWorld)
 
 Overworld.terrainScript = "$CONTENT_DATA/Scripts/terrain/terrain_overworld.lua"
-Overworld.groundMaterialSet = "$GAME_DATA/Terrain/Materials/gnd_standard_materialset.json"
+local month = getCurrentMonth()
+print("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW")
+if month > 10 or month < 3 then
+	Overworld.groundMaterialSet = "$CONTENT_DATA/Terrain/Materials/gnd_jolly_materialset.json" -- Christmas/New year
+	print("Merry Christmas!")
+elseif month == 10 then
+	Overworld.groundMaterialSet = "$CONTENT_DATA/Terrain/Materials/gnd_spoopy_materialset.json" -- Halloween
+	print("BOO! Did I scare ya?")
+else
+	Overworld.groundMaterialSet = "$CONTENT_DATA/Terrain/Materials/gnd_goofy_materialset.json" -- "Normal"
+	print("Welcome. To the E mod. Mk 4 shitposting system. For use in sussy environment conditions.")
+end
 Overworld.enableSurface = true
 Overworld.enableAssets = true
 Overworld.enableClutter = true

@@ -11,8 +11,17 @@
 
 dofile("$SURVIVAL_DATA/Scripts/terrain/terrain_util2.lua")
 
+local function getCurrentMonth()
+	local currentTime = os.time()
+	local secondsInMonth = 30.44 * 24 * 60 * 60
+	local elapsedMonths = math.floor(currentTime / secondsInMonth)
+	local currentMonth = (elapsedMonths % 12) + 1
+	return currentMonth
+end
+
 local FAR_LANDS_START = 6460
 local WATER_HEIGHT_START = -15
+local month = getCurrentMonth()
 
 function Init()
 	print("Init Terrain v3")
@@ -458,34 +467,97 @@ local function HarvestableNoise(x, y)
 end
 
 -- hvs_uuid, color_table, color_table_sz
-local hvs_tree_table =
-{
-	{ sm.uuid.new("c4ea19d3-2469-4059-9f13-3ddb4f7e0b79"), { 0xdb9819ff, 0xfb843cff, 0xdabd5cff, 0xd5bc36ff, 0xd0db18ff, 0xffe224ff, 0xe8b743ff }, 7 }, --harvestable_tree_birch01
-	{ sm.uuid.new("711c3e72-7ba1-4424-ae70-c13d23afe818"), { 0xdb9819ff, 0xfb843cff, 0xdabd5cff, 0xd5bc36ff, 0xd0db18ff, 0xffe224ff, 0xe8b743ff }, 7 }, --harvestable_tree_birch02
-	{ sm.uuid.new("a7aa52af-4276-4b2d-af44-36bc41864e04"), { 0xdb9819ff, 0xfb843cff, 0xdabd5cff, 0xd5bc36ff, 0xd0db18ff, 0xffe224ff, 0xe8b743ff }, 7 }, --harvestable_tree_birch03
-	{ sm.uuid.new("91ec04ea-9bf7-4a9d-bb7f-3d0125ff78c7"), { 0x54c51eff, 0x54c51eff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x065437ff, 0x541805ff, 0x7c5e2080 }, 15 }, --harvestable_tree_leafy01
-	{ sm.uuid.new("4d482999-98b7-4023-a149-d47be709b8f7"), { 0x54c51eff, 0x54c51eff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x065437ff, 0x541805ff, 0x7c5e2080 }, 15 }, --harvestable_tree_leafy02
-	{ sm.uuid.new("3db0a60d-8668-4c8a-8dd2-f5ceb294977e"), { 0x54c51eff, 0x54c51eff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x065437ff, 0x541805ff, 0x7c5e2080 }, 15 }, --harvestable_tree_leafy03
-	{ sm.uuid.new("8411caba-63db-4b93-ad67-7ae8e350d360"), { 0x005705ff, 0x005705ff, 0x146137ff, 0x7f882fff, 0x4e7108ff, 0x1a6822ff, 0x1a6822ff, 0x1a6822ff, 0x005b1fff, 0x8f4d00ff, 0x005b2aff, 0x1a6822ff }, 12 }, --harvestable_tree_pine01
-	{ sm.uuid.new("1cb503a4-9306-412f-9e13-371bc634af60"), { 0x005705ff, 0x005705ff, 0x146137ff, 0x7f882fff, 0x4e7108ff, 0x1a6822ff, 0x1a6822ff, 0x1a6822ff, 0x005b1fff, 0x8f4d00ff, 0x005b2aff, 0x1a6822ff }, 12 }, --harvestable_tree_pine02
-	{ sm.uuid.new("fa864e51-67db-4ac9-823b-cfbdf523375d"), { 0x005705ff, 0x005705ff, 0x146137ff, 0x7f882fff, 0x4e7108ff, 0x1a6822ff, 0x1a6822ff, 0x1a6822ff, 0x005b1fff, 0x8f4d00ff, 0x005b2aff, 0x1a6822ff }, 12 }, --harvestable_tree_pine03
-	{ sm.uuid.new("73f968f0-d3a3-4334-86a8-a90203a3a56d"), { 0x016401ff, 0x016401ff, 0x016401ff, 0x00763eff, 0x147900ff, 0x368f00ff, 0x368f00ff, 0x368f00ff, 0x4e7600ff, 0x646200ff, 0x00640aff }, 11 }, --harvestable_tree_spruce01
-	{ sm.uuid.new("86324c5b-e97a-41f6-aa2c-7c6462f1f2e7"), { 0x016401ff, 0x016401ff, 0x016401ff, 0x00763eff, 0x147900ff, 0x368f00ff, 0x368f00ff, 0x368f00ff, 0x4e7600ff, 0x646200ff, 0x00640aff }, 11 }, --harvestable_tree_spruce02
-	{ sm.uuid.new("27aa53ea-1e09-4251-a284-437f93850409"), { 0x016401ff, 0x016401ff, 0x016401ff, 0x00763eff, 0x147900ff, 0x368f00ff, 0x368f00ff, 0x368f00ff, 0x4e7600ff, 0x646200ff, 0x00640aff }, 11 } --harvestable_tree_spruce03
-}
 
-local hvs_rock_table =
-{
-	{ sm.uuid.new("0d3362ae-4cb3-42ae-8a08-d3f9ed79e274"), { 0x8c8c8cff }, 1 }, --hvs_stone_small01
-	{ sm.uuid.new("f6b8e9b8-5592-46b6-acf9-86123bf630a9"), { 0x8c8c8cff }, 1 }, --hvs_stone_small02
-	{ sm.uuid.new("60ad4b7f-a7ef-4944-8a87-0844e6305513"), { 0x8c8c8cff }, 1 }, --hvs_stone_small03
-	{ sm.uuid.new("ab5b947e-a223-4842-83dd-aa6b23ac2b86"), { 0x8c8c8cff }, 1 }, --hvs_stone_medium01
-	{ sm.uuid.new("5da6c862-8a5c-4b56-90d3-5f038d569c4a"), { 0x8c8c8cff }, 1 }, --hvs_stone_medium02
-	{ sm.uuid.new("90e0ef6a-8409-4459-8926-e5351d7da611"), { 0x8c8c8cff }, 1 }, --hvs_stone_medium03
-	{ sm.uuid.new("ab362045-0444-4749-9f24-f5e850162857"), { 0x8c8c8cff }, 1 }, --hvs_stone_large01
-	{ sm.uuid.new("63fb92b3-e1dc-4b5c-9ed3-7b572bc01ca4"), { 0x8c8c8cff }, 1 }, --hvs_stone_large02
-	{ sm.uuid.new("67111401-1ee1-4bfb-8780-fa878352f90d"), { 0x8c8c8cff }, 1 }  --hvs_stone_large03
-}
+local hvs_tree_table, hvs_rock_table = {}, {}
+
+if month > 10 or month < 3 then -- Winter
+	hvs_tree_table =
+	{
+		{ sm.uuid.new("c4ea19d3-2469-4059-9f13-3ddb4f7e0b79"), { 0xffffffff }, 1 }, --harvestable_tree_birch01
+		{ sm.uuid.new("711c3e72-7ba1-4424-ae70-c13d23afe818"), { 0xffffffff }, 1 }, --harvestable_tree_birch02
+		{ sm.uuid.new("a7aa52af-4276-4b2d-af44-36bc41864e04"), { 0xffffffff }, 1 }, --harvestable_tree_birch03
+		{ sm.uuid.new("91ec04ea-9bf7-4a9d-bb7f-3d0125ff78c7"), { 0xffffffff }, 1 }, --harvestable_tree_leafy01
+		{ sm.uuid.new("4d482999-98b7-4023-a149-d47be709b8f7"), { 0xffffffff }, 1 }, --harvestable_tree_leafy02
+		{ sm.uuid.new("3db0a60d-8668-4c8a-8dd2-f5ceb294977e"), { 0xffffffff }, 1 }, --harvestable_tree_leafy03
+		{ sm.uuid.new("8411caba-63db-4b93-ad67-7ae8e350d360"), { 0xffffffff }, 1 }, --harvestable_tree_pine01
+		{ sm.uuid.new("1cb503a4-9306-412f-9e13-371bc634af60"), { 0xffffffff }, 1 }, --harvestable_tree_pine02
+		{ sm.uuid.new("fa864e51-67db-4ac9-823b-cfbdf523375d"), { 0xffffffff }, 1 }, --harvestable_tree_pine03
+		{ sm.uuid.new("73f968f0-d3a3-4334-86a8-a90203a3a56d"), { 0xffffffff }, 1 }, --harvestable_tree_spruce01
+		{ sm.uuid.new("86324c5b-e97a-41f6-aa2c-7c6462f1f2e7"), { 0xffffffff }, 1 }, --harvestable_tree_spruce02
+		{ sm.uuid.new("27aa53ea-1e09-4251-a284-437f93850409"), { 0xffffffff }, 1 } --harvestable_tree_spruce03
+	}
+
+	hvs_rock_table =
+	{
+		{ sm.uuid.new("0d3362ae-4cb3-42ae-8a08-d3f9ed79e274"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_small01
+		{ sm.uuid.new("f6b8e9b8-5592-46b6-acf9-86123bf630a9"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_small02
+		{ sm.uuid.new("60ad4b7f-a7ef-4944-8a87-0844e6305513"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_small03
+		{ sm.uuid.new("ab5b947e-a223-4842-83dd-aa6b23ac2b86"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_medium01
+		{ sm.uuid.new("5da6c862-8a5c-4b56-90d3-5f038d569c4a"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_medium02
+		{ sm.uuid.new("90e0ef6a-8409-4459-8926-e5351d7da611"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_medium03
+		{ sm.uuid.new("ab362045-0444-4749-9f24-f5e850162857"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_large01
+		{ sm.uuid.new("63fb92b3-e1dc-4b5c-9ed3-7b572bc01ca4"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_large02
+		{ sm.uuid.new("67111401-1ee1-4bfb-8780-fa878352f90d"), { 0x8c8c8cff, 0x91e9ffff }, 2 }  --hvs_stone_large03
+	}
+elseif month == 10 then -- Hallowneen
+	hvs_tree_table =
+	{
+		{ sm.uuid.new("c4ea19d3-2469-4059-9f13-3ddb4f7e0b79"), { 0xdb9819ff, 0xfb843cff, 0xdabd5cff, 0xd5bc36ff, 0xd0db18ff, 0xffe224ff, 0xe8b743ff }, 7 }, --harvestable_tree_birch01
+		{ sm.uuid.new("711c3e72-7ba1-4424-ae70-c13d23afe818"), { 0xdb9819ff, 0xfb843cff, 0xdabd5cff, 0xd5bc36ff, 0xd0db18ff, 0xffe224ff, 0xe8b743ff }, 7 }, --harvestable_tree_birch02
+		{ sm.uuid.new("a7aa52af-4276-4b2d-af44-36bc41864e04"), { 0xdb9819ff, 0xfb843cff, 0xdabd5cff, 0xd5bc36ff, 0xd0db18ff, 0xffe224ff, 0xe8b743ff }, 7 }, --harvestable_tree_birch03
+		{ sm.uuid.new("91ec04ea-9bf7-4a9d-bb7f-3d0125ff78c7"), { 0x54c51eff, 0x54c51eff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x065437ff, 0x541805ff, 0x7c5e2080 }, 15 }, --harvestable_tree_leafy01
+		{ sm.uuid.new("4d482999-98b7-4023-a149-d47be709b8f7"), { 0x54c51eff, 0x54c51eff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x065437ff, 0x541805ff, 0x7c5e2080 }, 15 }, --harvestable_tree_leafy02
+		{ sm.uuid.new("3db0a60d-8668-4c8a-8dd2-f5ceb294977e"), { 0x54c51eff, 0x54c51eff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x065437ff, 0x541805ff, 0x7c5e2080 }, 15 }, --harvestable_tree_leafy03
+		{ sm.uuid.new("8411caba-63db-4b93-ad67-7ae8e350d360"), { 0x005705ff, 0x005705ff, 0x146137ff, 0x7f882fff, 0x4e7108ff, 0x1a6822ff, 0x1a6822ff, 0x1a6822ff, 0x005b1fff, 0x8f4d00ff, 0x005b2aff, 0x1a6822ff }, 12 }, --harvestable_tree_pine01
+		{ sm.uuid.new("1cb503a4-9306-412f-9e13-371bc634af60"), { 0x005705ff, 0x005705ff, 0x146137ff, 0x7f882fff, 0x4e7108ff, 0x1a6822ff, 0x1a6822ff, 0x1a6822ff, 0x005b1fff, 0x8f4d00ff, 0x005b2aff, 0x1a6822ff }, 12 }, --harvestable_tree_pine02
+		{ sm.uuid.new("fa864e51-67db-4ac9-823b-cfbdf523375d"), { 0x005705ff, 0x005705ff, 0x146137ff, 0x7f882fff, 0x4e7108ff, 0x1a6822ff, 0x1a6822ff, 0x1a6822ff, 0x005b1fff, 0x8f4d00ff, 0x005b2aff, 0x1a6822ff }, 12 }, --harvestable_tree_pine03
+		{ sm.uuid.new("73f968f0-d3a3-4334-86a8-a90203a3a56d"), { 0x016401ff, 0x016401ff, 0x016401ff, 0x00763eff, 0x147900ff, 0x368f00ff, 0x368f00ff, 0x368f00ff, 0x4e7600ff, 0x646200ff, 0x00640aff }, 11 }, --harvestable_tree_spruce01
+		{ sm.uuid.new("86324c5b-e97a-41f6-aa2c-7c6462f1f2e7"), { 0x016401ff, 0x016401ff, 0x016401ff, 0x00763eff, 0x147900ff, 0x368f00ff, 0x368f00ff, 0x368f00ff, 0x4e7600ff, 0x646200ff, 0x00640aff }, 11 }, --harvestable_tree_spruce02
+		{ sm.uuid.new("27aa53ea-1e09-4251-a284-437f93850409"), { 0x016401ff, 0x016401ff, 0x016401ff, 0x00763eff, 0x147900ff, 0x368f00ff, 0x368f00ff, 0x368f00ff, 0x4e7600ff, 0x646200ff, 0x00640aff }, 11 } --harvestable_tree_spruce03
+	}
+
+	hvs_rock_table =
+	{
+		{ sm.uuid.new("0d3362ae-4cb3-42ae-8a08-d3f9ed79e274"), { 0x8c8c8cff }, 1 }, --hvs_stone_small01
+		{ sm.uuid.new("f6b8e9b8-5592-46b6-acf9-86123bf630a9"), { 0x8c8c8cff }, 1 }, --hvs_stone_small02
+		{ sm.uuid.new("60ad4b7f-a7ef-4944-8a87-0844e6305513"), { 0x8c8c8cff }, 1 }, --hvs_stone_small03
+		{ sm.uuid.new("ab5b947e-a223-4842-83dd-aa6b23ac2b86"), { 0x8c8c8cff }, 1 }, --hvs_stone_medium01
+		{ sm.uuid.new("5da6c862-8a5c-4b56-90d3-5f038d569c4a"), { 0x8c8c8cff }, 1 }, --hvs_stone_medium02
+		{ sm.uuid.new("90e0ef6a-8409-4459-8926-e5351d7da611"), { 0x8c8c8cff }, 1 }, --hvs_stone_medium03
+		{ sm.uuid.new("ab362045-0444-4749-9f24-f5e850162857"), { 0x8c8c8cff }, 1 }, --hvs_stone_large01
+		{ sm.uuid.new("63fb92b3-e1dc-4b5c-9ed3-7b572bc01ca4"), { 0x8c8c8cff }, 1 }, --hvs_stone_large02
+		{ sm.uuid.new("67111401-1ee1-4bfb-8780-fa878352f90d"), { 0x8c8c8cff }, 1 }  --hvs_stone_large03
+	}
+else -- Normal
+	hvs_tree_table =
+	{
+		{ sm.uuid.new("c4ea19d3-2469-4059-9f13-3ddb4f7e0b79"), { 0xdb9819ff, 0xfb843cff, 0xdabd5cff, 0xd5bc36ff, 0xd0db18ff, 0xffe224ff, 0xe8b743ff }, 7 }, --harvestable_tree_birch01
+		{ sm.uuid.new("711c3e72-7ba1-4424-ae70-c13d23afe818"), { 0xdb9819ff, 0xfb843cff, 0xdabd5cff, 0xd5bc36ff, 0xd0db18ff, 0xffe224ff, 0xe8b743ff }, 7 }, --harvestable_tree_birch02
+		{ sm.uuid.new("a7aa52af-4276-4b2d-af44-36bc41864e04"), { 0xdb9819ff, 0xfb843cff, 0xdabd5cff, 0xd5bc36ff, 0xd0db18ff, 0xffe224ff, 0xe8b743ff }, 7 }, --harvestable_tree_birch03
+		{ sm.uuid.new("91ec04ea-9bf7-4a9d-bb7f-3d0125ff78c7"), { 0x54c51eff, 0x54c51eff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x065437ff, 0x541805ff, 0x7c5e2080 }, 15 }, --harvestable_tree_leafy01
+		{ sm.uuid.new("4d482999-98b7-4023-a149-d47be709b8f7"), { 0x54c51eff, 0x54c51eff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x065437ff, 0x541805ff, 0x7c5e2080 }, 15 }, --harvestable_tree_leafy02
+		{ sm.uuid.new("3db0a60d-8668-4c8a-8dd2-f5ceb294977e"), { 0x54c51eff, 0x54c51eff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x68cf37ff, 0x9ebe2bff, 0x4a8725ff, 0x68cf37ff, 0x0c7638ff, 0x065437ff, 0x541805ff, 0x7c5e2080 }, 15 }, --harvestable_tree_leafy03
+		{ sm.uuid.new("8411caba-63db-4b93-ad67-7ae8e350d360"), { 0x005705ff, 0x005705ff, 0x146137ff, 0x7f882fff, 0x4e7108ff, 0x1a6822ff, 0x1a6822ff, 0x1a6822ff, 0x005b1fff, 0x8f4d00ff, 0x005b2aff, 0x1a6822ff }, 12 }, --harvestable_tree_pine01
+		{ sm.uuid.new("1cb503a4-9306-412f-9e13-371bc634af60"), { 0x005705ff, 0x005705ff, 0x146137ff, 0x7f882fff, 0x4e7108ff, 0x1a6822ff, 0x1a6822ff, 0x1a6822ff, 0x005b1fff, 0x8f4d00ff, 0x005b2aff, 0x1a6822ff }, 12 }, --harvestable_tree_pine02
+		{ sm.uuid.new("fa864e51-67db-4ac9-823b-cfbdf523375d"), { 0x005705ff, 0x005705ff, 0x146137ff, 0x7f882fff, 0x4e7108ff, 0x1a6822ff, 0x1a6822ff, 0x1a6822ff, 0x005b1fff, 0x8f4d00ff, 0x005b2aff, 0x1a6822ff }, 12 }, --harvestable_tree_pine03
+		{ sm.uuid.new("73f968f0-d3a3-4334-86a8-a90203a3a56d"), { 0x016401ff, 0x016401ff, 0x016401ff, 0x00763eff, 0x147900ff, 0x368f00ff, 0x368f00ff, 0x368f00ff, 0x4e7600ff, 0x646200ff, 0x00640aff }, 11 }, --harvestable_tree_spruce01
+		{ sm.uuid.new("86324c5b-e97a-41f6-aa2c-7c6462f1f2e7"), { 0x016401ff, 0x016401ff, 0x016401ff, 0x00763eff, 0x147900ff, 0x368f00ff, 0x368f00ff, 0x368f00ff, 0x4e7600ff, 0x646200ff, 0x00640aff }, 11 }, --harvestable_tree_spruce02
+		{ sm.uuid.new("27aa53ea-1e09-4251-a284-437f93850409"), { 0x016401ff, 0x016401ff, 0x016401ff, 0x00763eff, 0x147900ff, 0x368f00ff, 0x368f00ff, 0x368f00ff, 0x4e7600ff, 0x646200ff, 0x00640aff }, 11 } --harvestable_tree_spruce03
+	}
+
+	hvs_rock_table =
+	{
+		{ sm.uuid.new("0d3362ae-4cb3-42ae-8a08-d3f9ed79e274"), { 0x8c8c8cff }, 1 }, --hvs_stone_small01
+		{ sm.uuid.new("f6b8e9b8-5592-46b6-acf9-86123bf630a9"), { 0x8c8c8cff }, 1 }, --hvs_stone_small02
+		{ sm.uuid.new("60ad4b7f-a7ef-4944-8a87-0844e6305513"), { 0x8c8c8cff }, 1 }, --hvs_stone_small03
+		{ sm.uuid.new("ab5b947e-a223-4842-83dd-aa6b23ac2b86"), { 0x8c8c8cff }, 1 }, --hvs_stone_medium01
+		{ sm.uuid.new("5da6c862-8a5c-4b56-90d3-5f038d569c4a"), { 0x8c8c8cff }, 1 }, --hvs_stone_medium02
+		{ sm.uuid.new("90e0ef6a-8409-4459-8926-e5351d7da611"), { 0x8c8c8cff }, 1 }, --hvs_stone_medium03
+		{ sm.uuid.new("ab362045-0444-4749-9f24-f5e850162857"), { 0x8c8c8cff }, 1 }, --hvs_stone_large01
+		{ sm.uuid.new("63fb92b3-e1dc-4b5c-9ed3-7b572bc01ca4"), { 0x8c8c8cff }, 1 }, --hvs_stone_large02
+		{ sm.uuid.new("67111401-1ee1-4bfb-8780-fa878352f90d"), { 0x8c8c8cff }, 1 }  --hvs_stone_large03
+	}
+end
 
 local hvs_tree_table_sz = #hvs_tree_table
 local hvs_rock_table_sz = #hvs_rock_table
