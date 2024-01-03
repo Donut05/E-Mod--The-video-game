@@ -283,23 +283,52 @@ function GetClutterIdxAt( x, y )
 	local clutter_noise = _sm_noise_octaveNoise2d(x, y, 12, g_terrainSeed_59) * _sm_noise_octaveNoise2d(x, y, 11, g_terrainSeed_4)
 	local clutter_idx = _math_floor(clutter_noise * 42.234) % ground_clutter_sz
 
-	return ground_clutter[clutter_idx + 1]
+	if month > 10 or month < 3 then -- Winter
+		return math.random(0, 4) == 0 and 24 or -1 -- Dead grass
+	elseif month == 10 then -- Hallowneen
+		if math.random(0, 1) == 0 then
+			return math.random(0, 4) == 0 and 19 or -1 -- Fish bones
+		else
+			return math.random(0, 4) == 0 and 25 or -1 -- Burnt horns
+		end
+	else -- Normal
+		return ground_clutter[clutter_idx + 1]
+	end
 end
 
-local ground_asset_list =
-{
-	{ sm.uuid.new("4bd88efa-949c-4c0b-8517-2f2b1b2bdb01"), { 0xb0a926ff, 0xf1e929ff, 0xf1ac28ff, 0xcd7d00ff, 0xf5de00ff, 0xf5de00ff, 0xbef319ff }, 7, { leaves = 0 } }, --env_foliage_smallbirch01
-	{ sm.uuid.new("f741ad80-c99a-4cec-b67d-e53ec82a7bd0"), { 0xb0a926ff, 0xf1e929ff, 0xf1ac28ff, 0xcd7d00ff, 0xf5de00ff, 0xf5de00ff, 0xbef319ff }, 7, { leaves = 0 } }, --env_foliage_smallbirch02
-	{ sm.uuid.new("09a5a0ee-0fd1-4b32-86c0-9e6f2b701546"), { 0x097b81ff, 0x12784eff, 0x0c8120ff, 0x4cc569ff, 0x32931aff, 0xa3d821ff, 0xd8bc21ff, 0xd83f21ff }, 8, { leaves = 0 } }, --env_nature_foliage_wildbush01
-	{ sm.uuid.new("b1e1b1bf-6175-465e-81c6-9ec9d0bf83d0"), { 0x097b81ff, 0x12784eff, 0x0c8120ff, 0x4cc569ff, 0x32931aff, 0xa3d821ff, 0xd8bc21ff, 0xd83f21ff }, 8, { leaves = 0 } }, --env_nature_foliage_wildbush02
-	{ sm.uuid.new("796cabcd-5703-42af-b4e9-512c85abcf59"), { 0x0c7d35ff, 0x499931ff, 0x2c7f0fff, 0x5b7f13ff, 0x5c7c23ff, 0x75a80fff, 0x797f12ff, 0xa8850fff, 0x7f4b0fff, 0x7f0f23ff }, 10, { leaves = 0 } }, --env_nature_foliage_buxus01
-	{ sm.uuid.new("df1a36a3-6be0-4681-845e-d89d6c80d1a6"), { 0x0c7d35ff, 0x499931ff, 0x2c7f0fff, 0x5b7f13ff, 0x5c7c23ff, 0x75a80fff, 0x797f12ff, 0xa8850fff, 0x7f4b0fff, 0x7f0f23ff }, 10, { leaves = 0 } }, --env_nature_foliage_buxus02
-	{ sm.uuid.new("73acaa1d-d208-450b-8159-99d5914bbcde"), { 0x0c7d35ff, 0x499931ff, 0x2c7f0fff, 0x5b7f13ff, 0x5c7c23ff, 0x75a80fff, 0x797f12ff, 0xa8850fff, 0x7f4b0fff, 0x7f0f23ff }, 10, { leaves = 0 } }, --env_nature_foliage_buxus03
-	{ sm.uuid.new("c63b9bff-0c25-460b-a1a3-af3161592170"), { 0x5b7f13ff, 0x678f0aff, 0x317f0fff, 0x0f7f52ff, 0x0f7f23ff, 0x3f5900ff, 0x576828ff, 0x636d48ff, 0x66552cff, 0x592300ff, 0x593e00ff }, 11, { leaves = 0 } }, --env_nature_foliage_boxwood
-	{ sm.uuid.new("fd3844b5-58eb-4cb0-96d6-383b7fa83923"), { 0x0c7d35ff, 0x499931ff, 0x2c7f0fff, 0x5b7f13ff, 0x5c7c23ff, 0x75a80fff, 0x797f12ff, 0xa8850fff, 0x7f4b0fff, 0x7f0f23ff, 0x8bad02ff, 0x8bad02ff, 0xb1a803ff, 0xa1bc05ff }, 14, { leaves = 0 } }, --env_nature_foliage_columnshrub01
-	{ sm.uuid.new("fe134420-39cb-450b-9560-5d3401556f7a"), { 0x0c7d35ff, 0x499931ff, 0x2c7f0fff, 0x5b7f13ff, 0x5c7c23ff, 0x75a80fff, 0x797f12ff, 0xa8850fff, 0x7f4b0fff, 0x7f0f23ff, 0x8bad02ff, 0x8bad02ff, 0xb1a803ff, 0xa1bc05ff }, 14, { leaves = 0 } }, --env_nature_foliage_columnshrub02
-	{ sm.uuid.new("40ff23e6-3914-4d85-9048-fe012f72cba1"), { 0x0c7d35ff, 0x499931ff, 0x2c7f0fff, 0x5b7f13ff, 0x5c7c23ff, 0x75a80fff, 0x797f12ff, 0xa8850fff, 0x7f4b0fff, 0x7f0f23ff, 0x8bad02ff, 0x8bad02ff, 0xb1a803ff, 0xa1bc05ff }, 14, { leaves = 0 } }  --env_nature_foliage_columnshrub03
-}
+local ground_asset_list = {}
+
+if month > 10 or month < 3 then -- Winter
+	ground_asset_list =	{
+		{ sm.uuid.new("4bd88efa-949c-4c0b-8517-2f2b1b2bdb01"), { 0xffffffff }, 1, { leaves = 0 } }, --env_foliage_smallbirch01
+		{ sm.uuid.new("f741ad80-c99a-4cec-b67d-e53ec82a7bd0"), { 0xffffffff }, 1, { leaves = 0 } }, --env_foliage_smallbirch02
+		{ sm.uuid.new("09a5a0ee-0fd1-4b32-86c0-9e6f2b701546"), { 0xffffffff }, 1, { leaves = 0 } }, --env_nature_foliage_wildbush01
+		{ sm.uuid.new("b1e1b1bf-6175-465e-81c6-9ec9d0bf83d0"), { 0xffffffff }, 1, { leaves = 0 } }, --env_nature_foliage_wildbush02
+		{ sm.uuid.new("796cabcd-5703-42af-b4e9-512c85abcf59"), { 0xffffffff }, 1, { leaves = 0 } }, --env_nature_foliage_buxus01
+		{ sm.uuid.new("df1a36a3-6be0-4681-845e-d89d6c80d1a6"), { 0xffffffff }, 1, { leaves = 0 } }, --env_nature_foliage_buxus02
+		{ sm.uuid.new("73acaa1d-d208-450b-8159-99d5914bbcde"), { 0xffffffff }, 1, { leaves = 0 } }, --env_nature_foliage_buxus03
+		{ sm.uuid.new("c63b9bff-0c25-460b-a1a3-af3161592170"), { 0xffffffff }, 1, { leaves = 0 } }, --env_nature_foliage_boxwood
+		{ sm.uuid.new("fd3844b5-58eb-4cb0-96d6-383b7fa83923"), { 0xffffffff }, 1, { leaves = 0 } }, --env_nature_foliage_columnshrub01
+		{ sm.uuid.new("fe134420-39cb-450b-9560-5d3401556f7a"), { 0xffffffff }, 1, { leaves = 0 } }, --env_nature_foliage_columnshrub02
+		{ sm.uuid.new("40ff23e6-3914-4d85-9048-fe012f72cba1"), { 0xffffffff }, 1, { leaves = 0 } }  --env_nature_foliage_columnshrub03
+	}
+elseif month == 10 then -- Hallowneen
+	
+else -- Normal
+	ground_asset_list =	{
+		{ sm.uuid.new("4bd88efa-949c-4c0b-8517-2f2b1b2bdb01"), { 0xb0a926ff, 0xf1e929ff, 0xf1ac28ff, 0xcd7d00ff, 0xf5de00ff, 0xf5de00ff, 0xbef319ff }, 7, { leaves = 0 } }, --env_foliage_smallbirch01
+		{ sm.uuid.new("f741ad80-c99a-4cec-b67d-e53ec82a7bd0"), { 0xb0a926ff, 0xf1e929ff, 0xf1ac28ff, 0xcd7d00ff, 0xf5de00ff, 0xf5de00ff, 0xbef319ff }, 7, { leaves = 0 } }, --env_foliage_smallbirch02
+		{ sm.uuid.new("09a5a0ee-0fd1-4b32-86c0-9e6f2b701546"), { 0x097b81ff, 0x12784eff, 0x0c8120ff, 0x4cc569ff, 0x32931aff, 0xa3d821ff, 0xd8bc21ff, 0xd83f21ff }, 8, { leaves = 0 } }, --env_nature_foliage_wildbush01
+		{ sm.uuid.new("b1e1b1bf-6175-465e-81c6-9ec9d0bf83d0"), { 0x097b81ff, 0x12784eff, 0x0c8120ff, 0x4cc569ff, 0x32931aff, 0xa3d821ff, 0xd8bc21ff, 0xd83f21ff }, 8, { leaves = 0 } }, --env_nature_foliage_wildbush02
+		{ sm.uuid.new("796cabcd-5703-42af-b4e9-512c85abcf59"), { 0x0c7d35ff, 0x499931ff, 0x2c7f0fff, 0x5b7f13ff, 0x5c7c23ff, 0x75a80fff, 0x797f12ff, 0xa8850fff, 0x7f4b0fff, 0x7f0f23ff }, 10, { leaves = 0 } }, --env_nature_foliage_buxus01
+		{ sm.uuid.new("df1a36a3-6be0-4681-845e-d89d6c80d1a6"), { 0x0c7d35ff, 0x499931ff, 0x2c7f0fff, 0x5b7f13ff, 0x5c7c23ff, 0x75a80fff, 0x797f12ff, 0xa8850fff, 0x7f4b0fff, 0x7f0f23ff }, 10, { leaves = 0 } }, --env_nature_foliage_buxus02
+		{ sm.uuid.new("73acaa1d-d208-450b-8159-99d5914bbcde"), { 0x0c7d35ff, 0x499931ff, 0x2c7f0fff, 0x5b7f13ff, 0x5c7c23ff, 0x75a80fff, 0x797f12ff, 0xa8850fff, 0x7f4b0fff, 0x7f0f23ff }, 10, { leaves = 0 } }, --env_nature_foliage_buxus03
+		{ sm.uuid.new("c63b9bff-0c25-460b-a1a3-af3161592170"), { 0x5b7f13ff, 0x678f0aff, 0x317f0fff, 0x0f7f52ff, 0x0f7f23ff, 0x3f5900ff, 0x576828ff, 0x636d48ff, 0x66552cff, 0x592300ff, 0x593e00ff }, 11, { leaves = 0 } }, --env_nature_foliage_boxwood
+		{ sm.uuid.new("fd3844b5-58eb-4cb0-96d6-383b7fa83923"), { 0x0c7d35ff, 0x499931ff, 0x2c7f0fff, 0x5b7f13ff, 0x5c7c23ff, 0x75a80fff, 0x797f12ff, 0xa8850fff, 0x7f4b0fff, 0x7f0f23ff, 0x8bad02ff, 0x8bad02ff, 0xb1a803ff, 0xa1bc05ff }, 14, { leaves = 0 } }, --env_nature_foliage_columnshrub01
+		{ sm.uuid.new("fe134420-39cb-450b-9560-5d3401556f7a"), { 0x0c7d35ff, 0x499931ff, 0x2c7f0fff, 0x5b7f13ff, 0x5c7c23ff, 0x75a80fff, 0x797f12ff, 0xa8850fff, 0x7f4b0fff, 0x7f0f23ff, 0x8bad02ff, 0x8bad02ff, 0xb1a803ff, 0xa1bc05ff }, 14, { leaves = 0 } }, --env_nature_foliage_columnshrub02
+		{ sm.uuid.new("40ff23e6-3914-4d85-9048-fe012f72cba1"), { 0x0c7d35ff, 0x499931ff, 0x2c7f0fff, 0x5b7f13ff, 0x5c7c23ff, 0x75a80fff, 0x797f12ff, 0xa8850fff, 0x7f4b0fff, 0x7f0f23ff, 0x8bad02ff, 0x8bad02ff, 0xb1a803ff, 0xa1bc05ff }, 14, { leaves = 0 } }  --env_nature_foliage_columnshrub03
+	}
+end
 
 local ground_rock_list =
 {
@@ -489,15 +518,15 @@ if month > 10 or month < 3 then -- Winter
 
 	hvs_rock_table =
 	{
-		{ sm.uuid.new("0d3362ae-4cb3-42ae-8a08-d3f9ed79e274"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_small01
-		{ sm.uuid.new("f6b8e9b8-5592-46b6-acf9-86123bf630a9"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_small02
-		{ sm.uuid.new("60ad4b7f-a7ef-4944-8a87-0844e6305513"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_small03
-		{ sm.uuid.new("ab5b947e-a223-4842-83dd-aa6b23ac2b86"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_medium01
-		{ sm.uuid.new("5da6c862-8a5c-4b56-90d3-5f038d569c4a"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_medium02
-		{ sm.uuid.new("90e0ef6a-8409-4459-8926-e5351d7da611"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_medium03
-		{ sm.uuid.new("ab362045-0444-4749-9f24-f5e850162857"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_large01
-		{ sm.uuid.new("63fb92b3-e1dc-4b5c-9ed3-7b572bc01ca4"), { 0x8c8c8cff, 0x91e9ffff }, 2 }, --hvs_stone_large02
-		{ sm.uuid.new("67111401-1ee1-4bfb-8780-fa878352f90d"), { 0x8c8c8cff, 0x91e9ffff }, 2 }  --hvs_stone_large03
+		{ sm.uuid.new("0d3362ae-4cb3-42ae-8a08-d3f9ed79e274"), { 0x91e9ffff }, 1 }, --hvs_stone_small01
+		{ sm.uuid.new("f6b8e9b8-5592-46b6-acf9-86123bf630a9"), { 0x91e9ffff }, 1 }, --hvs_stone_small02
+		{ sm.uuid.new("60ad4b7f-a7ef-4944-8a87-0844e6305513"), { 0x91e9ffff }, 1 }, --hvs_stone_small03
+		{ sm.uuid.new("ab5b947e-a223-4842-83dd-aa6b23ac2b86"), { 0x91e9ffff }, 1 }, --hvs_stone_medium01
+		{ sm.uuid.new("5da6c862-8a5c-4b56-90d3-5f038d569c4a"), { 0x91e9ffff }, 1 }, --hvs_stone_medium02
+		{ sm.uuid.new("90e0ef6a-8409-4459-8926-e5351d7da611"), { 0x91e9ffff }, 1 }, --hvs_stone_medium03
+		{ sm.uuid.new("ab362045-0444-4749-9f24-f5e850162857"), { 0x91e9ffff }, 1 }, --hvs_stone_large01
+		{ sm.uuid.new("63fb92b3-e1dc-4b5c-9ed3-7b572bc01ca4"), { 0x91e9ffff }, 1 }, --hvs_stone_large02
+		{ sm.uuid.new("67111401-1ee1-4bfb-8780-fa878352f90d"), { 0x91e9ffff }, 1 }  --hvs_stone_large03
 	}
 elseif month == 10 then -- Hallowneen
 	hvs_tree_table =

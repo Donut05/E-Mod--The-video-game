@@ -20,3 +20,7 @@ function Player:server_onExplosion(center, destructionLevel)
         g_sillyManager:Cl_OnScoreEvent("explode")
     end
 end
+
+function Player:cl_playEffect(data)
+    sm.effect.playEffect(data.effectName, data.worldPosition)
+end

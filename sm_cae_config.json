@@ -39,6 +39,10 @@
     "SovietMarch": {
       "path": "$CONTENT_DATA/Effects/Audio/music/soviet_march.mp3",
       "is3D": true
+    },
+    "DateAndTimeMeme": {
+      "path": "$CONTENT_DATA/Effects/Audio/music/Undertale-OST-023-Shop.mp3",
+      "is3D": false
     }
   }
 }

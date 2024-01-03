@@ -126,5 +126,13 @@
             "type" : "audio"
          }
       ]
+   },
+   "Sounds - Undertale_shop_date_and_time_meme" : {
+      "effectList" : [
+         {
+            "name" : "DateAndTimeMeme",
+            "type" : "audio"
+         }
+      ]
    }
 }

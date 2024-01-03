@@ -18,7 +18,6 @@ Overworld = class(BaseWorld)
 
 Overworld.terrainScript = "$CONTENT_DATA/Scripts/terrain/terrain_overworld.lua"
 local month = getCurrentMonth()
-print("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW")
 if month > 10 or month < 3 then
 	Overworld.groundMaterialSet = "$CONTENT_DATA/Terrain/Materials/gnd_jolly_materialset.json" -- Christmas/New year
 	print("Merry Christmas!")
@@ -84,7 +83,7 @@ function Overworld.client_onCreate(self)
 	self.capturedCreation = {}
 	self.captureTime = sm.game.getCurrentTick()
 	self.lockEffect = sm.effect.createEffect("00Fard - Creation_lock")
-	self.timerGUI = sm.gui.createWorldIconGui(44, 44, "$GAME_DATA/Gui/Layouts/Hud/Hud_BeaconIcon.layout", false)
+	--self.timerGUI = sm.gui.createWorldIconGui(44, 44, "$GAME_DATA/Gui/Layouts/Hud/Hud_BeaconIcon.layout", false)
 
 	self.ambienceEffect = sm.effect.createEffect("OutdoorAmbience")
 	self.ambienceEffect:start()
@@ -233,6 +232,7 @@ function Overworld.client_onFixedUpdate(self)
 			self.lockEffect:start()
 		end
 		self.lockEffect:setPosition(self.hostShape.worldPosition + self.lockOffset)
+		--[[
 		--Handle timer GUI
 		if not self.timerGUI:isActive() then
 			self.timerGUI:setColor("Icon", sm.color.new("00bcffff"))
@@ -241,7 +241,7 @@ function Overworld.client_onFixedUpdate(self)
 		end
 		self.timerGUI:setWorldPosition(self.hostShape.worldPosition + self.lockOffset)
 		local frameIndex = math.floor((sm.game.getCurrentTick() % self.captureTime) / (self.captureTime / 360)) + 1
-		self.timerGUI:setItemIcon("Icon", "Rotations", "remove", tostring(1))
+		self.timerGUI:setItemIcon("Icon", "Rotations", "remove", tostring(1))]]
 	else
 		--Handle lock effect
 		if self.lockEffect:isPlaying() then
