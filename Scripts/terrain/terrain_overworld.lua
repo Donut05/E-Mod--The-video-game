@@ -284,7 +284,7 @@ function GetClutterIdxAt( x, y )
 	local clutter_idx = _math_floor(clutter_noise * 42.234) % ground_clutter_sz
 
 	if month > 10 or month < 3 then -- Winter
-		return math.random(0, 4) == 0 and 24 or -1 -- Dead grass
+		return (clutter_idx == 0 and math.random(0, 10) == 0) and 24 or -1 -- Dead grass
 	elseif month == 10 then -- Hallowneen
 		if math.random(0, 1) == 0 then
 			return math.random(0, 4) == 0 and 19 or -1 -- Fish bones

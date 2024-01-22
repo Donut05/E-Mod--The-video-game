@@ -3,12 +3,12 @@
     <Widget type="Widget" skin="PanelEmpty" position_real="0 0.3611111111111111 0.26041666666666669 0.42129629629629628" align="Left VCenter">
         <Widget type="ImageBox" skin="ImageBox" position_real="0 0.032967032967032968 0.83999999999999997 0.94505494505494503" name="Meme">
             <Property key="ImageTexture" value="pc.jpg"/>
-            <Widget type="TextBox" skin="TextBox" position_real="0.42857142857142855 0.023255813953488372 0.40476190476190477 0.081395348837209308" name="Month">
+            <Widget type="TextBox" skin="TextBox" position_real="0.42857142857142855 0.023255813953488372 0.33333333333333331 0.081395348837209308" name="Month">
                 <Property key="Caption" value="SEPTEMBER"/>
                 <Property key="TextAlign" value="Center"/>
                 <Property key="FontName" value="X_Hud_Alert"/>
             </Widget>
-            <Widget type="TextBox" skin="TextBox" position_real="0.86904761904761907 0.023255813953488372 0.10714285714285714 0.081395348837209308" name="Day">
+            <Widget type="TextBox" skin="TextBox" position_real="0.80952380952380953 0.023255813953488372 0.16666666666666666 0.081395348837209308" name="Day">
                 <Property key="Caption" value="88"/>
                 <Property key="FontName" value="X_Hud_Alert"/>
                 <Property key="TextAlign" value="Center"/>

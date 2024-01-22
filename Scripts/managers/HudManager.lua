@@ -80,7 +80,7 @@ function HudManager.client_onFixedUpdate(self, dt)
         self.lastTick = sm.game.getCurrentTick()
         print("ROLLED FOR A RANDOM EVENT!")
         --Date and time meme
-        if math.random(0, 10) == 0 then
+        if math.random(0, 100) == 0 then
             if not self.dateTimeHUD:isActive() then
                 local calendar = getCurrentDateTime()
                 self.dateTimeHUD:setText("Month", calendar.month)

@@ -82,8 +82,9 @@ function Overworld.client_onCreate(self)
 	self.lockOffset = sm.vec3.zero()
 	self.capturedCreation = {}
 	self.captureTime = sm.game.getCurrentTick()
+	self.captureTimeStart = sm.game.getCurrentTick()
 	self.lockEffect = sm.effect.createEffect("00Fard - Creation_lock")
-	--self.timerGUI = sm.gui.createWorldIconGui(44, 44, "$GAME_DATA/Gui/Layouts/Hud/Hud_BeaconIcon.layout", false)
+	self.timerGUI = sm.gui.createWorldIconGui(100, 100, "$CONTENT_DATA/Gui/Layouts/DMCA_locked_timer.layout", false)
 
 	self.ambienceEffect = sm.effect.createEffect("OutdoorAmbience")
 	self.ambienceEffect:start()
@@ -232,7 +233,6 @@ function Overworld.client_onFixedUpdate(self)
 			self.lockEffect:start()
 		end
 		self.lockEffect:setPosition(self.hostShape.worldPosition + self.lockOffset)
-		--[[
 		--Handle timer GUI
 		if not self.timerGUI:isActive() then
 			self.timerGUI:setColor("Icon", sm.color.new("00bcffff"))
@@ -240,8 +240,8 @@ function Overworld.client_onFixedUpdate(self)
 			self.timerGUI:open()
 		end
 		self.timerGUI:setWorldPosition(self.hostShape.worldPosition + self.lockOffset)
-		local frameIndex = math.floor((sm.game.getCurrentTick() % self.captureTime) / (self.captureTime / 360)) + 1
-		self.timerGUI:setItemIcon("Icon", "Rotations", "remove", tostring(1))]]
+		local frameIndex = 360 - math.floor((sm.game.getCurrentTick() - self.captureTimeStart) / (self.captureTime - self.captureTimeStart) * 360)
+		self.timerGUI:setImage("Icon", "$CONTENT_DATA/Gui/Images/Ui/progress_circle/tile" .. frameIndex .. ".png")
 	else
 		--Handle lock effect
 		if self.lockEffect:isPlaying() then
@@ -379,18 +379,14 @@ function Overworld.client_onCollision(self, objectA, objectB, position, pointVel
 	--=COLLISION DESTRUCTION=--
 	if self.collisionDestructionSwitch then
 		if sm.exists(objectB) and type(objectB) == "Shape" then
-			print("bonk!")
 			if (pointVelocityA + pointVelocityB):length() > (sm.item.getQualityLevel(objectB.uuid) * 5) and math.random(0, sm.item.getQualityLevel(objectB.uuid)) == 0
 			and objectB.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and objectB.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
-				print("destroy")
 				sm.melee.meleeAttack(sm.uuid.new("38fe8287-d408-492f-a3a0-996f5f13ecda"), 1, position, sm.vec3.new(2, 2, 2), sm.localPlayer.getPlayer(), 0, 0)
 			end
 		end
 		if sm.exists(objectA) and type(objectA) == "Shape" then
-			print("bonk!")
 			if (pointVelocityA + pointVelocityB):length() > (sm.item.getQualityLevel(objectA.uuid) * 2) and math.random(0, sm.item.getQualityLevel(objectA.uuid)) == 0
 			and objectA.uuid ~= sm.uuid.new("69e362c3-32aa-4cd1-adc0-dcfc47b92c0d") and objectA.uuid ~= sm.uuid.new("db66f0b1-0c50-4b74-bdc7-771374204b1f") then
-				print("destroy")
 				sm.melee.meleeAttack(sm.uuid.new("38fe8287-d408-492f-a3a0-996f5f13ecda"), 1, position, sm.vec3.new(2, 2, 2), sm.localPlayer.getPlayer(), 0, 0)
 			end
 		end
@@ -922,13 +918,14 @@ function Overworld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, at
 				end
 			end
 			if staticBodies > dynamicBodies then
-				self.captureTime = baseCaptureTime * 1.001
+				self.captureTime = baseCaptureTime * 2
 				self.isABase = true
 			else
 				self.captureTime = baseCaptureTime + 200
 				self.isABase = false
 			end
-			print(self.captureTime)
+			self.captureTimeStart = sm.game.getCurrentTick()
+			print("[E MOD] Started a countdown at tick", sm.game.getCurrentTick(), "for the duration of", self.captureTime - sm.game.getCurrentTick(), "ticks that will end at tick", self.captureTime)
 			--Calculate where the lock will be
 			local visualCenter = sm.vec3.zero()
 			local counter = 0
