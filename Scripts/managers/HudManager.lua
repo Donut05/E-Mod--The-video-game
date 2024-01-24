@@ -78,9 +78,8 @@ function HudManager.client_onFixedUpdate(self, dt)
     if sm.game.getCurrentTick() >= self.lastTick + 1200 then --Roll for a random event every 30 seconds
         --Reset timer
         self.lastTick = sm.game.getCurrentTick()
-        print("ROLLED FOR A RANDOM EVENT!")
         --Date and time meme
-        if math.random(0, 100) == 0 then
+        if math.random(0, 50) == 0 then
             if not self.dateTimeHUD:isActive() then
                 local calendar = getCurrentDateTime()
                 self.dateTimeHUD:setText("Month", calendar.month)
@@ -99,7 +98,7 @@ function HudManager.client_onFixedUpdate(self, dt)
             end
         end
     end
-    if sm.game.getCurrentTick() >= DAT_meme_tick + 2000 then
+    if sm.game.getCurrentTick() >= DAT_meme_tick + 480 then
         if self.dateTimeHUD:isActive() then
             self.dateTimeHUD:close()
         end

@@ -150,28 +150,7 @@ local function getCreationAabb(bodies)
 end
 
 local playOutro = false
---[[ FUCK THE CIRCLE
-local function calculateCirclePositions(playerPos, circlePos, radius)
-	local circle = {}
-	for angle = 0, 359, 1 do
-		local radians = math.rad(angle)
-		local x = circlePos.x + radius * math.cos(radians)
-		local y = circlePos.y
-		local z = circlePos.z + radius * math.sin(radians)
 
-		local position = sm.vec3.new(x, y, z)
-		local lookDirection = (playerPos - position):normalize()
-
-		-- The resulting position is adjusted so that it's always pointing towards playerPos
-		table.insert(circle, { position = position, lookDirection = lookDirection })
-	end
-
-	return circle
-end
-
-local testTick = sm.game.getCurrentTick()
-local complete = 361
-]]--
 function Overworld.client_onFixedUpdate(self)
 	BaseWorld.client_onFixedUpdate(self)
 
@@ -210,23 +189,17 @@ function Overworld.client_onFixedUpdate(self)
 		self.pipeCooldown = false
 		self.pipeCooldownTick = sm.game.getCurrentTick()
 	end
---[[ FUCK IT FUCK IT FUCK IT
-	local circle = calculateCirclePositions(sm.localPlayer.getPlayer().character.worldPosition, sm.vec3.new(0, -10, -5), 2)
 
-	if sm.game.getCurrentTick() >= testTick + 15 then
-		testTick = sm.game.getCurrentTick()
-		for i, pos in ipairs(circle) do
-			if i < complete then
-				sm.particle.createParticle("construct_welding", pos.position)
-			end
-		end
-		complete = complete - 10
-		if complete <= 0 then
-			complete = 361
-		end
-	end
-]]
 	if self.captured then
+		if not sm.exists(self.hostShape) then
+			if self.lockEffect:isPlaying() then
+				self.lockEffect:stopImmediate()
+			end
+			if self.timerGUI:isActive() then
+				self.timerGUI:close()
+			end
+			return
+		end
 		--Handle lock effect
 		playOutro = true
 		if not self.lockEffect:isPlaying() then
@@ -236,6 +209,7 @@ function Overworld.client_onFixedUpdate(self)
 		--Handle timer GUI
 		if not self.timerGUI:isActive() then
 			self.timerGUI:setColor("Icon", sm.color.new("00bcffff"))
+			self.timerGUI:setMaxRenderDistance(26399999)
 			self.timerGUI:setRequireLineOfSight(false)
 			self.timerGUI:open()
 		end
@@ -861,6 +835,10 @@ end
 
 local DMCA_strike = sm.uuid.new("6bb9aa22-8b36-4fed-a740-028e5360a617")
 
+function Overworld.cl_playUnlockParticle(self, pos)
+	sm.particle.createParticle("DMCA_creation_unlock", pos)
+end
+
 function Overworld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, attacker, damage, userData, hitNormal, target, projectileUuid)
 	BaseWorld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, attacker, damage, userData, hitNormal, target, projectileUuid)
 
@@ -886,6 +864,10 @@ function Overworld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, at
 			--If we already captured a creation, free it
 			if #self.capturedCreation > 0 then
 				self.captured = false
+				if sm.exists(self.hostShape) then
+					local oldPos = self.hostShape.worldPosition + self.lockOffset
+					self.network:sendToClients("cl_playUnlockParticle", oldPos)
+				end
 				for _, body in ipairs(self.capturedCreation) do
 					if sm.exists(body) then
 						body:setBuildable(true)
@@ -918,11 +900,14 @@ function Overworld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, at
 				end
 			end
 			if staticBodies > dynamicBodies then
-				self.captureTime = baseCaptureTime * 2
+				self.captureTime = baseCaptureTime * 1.0001
 				self.isABase = true
 			else
 				self.captureTime = baseCaptureTime + 200
 				self.isABase = false
+			end
+			if self.captureTime - sm.game.getCurrentTick() > 12000 then
+				self.captureTime = sm.game.getCurrentTick() + 12000
 			end
 			self.captureTimeStart = sm.game.getCurrentTick()
 			print("[E MOD] Started a countdown at tick", sm.game.getCurrentTick(), "for the duration of", self.captureTime - sm.game.getCurrentTick(), "ticks that will end at tick", self.captureTime)

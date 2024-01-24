@@ -8,36 +8,12 @@
       "path": "$CONTENT_DATA/Effects/Audio/sfx/memes/meet_the_sniper.mp3",
       "is3D": false
     },
-    "BeeSwarmBuzz": {
-      "path": "$CONTENT_DATA/Effects/Audio/sfx/env/bees.mp3",
-      "is3D": true
-    },
-    "MicrowaveOpen01": {
-      "path": "$CONTENT_DATA/Effects/Audio/sfx/parts/microwave/microwave_open_01.mp3",
-      "is3D": true
-    },
-    "MicrowaveOpen02": {
-      "path": "$CONTENT_DATA/Effects/Audio/sfx/parts/microwave/microwave_open_02.mp3",
-      "is3D": true
-    },
-    "MicrowaveClose01": {
-      "path": "$CONTENT_DATA/Effects/Audio/sfx/parts/microwave/microwave_close_01.mp3",
-      "is3D": true
-    },
-    "MicrowaveClose02": {
-      "path": "$CONTENT_DATA/Effects/Audio/sfx/parts/microwave/microwave_close_02.mp3",
-      "is3D": true
-    },
     "Rain": {
       "path": "$CONTENT_DATA/Effects/Audio/sfx/env/rain.mp3",
       "is3D": false
     },
     "RainInside": {
       "path": "$CONTENT_DATA/Effects/Audio/sfx/env/rain_inside.mp3",
-      "is3D": true
-    },
-    "SovietMarch": {
-      "path": "$CONTENT_DATA/Effects/Audio/music/soviet_march.mp3",
       "is3D": true
     },
     "DateAndTimeMeme": {
