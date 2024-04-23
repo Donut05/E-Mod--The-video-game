@@ -17,6 +17,7 @@ dofile("$SURVIVAL_DATA/Scripts/game/util/Timer.lua")
 dofile("$SURVIVAL_DATA/Scripts/game/managers/QuestEntityManager.lua")
 dofile("$GAME_DATA/Scripts/game/managers/EventManager.lua")
 dofile("$CONTENT_DATA/Scripts/terrain/terrain_overworld.lua")
+dofile("$CONTENT_DATA/Scripts/mod_utils.lua")
 
 ---@class SurvivalGame : GameClass
 ---@field sv table
@@ -480,7 +481,21 @@ function SurvivalGame.cl_onChatCommand(self, params)
 				amount = 1
 			}
 			if unitSpawnNames[params[2]] then
-				spawnParams.uuid = unitSpawnNames[params[2]]
+				if params[2] == "tapebot" or params[2] == "tb" then
+					local type = math.random(3)
+					print("Chose type", type)
+					if type == 0 then
+						spawnParams.uuid = sm.uuid.new("04761b4a-a83e-4736-b565-120bc776edb2")
+					elseif type == 1 then
+						spawnParams.uuid = sm.uuid.new("9dbbd2fb-7726-4e8f-8eb4-0dab228a561d")
+					elseif type == 2 then
+						spawnParams.uuid = sm.uuid.new("fcb2e8ce-ca94-45e4-a54b-b5acc156170b")
+					elseif type == 3 then
+						spawnParams.uuid = sm.uuid.new("68d3b2f3-ed4b-4967-9d22-8ee6f555df63")
+					end
+				else
+					spawnParams.uuid = unitSpawnNames[params[2]]
+				end
 			else
 				spawnParams.uuid = sm.uuid.new(params[2])
 			end
@@ -508,8 +523,7 @@ function SurvivalGame.cl_onChatCommand(self, params)
 		local hit, result = sm.localPlayer.getRaycast(1000)
 		if hit then
 			if result.type == "terrainSurface" then
-				sm.event.sendToWorld(sm.localPlayer.getPlayer().character:getWorld(), "cl_playDigEffect",
-					{ position = result.pointWorld, rotation = result.normalWorld })
+				sm.event.sendToWorld(sm.localPlayer.getPlayer().character:getWorld(), "cl_playDigEffect", { position = result.pointWorld, rotation = result.normalWorld })
 				local totebot_params = {
 					uuid = sm.uuid.new("8984bdbf-521e-4eed-b3c4-2b5e287eb879"),
 					world = sm.localPlayer.getPlayer().character:getWorld(),

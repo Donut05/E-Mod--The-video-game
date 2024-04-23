@@ -912,15 +912,7 @@ function Overworld.server_onProjectile(self, hitPos, hitTime, hitVelocity, _, at
 			self.captureTimeStart = sm.game.getCurrentTick()
 			print("[E MOD] Started a countdown at tick", sm.game.getCurrentTick(), "for the duration of", self.captureTime - sm.game.getCurrentTick(), "ticks that will end at tick", self.captureTime)
 			--Calculate where the lock will be
-			local visualCenter = sm.vec3.zero()
-			local counter = 0
-			for _, body in ipairs(self.capturedCreation) do
-				for _, shape in ipairs(body:getShapes()) do
-					counter = counter + 1
-					visualCenter = visualCenter + shape.worldPosition
-				end
-			end
-			visualCenter = visualCenter / counter
+			local visualCenter = sm.vec3.new(boxMin.x + ((boxMax.x - boxMin.x) / 2), boxMin.y + ((boxMax.y - boxMin.y) / 2), boxMin.z + ((boxMax.z - boxMin.z) / 2))
 			local worldLockEffectPos = sm.vec3.new(visualCenter.x, visualCenter.y, boxMax.z + 1)
 			local bodyCount = math.floor(#self.capturedCreation / 2)
 			if bodyCount <= 1 then

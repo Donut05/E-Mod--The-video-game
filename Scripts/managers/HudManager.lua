@@ -10,19 +10,20 @@ local function getCurrentDateTime()
     local secondsInMinute = 60
     local secondsInHour = 3600
     local secondsInDay = 86400
-    --Calculate the number of seconds in the current year
     local currentYear = epoch + math.floor(currentTime / (365 * secondsInDay))
     local yearStartSeconds = os.time({ year = currentYear, month = 1, day = 1, hour = 0, min = 0, sec = 0 })
     local secondsInCurrentYear = currentTime - yearStartSeconds
-    --Calculate months, days, hours, and minutes
     local months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }
     local currentMonth = 1
-    while currentMonth < 12 and secondsInCurrentYear >= (30.44 * secondsInDay) do
-        secondsInCurrentYear = secondsInCurrentYear - (30.44 * secondsInDay)
+    while currentMonth < 12 and secondsInCurrentYear >= (30.4375 * secondsInDay) do
+        secondsInCurrentYear = secondsInCurrentYear - (30.4375 * secondsInDay)
         currentMonth = currentMonth + 1
     end
     local currentDay = math.floor(secondsInCurrentYear / secondsInDay) + 1
     local currentHour = math.floor((secondsInCurrentYear % secondsInDay) / secondsInHour)
+    print(secondsInCurrentYear)
+    print(secondsInDay)
+    print(secondsInHour)
     local currentMinute = math.floor((secondsInCurrentYear % secondsInHour) / secondsInMinute)
 
     local function getDaySuffix(day)
